@@ -1,0 +1,12 @@
+{
+  "name": "Hit the Coin",
+  "short_name": "Hit the Coin",
+  "id": "com.naazeri.hit.the.coin",
+  "description": "",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
