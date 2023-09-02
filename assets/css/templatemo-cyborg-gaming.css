@@ -273,7 +273,7 @@ section {
 }
 
 .heading-section h4 {
-  color: #ec6090;
+  color: #e8e8e8;
   font-size: 34px;
   text-decoration: none;
   margin-bottom: 30px;
@@ -543,7 +543,7 @@ Header Style
 .nav li:last-child:hover a,
 .nav li:last-child a.active {
   color: #fff !important;
-  background-color: #e75e8d !important;
+  background-color: #454545 !important;
 }
 
 .nav li:hover a,
