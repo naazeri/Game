@@ -3,7 +3,7 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1689442502|168473223";
+const CACHE_VERSION = "1698742441|1678002112";
 const CACHE_PREFIX = "Flappy Bird-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "index.offline.html";
