@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
 
-    <title>Vega</title>
-    <script
-      type="module"
-      crossorigin
-      src="./assets/index-3509133a.js"
-    ></script>
-    <link rel="stylesheet" href="./assets/index-d8235e1c.css" />
-  </head>
-  <body>
-    <div class="fixed text-white text-sm ml-2 mt-1 select-none">
-      <span>Score: </span><span id="scoreEl">0</span>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <div
-      class="fixed inset-0 flex items-center justify-center"
-      id="modalEl"
-    >
-      <div class="bg-white max-w-md w-full p-6 text-center rounded-lg">
-        <h1 class="text-4xl font-bold leading-none" id="modalScoreEl">
-          0
-        </h1>
-        <p class="text-sm text-gray-700 mb-4">Points</p>
-        <div>
-          <button
-            class="bg-blue-500 text-white w-full py-3 rounded-full text-sm"
-            id="startGameEl"
-          >
-            Start Game
-          </button>
-        </div>
-        <div class="mt-5">
-          Developed by:
-          <a
-            class="text-blue-600"
-            href="https://naazeri.ir"
-            target="_blank"
-            >naazeri</a
-          >
-        </div>
+  <title>Vega</title>
+  <script type="module" crossorigin src="./assets/index-3509133a.js"></script>
+  <link rel="stylesheet" href="./assets/index-d8235e1c.css" />
+</head>
+
+<body>
+  <div class="fixed text-white text-sm ml-2 mt-1 select-none">
+    <span>Score: </span><span id="scoreEl">0</span>
+  </div>
+
+  <div class="fixed inset-0 flex items-center justify-center" id="modalEl">
+    <div class="bg-white max-w-md w-full p-6 text-center rounded-lg">
+      <h1 class="text-4xl font-bold leading-none" id="modalScoreEl">
+        0
+      </h1>
+      <p class="text-sm text-gray-700 mb-4">Points</p>
+      <div>
+        <button class="bg-blue-500 text-white w-full py-3 rounded-full text-sm" id="startGameEl">
+          Start Game
+        </button>
+      </div>
+      <div class="mt-5">
+        Developed by:
+        <a class="text-blue-600" href="https://nazeriland.ir" target="_blank">naazeri</a>
       </div>
     </div>
+  </div>
 
-    <canvas></canvas>
-    <script src="./lib/gsap.min.js"></script>
-  </body>
+  <canvas></canvas>
+  <script src="./lib/gsap.min.js"></script>
+</body>
+
 </html>
