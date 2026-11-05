@@ -1,0 +1,19 @@
+{
+  "name": "flappy-bird",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.88.2"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
+  }
+}

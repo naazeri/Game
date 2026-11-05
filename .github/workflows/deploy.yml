@@ -50,7 +50,7 @@ jobs:
           cp -r *.png favicon.ico _site/ 2>/dev/null || true
 
           # Copy legacy built games (until each is rewritten)
-          for dir in bola change-balls flappy-bird poke ponge vega; do
+          for dir in bola change-balls poke ponge vega; do
             if [ -d "$dir" ]; then
               cp -r "$dir" _site/
             fi
@@ -59,6 +59,9 @@ jobs:
           # Copy rebuilt games from apps/
           if [ -d "apps/hit-the-coin/dist" ]; then
             cp -r apps/hit-the-coin/dist _site/hit-the-coin
+          fi
+          if [ -d "apps/flappy-bird/dist" ]; then
+            cp -r apps/flappy-bird/dist _site/flappy-bird
           fi
 
       - name: Upload Pages artifact

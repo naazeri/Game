@@ -5,6 +5,8 @@
   "scripts": {
     "build": "pnpm -r run build",
     "dev:hit-the-coin": "pnpm --filter hit-the-coin dev",
-    "build:hit-the-coin": "pnpm --filter hit-the-coin build"
+    "build:hit-the-coin": "pnpm --filter hit-the-coin build",
+    "dev:flappy-bird": "pnpm --filter flappy-bird dev",
+    "build:flappy-bird": "pnpm --filter flappy-bird build"
   }
 }
