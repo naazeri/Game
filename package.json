@@ -1,0 +1,10 @@
+{
+  "name": "games-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev:hit-the-coin": "pnpm --filter hit-the-coin dev",
+    "build:hit-the-coin": "pnpm --filter hit-the-coin build"
+  }
+}

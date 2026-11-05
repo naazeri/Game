@@ -1,0 +1,15 @@
+export const GAME_CONFIG = {
+  WIDTH: 1920,
+  HEIGHT: 1080,
+  TIMEOUT_SECONDS: 15,
+  COIN_DISPLAY_SIZE: 100,
+  MARGIN: 80,
+  TOP_MARGIN: 130,
+  BG_COLOR_HEX: 0xd1d1d1,
+  BG_COLOR_STR: '#d1d1d1',
+  FONT_FAMILY: 'PeachDays',
+  STORAGE_KEY_HIGHSCORE: 'hit_the_coin_highscore',
+  VERSION: 'v1.2.0',
+  COMBO_TIMEOUT_MS: 1500,
+  SPECIAL_COIN_CHANCE: 0.15,
+} as const;

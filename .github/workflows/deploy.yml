@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 12.16.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build games
+        run: pnpm -r run build
+
+      - name: Assemble GitHub Pages site
+        run: |
+          mkdir -p _site
+          # Copy landing page and root static files
+          cp -r index.html CNAME site.webmanifest assets _site/
+          cp -r *.png favicon.ico _site/ 2>/dev/null || true
+
+          # Copy legacy built games (until each is rewritten)
+          for dir in bola change-balls flappy-bird poke ponge vega; do
+            if [ -d "$dir" ]; then
+              cp -r "$dir" _site/
+            fi
+          done
+
+          # Copy rebuilt games from apps/
+          if [ -d "apps/hit-the-coin/dist" ]; then
+            cp -r apps/hit-the-coin/dist _site/hit-the-coin
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
