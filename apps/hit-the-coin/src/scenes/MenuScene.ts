@@ -80,18 +80,22 @@ export class MenuScene extends Phaser.Scene {
   }
 
   private playMenuMusic(): void {
-    if (!this.sound.get('bgm_menu')) {
-      const music = this.sound.add('bgm_menu', { loop: true, volume: 0.35 });
-      music.play();
-    } else if (!this.sound.get('bgm_menu')?.isPlaying) {
-      this.sound.get('bgm_menu')?.play();
+    // If bgm_menu is already playing (e.g. continuing from ResultScene or AboutScene), do not restart
+    if (this.sound.getAll('bgm_menu').some((s) => s.isPlaying)) {
+      return;
     }
+
+    let bgm = this.sound.get('bgm_menu') as Phaser.Sound.WebAudioSound | Phaser.Sound.HTML5AudioSound | undefined;
+    if (!bgm) {
+      bgm = this.sound.add('bgm_menu', { loop: true, volume: 0.35 }) as Phaser.Sound.WebAudioSound;
+    }
+    bgm.play({ loop: true, volume: 0.35 });
 
     // Handle browser autoplay policy on first user click/touch
     if (this.sound.locked) {
       this.sound.once('unlocked', () => {
-        if (!this.sound.get('bgm_menu')?.isPlaying) {
-          this.sound.get('bgm_menu')?.play();
+        if (!this.sound.getAll('bgm_menu').some((s) => s.isPlaying)) {
+          bgm?.play({ loop: true, volume: 0.35 });
         }
       });
     }

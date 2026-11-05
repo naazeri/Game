@@ -39,7 +39,13 @@ export class GameScene extends Phaser.Scene {
 
     // Start fast-paced gameplay music
     this.sound.stopAll();
-    this.sound.play('bgm_game', { loop: true, volume: 0.35 });
+    let gameBgm = this.sound.get('bgm_game') as Phaser.Sound.WebAudioSound | Phaser.Sound.HTML5AudioSound | undefined;
+    if (!gameBgm) {
+      gameBgm = this.sound.add('bgm_game', { loop: true, volume: 0.35 }) as Phaser.Sound.WebAudioSound;
+    }
+    if (!gameBgm.isPlaying) {
+      gameBgm.play({ loop: true, volume: 0.35 });
+    }
 
     // 1. Interactive background: detects missed clicks
     this.background = this.add.rectangle(0, 0, width, height, GAME_CONFIG.BG_COLOR_HEX)

@@ -25,10 +25,8 @@ export class ResultScene extends Phaser.Scene {
   create(data: ResultData): void {
     const { width, height } = this.scale;
 
-    // Play cheerful menu/result music if not playing
-    if (!this.sound.get('bgm_menu')?.isPlaying) {
-      this.sound.play('bgm_menu', { loop: true, volume: 0.35 });
-    }
+    // Play cheerful menu/result music if not already playing
+    this.playMenuMusic();
 
     // Background
     this.bg = this.add.rectangle(0, 0, width, height, GAME_CONFIG.BG_COLOR_HEX).setOrigin(0);
@@ -143,5 +141,17 @@ export class ResultScene extends Phaser.Scene {
     });
 
     return btn;
+  }
+
+  private playMenuMusic(): void {
+    if (this.sound.getAll('bgm_menu').some((s) => s.isPlaying)) {
+      return;
+    }
+
+    let bgm = this.sound.get('bgm_menu') as Phaser.Sound.WebAudioSound | Phaser.Sound.HTML5AudioSound | undefined;
+    if (!bgm) {
+      bgm = this.sound.add('bgm_menu', { loop: true, volume: 0.35 }) as Phaser.Sound.WebAudioSound;
+    }
+    bgm.play({ loop: true, volume: 0.35 });
   }
 }

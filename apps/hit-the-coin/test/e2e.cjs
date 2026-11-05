@@ -70,6 +70,45 @@ const CHROME_PATH = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
   console.log('Capturing Result Scene...');
   await page.screenshot({ path: path.join(ARTIFACT_DIR, 'screenshot_result.png') });
 
+  // Test audio count in Result Scene
+  const resultAudioStatus = await page.evaluate(() => {
+    const game = window.game;
+    const menuSounds = game.sound.getAll('bgm_menu');
+    const playingSounds = menuSounds.filter((s) => s.isPlaying);
+    return {
+      totalMenuSounds: menuSounds.length,
+      playingCount: playingSounds.length,
+      isLooping: menuSounds[0] ? menuSounds[0].loop : false,
+    };
+  });
+  console.log('ResultScene audio status:', resultAudioStatus);
+
+  // Click Back to Menu from Result Scene
+  console.log('Navigating Back to Menu from ResultScene...');
+  await page.evaluate(() => {
+    const game = window.game;
+    const scene = game.scene.getScene('ResultScene');
+    if (scene) scene.scene.start('MenuScene');
+  });
+  await new Promise((r) => setTimeout(r, 600));
+
+  // Check audio status in MenuScene after returning from ResultScene
+  const menuAfterResultAudioStatus = await page.evaluate(() => {
+    const game = window.game;
+    const menuSounds = game.sound.getAll('bgm_menu');
+    const playingSounds = menuSounds.filter((s) => s.isPlaying);
+    return {
+      totalMenuSounds: menuSounds.length,
+      playingCount: playingSounds.length,
+      isLooping: menuSounds[0] ? menuSounds[0].loop : false,
+    };
+  });
+  console.log('MenuScene (after back from Result) audio status:', menuAfterResultAudioStatus);
+
+  if (menuAfterResultAudioStatus.playingCount > 1) {
+    throw new Error(`Audio overlap detected! ${menuAfterResultAudioStatus.playingCount} instances playing concurrently.`);
+  }
+
   // Navigate to About Scene
   console.log('Capturing About Scene...');
   await page.evaluate(() => {
