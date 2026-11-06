@@ -7,6 +7,8 @@
     "dev:hit-the-coin": "pnpm --filter hit-the-coin dev",
     "build:hit-the-coin": "pnpm --filter hit-the-coin build",
     "dev:flappy-bird": "pnpm --filter flappy-bird dev",
-    "build:flappy-bird": "pnpm --filter flappy-bird build"
+    "build:flappy-bird": "pnpm --filter flappy-bird build",
+    "dev:poke": "pnpm --filter poke dev",
+    "build:poke": "pnpm --filter poke build"
   }
 }

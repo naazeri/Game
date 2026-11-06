@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { DEVELOPER_INFO } from '@games/shared';
 import { GAME_CONFIG } from '../config';
 
 export class AboutScene extends Phaser.Scene {
@@ -27,14 +28,14 @@ export class AboutScene extends Phaser.Scene {
     }).setOrigin(0.5);
 
     // Developer credit
-    this.devText = this.add.text(width / 2, height * 0.40, 'Developer: Reza Nazeri', {
+    this.devText = this.add.text(width / 2, height * 0.40, `Developer: ${DEVELOPER_INFO.name}`, {
       fontFamily: GAME_CONFIG.FONT_FAMILY,
       fontSize: `${Math.min(64, Math.max(38, Math.round(width * 0.045)))}px`,
       color: '#000000',
     }).setOrigin(0.5);
 
     // Website link (interactive)
-    this.websiteText = this.add.text(width / 2, height * 0.52, 'Website: naazeri.ir', {
+    this.websiteText = this.add.text(width / 2, height * 0.52, `Website: ${DEVELOPER_INFO.websiteDisplay}`, {
       fontFamily: GAME_CONFIG.FONT_FAMILY,
       fontSize: `${Math.min(54, Math.max(32, Math.round(width * 0.038)))}px`,
       color: '#1d4ed8',
@@ -55,7 +56,7 @@ export class AboutScene extends Phaser.Scene {
 
     this.websiteText.on('pointerdown', () => {
       this.sound.play('ui_click', { volume: 0.45 });
-      window.open('https://naazeri.ir/', '_blank');
+      window.open(DEVELOPER_INFO.websiteUrl, '_blank');
     });
 
     // Back button

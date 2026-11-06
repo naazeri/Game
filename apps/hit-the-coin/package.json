@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@games/shared": "workspace:*",
     "phaser": "^3.88.2"
   },
   "devDependencies": {

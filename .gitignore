@@ -5,4 +5,7 @@ dist/
 .engram/cache/
 *.local
 
+# Private Remake Documentation
+REMAKE_ROADMAP.md
+
 
