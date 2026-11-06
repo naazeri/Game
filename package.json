@@ -9,6 +9,8 @@
     "dev:flappy-bird": "pnpm --filter flappy-bird dev",
     "build:flappy-bird": "pnpm --filter flappy-bird build",
     "dev:poke": "pnpm --filter poke dev",
-    "build:poke": "pnpm --filter poke build"
+    "build:poke": "pnpm --filter poke build",
+    "dev:change-balls": "pnpm --filter change-balls dev",
+    "build:change-balls": "pnpm --filter change-balls build"
   }
 }
