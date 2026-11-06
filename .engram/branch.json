@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "branchName": "main",
+  "worktreePath": "C:\\Users\\Reza\\Documents\\Project\\me\\Game",
+  "upstream": "origin/main",
+  "mergeBase": "c3fedc40348fafff40e7476ded1c75366062ef6d",
+  "firstSeenHead": "c3fedc40348fafff40e7476ded1c75366062ef6d",
+  "lastSeenHead": "c3fedc40348fafff40e7476ded1c75366062ef6d",
+  "lastAnalyzedHead": "c3fedc40348fafff40e7476ded1c75366062ef6d",
+  "stale": false,
+  "staleReason": null,
+  "staleSince": null,
+  "lifecycleEvent": null,
+  "createdAt": "2026-11-06T01:32:19.522Z",
+  "updatedAt": "2026-11-06T01:32:19.522Z"
+}
