@@ -3,6 +3,7 @@ _legacy_sources/
 node_modules/
 dist/
 .engram/cache/
+.engram/studio/
 *.local
 
 # Private Remake Documentation

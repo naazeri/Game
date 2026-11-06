@@ -3,14 +3,14 @@
   "branchName": "main",
   "worktreePath": "C:\\Users\\Reza\\Documents\\Project\\me\\Game",
   "upstream": "origin/main",
-  "mergeBase": "a06c4ecc10b9ede008268bb7334fa085d8ec75f1",
+  "mergeBase": "bb72e0bc9f915f398116d9ed29e7b23f89e42ea9",
   "firstSeenHead": "c3fedc40348fafff40e7476ded1c75366062ef6d",
-  "lastSeenHead": "a06c4ecc10b9ede008268bb7334fa085d8ec75f1",
-  "lastAnalyzedHead": "a06c4ecc10b9ede008268bb7334fa085d8ec75f1",
+  "lastSeenHead": "bb72e0bc9f915f398116d9ed29e7b23f89e42ea9",
+  "lastAnalyzedHead": "bb72e0bc9f915f398116d9ed29e7b23f89e42ea9",
   "stale": false,
   "staleReason": null,
   "staleSince": null,
   "lifecycleEvent": null,
   "createdAt": "2026-11-06T01:32:19.522Z",
-  "updatedAt": "2026-11-06T20:25:45.166Z"
+  "updatedAt": "2026-11-06T23:34:48.111Z"
 }

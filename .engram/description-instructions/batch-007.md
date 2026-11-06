@@ -1,4 +1,4 @@
-# Node Description Batch 8 of 16
+# Node Description Batch 8 of 25
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -19,51 +19,53 @@ relations (neighbors) and the provided citations/evidence — e.g.
 Ground entity descriptions in the citations/evidence when present; do not
 speculate beyond the context, so a node with no supporting context may be
 left out of the reply.
-Write every description in English (en). Do not switch languages.
+LANGUAGE: each entry has a `lang=` marker giving the language of its source.
+Write that entry's description in EXACTLY that language. Do not translate to
+a single common language — match each node's source language individually.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "assets_index_ufwfauyg_gt_creategameoverui": ".createGameOverUI()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create()]
-- "assets_index_ufwfauyg_gt_createglobalcontrols": ".createGlobalControls()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create()]
-- "assets_index_ufwfauyg_gt_createingamehud": ".createInGameHUD()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create()]
-- "assets_index_ufwfauyg_gt_createreadyui": ".createReadyUI()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create()]
-- "assets_index_ufwfauyg_gt_cyclebirdskin": ".cycleBirdSkin()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .applyBirdSkin()]
-- "assets_index_ufwfauyg_gt_triggernewrecordcelebration": ".triggerNewRecordCelebration()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .updatePipes()]
-- "assets_index_ufwfauyg_gt_update": ".update()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .updatePipes()]
-- "assets_index_ufwfauyg_gt_updateenvironmentlighting": ".updateEnvironmentLighting()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .updatePipes()]
-- "assets_index_ufwfauyg_st": "st()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L1 | neighbors=[index-UfWfaUyg.js, tt()]
-- "assets_index_ufwfauyg_tt": "tt()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L1 | neighbors=[index-UfWfaUyg.js, st()]
-- "build_export_web_loader": "export-web.loader.js" | kind=code-symbol | source=change-balls/Build/export-web.loader.js:L1 | neighbors=[createUnityInstance(), 5e62a51 update change-balls to version …]
-- "build_unityloader_b": "b()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, a()]
-- "build_unityloader_e": "e()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L4 | neighbors=[UnityLoader.js, i()]
-- "build_unityloader_p": "p()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a()]
-- "build_unityloader_r": "r()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L4 | neighbors=[UnityLoader.js, n()]
-- "build_unityloader_t": "t()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L4 | neighbors=[UnityLoader.js, n()]
-- "build_unityloader_y": "y()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, a()]
-- "commit:repo:github.com/naazeri/Game@a06c4ecc10b9ede008268bb7334fa085d8ec75f1": "a06c4ec chore: remove bola game and update engram memory graph" | kind=Commit | source=git | neighbors=[main, b714fad chore(memory): initialize Engra…]
-- "commit:repo:github.com/naazeri/Game@ea8f4f5b223e693a6d31492fb57eb8a49ec269d8": "ea8f4f5 Initial commit" | kind=Commit | source=git | neighbors=[main, b3188a4 Create CNAME]
-- "flappy_bird_vite_config": "vite.config.ts" | kind=code-symbol | source=apps/flappy-bird/vite.config.ts:L1 | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, c3fedc4 feat(flappy-bird): release v1.2…]
-- "js_bootstrap_min_ai_getcontent": ".getContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .hasContent()]
-- "js_bootstrap_min_ai_hascontent": ".hasContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .getContent()]
-- "js_bootstrap_min_ai_putelementintemplate": "._putElementInTemplate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._setContent()]
-- "js_bootstrap_min_ai_typecheckconfig": "._typeCheckConfig()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._checkContent()]
-- "js_bootstrap_min_at_handleswipe": "._handleSwipe()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._end()]
-- "js_bootstrap_min_at_initevents": "._initEvents()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, .constructor()]
-- "js_bootstrap_min_at_start": "._start()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._eventIsPointerPenTouch()]
-- "js_bootstrap_min_f": "F()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, N()]
-- "js_bootstrap_min_fe_getplacement": "._getPlacement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._getPopperConfig()]
-- "js_bootstrap_min_fe_getpopperconfig": "._getPopperConfig()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._getPlacement()]
-- "js_bootstrap_min_fe_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._completeHide()]
-- "js_bootstrap_min_fe_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .getOrCreateInstance()]
-- "js_bootstrap_min_fe_selectmenuitem": "._selectMenuItem()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .dataApiKeydownHandler()]
-- "js_bootstrap_min_fe_update": ".update()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._detectNavbar()]
-- "js_bootstrap_min_fs_getinnerelement": "._getInnerElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributesOnChild()]
-- "js_bootstrap_min_fs_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, .getOrCreateInstance()]
-- "js_bootstrap_min_fs_toggledropdown": "._toggleDropDown()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._getOuterElement()]
-- "js_bootstrap_min_gi_dispose": ".dispose()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[gi, .deactivate()]
-- "js_bootstrap_min_gi_initializebackdrop": "._initializeBackDrop()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[gi, we]
-- "js_bootstrap_min_gi_initializefocustrap": "._initializeFocusTrap()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[gi, Se]
+- "commit:repo:github.com/naazeri/Game@b3188a4e4cdbeab702f15447ff80c13ba68d998a": "b3188a4 Create CNAME" | kind=Commit | source=git | neighbors=[main, cd3f55a add flappy bird game, ea8f4f5 Initial commit] | lang=pt
+- "commit:repo:github.com/naazeri/Game@b714fad0f3a1c714faa4b102287ed463c4e7cd52": "b714fad chore(memory): initialize Engram knowledge graph and Antigravity agent …" | kind=Commit | source=git | neighbors=[main, a06c4ec chore: remove bola game and upd…, c3fedc4 feat(flappy-bird): release v1.2…] | lang=en
+- "commit:repo:github.com/naazeri/Game@bcc967b0ad878f8c66beacccffe35f5ec830aa22": "bcc967b fix header" | kind=Commit | source=git | neighbors=[a834ef4 add favicon, main, d7ef535 Update index.html] | lang=en
+- "commit:repo:github.com/naazeri/Game@cd3f55a0cf14f975805265ec03e0d10ea82cdb21": "cd3f55a add flappy bird game" | kind=Commit | source=git | neighbors=[b3188a4 Create CNAME, main, 7a5a4cf Update README.md] | lang=pt
+- "commit:repo:github.com/naazeri/Game@d7ef535fb4469a4914d5732d3290ad084ce64975": "d7ef535 Update index.html" | kind=Commit | source=git | neighbors=[bcc967b fix header, main, 1270fdf change text and hover color] | lang=en
+- "commit:repo:github.com/naazeri/Game@e3d39499515f4517bc8299fa3942f2dbddfc0a27": "e3d3949 add hit-the-coin gmae" | kind=Commit | source=git | neighbors=[07c6be3 add change balls v1.2.1, main, 37be431 add ponge v1.1.3] | lang=en
+- "commit:repo:github.com/naazeri/Game@ebd193e532d5857242e3d01f84ea1744cce80547": "ebd193e change domain and convert images to webp" | kind=Commit | source=git | neighbors=[60c8c84 Update CNAME, main, 5e62a51 update change-balls to version …] | lang=en
+- "data_storagemanager_storagemanager_getbestscore": ".getBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L10 | neighbors=[StorageManager, .getKey(), .saveBestScore()] | lang=en
+- "data_storagemanager_storagemanager_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L36 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
+- "data_storagemanager_storagemanager_savebestscore": ".saveBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L16 | neighbors=[StorageManager, .getBestScore(), .getKey()] | lang=en
+- "data_storagemanager_storagemanager_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L31 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
+- "entities_ballpillar_ballpillar_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L24 | neighbors=[BallPillar, .drawPivot(), .drawRod()] | lang=en
+- "entities_centralball_centralball_spawntrailparticle": ".spawnTrailParticle()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L149 | neighbors=[CentralBall, getHeatTierForScore(), .update()] | lang=en
+- "entities_centralball_centralball_updatescore": ".updateScore()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L75 | neighbors=[CentralBall, .drawGlow(), getHeatTierForScore()] | lang=en
+- "js_bootstrap_min_ai_changecontent": ".changeContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._checkContent(), ._getTemplateFactory()] | lang=en
+- "js_bootstrap_min_ai_checkcontent": "._checkContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .changeContent(), ._typeCheckConfig()] | lang=en
+- "js_bootstrap_min_ai_maybesanitize": "._maybeSanitize()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._setContent(), .toHtml()] | lang=en
+- "js_bootstrap_min_at_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._initEvents(), .isSupported()] | lang=en
+- "js_bootstrap_min_at_end": "._end()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._eventIsPointerPenTouch(), ._handleSwipe()] | lang=en
+- "js_bootstrap_min_at_eventispointerpentouch": "._eventIsPointerPenTouch()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._end(), ._start()] | lang=en
+- "js_bootstrap_min_at_issupported": ".isSupported()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, .constructor(), ._addEventListeners()] | lang=en
+- "js_bootstrap_min_d": "D()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, M(), N()] | lang=en
+- "js_bootstrap_min_e": "e()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._applyManipulationCallback(), ._observerCallback()] | lang=en
+- "js_bootstrap_min_fe_clearmenus": ".clearMenus()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._completeHide(), .getInstance()] | lang=en
+- "js_bootstrap_min_fe_completehide": "._completeHide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .clearMenus(), .hide()] | lang=en
+- "js_bootstrap_min_fe_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._detectNavbar(), .prev()] | lang=en
+- "js_bootstrap_min_fe_detectnavbar": "._detectNavbar()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .constructor(), .update()] | lang=en
+- "js_bootstrap_min_fs_activate": "._activate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._queueCallback(), .show()] | lang=en
+- "js_bootstrap_min_fs_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._getChildren(), ._setInitialAttributes()] | lang=en
+- "js_bootstrap_min_fs_deactivate": "._deactivate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._queueCallback(), .show()] | lang=en
+- "js_bootstrap_min_fs_elemisactive": "._elemIsActive()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributesOnChild(), .show()] | lang=en
+- "js_bootstrap_min_fs_getactiveelem": "._getActiveElem()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._getChildren(), .show()] | lang=en
+- "js_bootstrap_min_fs_getouterelement": "._getOuterElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributesOnChild(), ._toggleDropDown()] | lang=en
+- "js_bootstrap_min_fs_keydown": "._keydown()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._getChildren(), .getOrCreateInstance()] | lang=en
+- "js_bootstrap_min_fs_setinitialattributesontargetpanel": "._setInitialAttributesOnTargetPanel()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributesOnChild(), ._setAttributeIfNotExists()] | lang=en
+- "js_bootstrap_min_gi_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[gi, .deactivate(), ._queueCallback()] | lang=en
+- "js_bootstrap_min_gi_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[gi, Ne, ._queueCallback()] | lang=en
+- "js_bootstrap_min_i": "I()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, N(), P()] | lang=en
+- "js_bootstrap_min_l": "L()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, N(), O()] | lang=en
+- "js_bootstrap_min_mi_getcontent": "._getContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Mi, ._getContentForTemplate(), ._isWithContent()] | lang=en
 
 ## Instructions
 

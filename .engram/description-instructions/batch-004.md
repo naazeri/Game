@@ -1,4 +1,4 @@
-# Node Description Batch 5 of 16
+# Node Description Batch 5 of 25
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -19,53 +19,51 @@ relations (neighbors) and the provided citations/evidence — e.g.
 Ground entity descriptions in the citations/evidence when present; do not
 speculate beyond the context, so a node with no supporting context may be
 left out of the reply.
-LANGUAGE: each entry has a `lang=` marker giving the language of its source.
-Write that entry's description in EXACTLY that language. Do not translate to
-a single common language — match each node's source language individually.
+Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "build_unityloader_h": "h()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, f(), w()] | lang=en
-- "build_unityloader_m": "m()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, a(), s()] | lang=en
-- "build_unityloader_v": "v()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, f(), g()] | lang=en
-- "commit:repo:github.com/naazeri/Game@07c6be398a252b0331a07df06ee4c77d47f651e5": "07c6be3 add change balls v1.2.1" | kind=Commit | source=git | neighbors=[main, e3d3949 add hit-the-coin gmae, 19f781f add bola game] | lang=en
-- "commit:repo:github.com/naazeri/Game@1270fdf0bb0536382d1c4a761554facc583ae9af": "1270fdf change text and hover color" | kind=Commit | source=git | neighbors=[main, 8ab3175 minify images, d7ef535 Update index.html] | lang=en
-- "commit:repo:github.com/naazeri/Game@19f781f008f5290cc5d83b7953f5c010312888f7": "19f781f add bola game" | kind=Commit | source=git | neighbors=[main, 07c6be3 add change balls v1.2.1, 7d1691c change flappy-bird to GLES2] | lang=en
-- "commit:repo:github.com/naazeri/Game@41bf5e35e0869f59de8626a71a7f69548a18c3fb": "41bf5e3 add bola, flappy, hit the coin images" | kind=Commit | source=git | neighbors=[main, a4c2e32 remove preloader and unused libs, 79daffc add landing page] | lang=en
-- "commit:repo:github.com/naazeri/Game@53277901c1e24f89bb53a3c9f00854533b7704a6": "5327790 add deadzone to flappy bird sky" | kind=Commit | source=git | neighbors=[main, a902dcb Update README.md, 993d092 add vega link but commented] | lang=en
-- "commit:repo:github.com/naazeri/Game@60c8c84fc62186744c95c8fb37e7d194cc10aea7": "60c8c84 Update CNAME" | kind=Commit | source=git | neighbors=[main, ebd193e change domain and convert image…, a902dcb Update README.md] | lang=en
-- "commit:repo:github.com/naazeri/Game@7a5a4cf80998a161acef3f8cfbcded46e3766aa7": "7a5a4cf Update README.md" | kind=Commit | source=git | neighbors=[main, a445a0f add poke game, cd3f55a add flappy bird game] | lang=pt
-- "commit:repo:github.com/naazeri/Game@7d1691c2887f6512b71b76c0b588fecc11abe5c8": "7d1691c change flappy-bird to GLES2" | kind=Commit | source=git | neighbors=[main, 19f781f add bola game, a445a0f add poke game] | lang=en
-- "commit:repo:github.com/naazeri/Game@8ab3175ff80e98b28da140720aac6e076a05a88a": "8ab3175 minify images" | kind=Commit | source=git | neighbors=[1270fdf change text and hover color, main, 8ee78eb change Bootstrap to v5.3.1] | lang=en
-- "commit:repo:github.com/naazeri/Game@993d09281e0b27ae8a0bdc712615e86364fe47a1": "993d092 add vega link but commented" | kind=Commit | source=git | neighbors=[main, 5327790 add deadzone to flappy bird sky, e7dfc30 add vega game] | lang=en
-- "commit:repo:github.com/naazeri/Game@a445a0fc5d9926b7df64233faa8151cc6435f04d": "a445a0f add poke game" | kind=Commit | source=git | neighbors=[7a5a4cf Update README.md, main, 7d1691c change flappy-bird to GLES2] | lang=pt
-- "commit:repo:github.com/naazeri/Game@a4c2e32222bd9e99704d905756f49a2d644690bf": "a4c2e32 remove preloader and unused libs" | kind=Commit | source=git | neighbors=[41bf5e3 add bola, flappy, hit the coin …, main, a834ef4 add favicon] | lang=en
-- "commit:repo:github.com/naazeri/Game@a834ef4971b93a92d62138accec36ace87cf1ffd": "a834ef4 add favicon" | kind=Commit | source=git | neighbors=[a4c2e32 remove preloader and unused libs, main, bcc967b fix header] | lang=pt
-- "commit:repo:github.com/naazeri/Game@a902dcb640b40bb29c6ac7040d69e9c2f20c5688": "a902dcb Update README.md" | kind=Commit | source=git | neighbors=[5327790 add deadzone to flappy bird sky, main, 60c8c84 Update CNAME] | lang=pt
-- "commit:repo:github.com/naazeri/Game@b3188a4e4cdbeab702f15447ff80c13ba68d998a": "b3188a4 Create CNAME" | kind=Commit | source=git | neighbors=[main, cd3f55a add flappy bird game, ea8f4f5 Initial commit] | lang=pt
-- "commit:repo:github.com/naazeri/Game@b714fad0f3a1c714faa4b102287ed463c4e7cd52": "b714fad chore(memory): initialize Engram knowledge graph and Antigravity agent …" | kind=Commit | source=git | neighbors=[main, a06c4ec chore: remove bola game and upd…, c3fedc4 feat(flappy-bird): release v1.2…] | lang=en
-- "commit:repo:github.com/naazeri/Game@bcc967b0ad878f8c66beacccffe35f5ec830aa22": "bcc967b fix header" | kind=Commit | source=git | neighbors=[a834ef4 add favicon, main, d7ef535 Update index.html] | lang=en
-- "commit:repo:github.com/naazeri/Game@cd3f55a0cf14f975805265ec03e0d10ea82cdb21": "cd3f55a add flappy bird game" | kind=Commit | source=git | neighbors=[b3188a4 Create CNAME, main, 7a5a4cf Update README.md] | lang=pt
-- "commit:repo:github.com/naazeri/Game@d7ef535fb4469a4914d5732d3290ad084ce64975": "d7ef535 Update index.html" | kind=Commit | source=git | neighbors=[bcc967b fix header, main, 1270fdf change text and hover color] | lang=en
-- "commit:repo:github.com/naazeri/Game@e3d39499515f4517bc8299fa3942f2dbddfc0a27": "e3d3949 add hit-the-coin gmae" | kind=Commit | source=git | neighbors=[07c6be3 add change balls v1.2.1, main, 37be431 add ponge v1.1.3] | lang=en
-- "commit:repo:github.com/naazeri/Game@ebd193e532d5857242e3d01f84ea1744cce80547": "ebd193e change domain and convert images to webp" | kind=Commit | source=git | neighbors=[60c8c84 Update CNAME, main, 5e62a51 update change-balls to version …] | lang=en
-- "js_bootstrap_min_ai_changecontent": ".changeContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._checkContent(), ._getTemplateFactory()] | lang=en
-- "js_bootstrap_min_ai_checkcontent": "._checkContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .changeContent(), ._typeCheckConfig()] | lang=en
-- "js_bootstrap_min_ai_maybesanitize": "._maybeSanitize()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._setContent(), .toHtml()] | lang=en
-- "js_bootstrap_min_at_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._initEvents(), .isSupported()] | lang=en
-- "js_bootstrap_min_at_end": "._end()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._eventIsPointerPenTouch(), ._handleSwipe()] | lang=en
-- "js_bootstrap_min_at_eventispointerpentouch": "._eventIsPointerPenTouch()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, ._end(), ._start()] | lang=en
-- "js_bootstrap_min_at_issupported": ".isSupported()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[at, .constructor(), ._addEventListeners()] | lang=en
-- "js_bootstrap_min_d": "D()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, M(), N()] | lang=en
-- "js_bootstrap_min_e": "e()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._applyManipulationCallback(), ._observerCallback()] | lang=en
-- "js_bootstrap_min_fe_clearmenus": ".clearMenus()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._completeHide(), .getInstance()] | lang=en
-- "js_bootstrap_min_fe_completehide": "._completeHide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .clearMenus(), .hide()] | lang=en
-- "js_bootstrap_min_fe_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._detectNavbar(), .prev()] | lang=en
-- "js_bootstrap_min_fe_detectnavbar": "._detectNavbar()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, .constructor(), .update()] | lang=en
-- "js_bootstrap_min_fs_activate": "._activate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._queueCallback(), .show()] | lang=en
-- "js_bootstrap_min_fs_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._getChildren(), ._setInitialAttributes()] | lang=en
-- "js_bootstrap_min_fs_deactivate": "._deactivate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._queueCallback(), .show()] | lang=en
+- "assets_index_b4cljeyc_nt_repositioncoin": ".repositionCoin()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .create(), .handleCoinHit(), .handleResize()]
+- "assets_index_b4cljeyc_zt": "zt" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .handleResize()]
+- "assets_index_ctaeemyb_ce_handlegameover": ".handleGameOver()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .spawnGameOverEffect(), .getX(), .handlePillarHit()]
+- "assets_index_ctaeemyb_ct_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
+- "assets_index_ctaeemyb_ct_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
+- "assets_index_ctaeemyb_ct_savebestscore": ".saveBestScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getBestScore(), .getKey(), .show()]
+- "assets_index_ctaeemyb_ct_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
+- "assets_index_ctaeemyb_de_addlife": ".addLife()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), de, .drawHeart(), .spawnHeartSparks()]
+- "assets_index_ctaeemyb_fe_show": ".show()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[fe, .getBestScore(), .saveBestScore(), .saveCurrentScore()]
+- "assets_index_ctaeemyb_kt_flip": ".flip()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.flipBothPillars(), .flipLeftPillar(), .flipRightPillar(), Kt]
+- "assets_index_ctaeemyb_ne": "ne" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .create(), .preload()]
+- "assets_index_ctaeemyb_nt": "Nt()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .drawGlow(), .spawnTrailParticle(), .updateScore()]
+- "assets_index_ctaeemyb_oe_createcontent": ".createContent()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[oe, .createMediumButton(), .createSaveButton(), .createSmallButton()]
+- "assets_index_ctaeemyb_ue_getx": ".getX()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handleGameOver(), .handlePillarHit(), .update(), ue]
+- "assets_index_ctaeemyb_ue_updatescore": ".updateScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), ue, Nt(), .drawGlow()]
+- "assets_index_d2py_agh_gt": "Gt" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[index-D2py_AGH.js, .constructor(), .create(), .preload()]
+- "assets_index_d2py_agh_nt_checkcollisions": ".checkCollisions()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .distToSegment(), .handleGameOver(), .update()]
+- "assets_index_d2py_agh_nt_showmenu": ".showMenu()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .create(), .hideAbout(), .clearMobs()]
+- "assets_index_d2py_agh_nt_update": ".update()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .checkCollisions(), .handleKeyboardMovement(), .updateMobs()]
+- "assets_index_ufwfauyg_gt_updatepipes": ".updatePipes()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .update(), .triggerNewRecordCelebration(), .updateEnvironmentLighting()]
+- "assets_index_ufwfauyg_it": "It" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[index-UfWfaUyg.js, .constructor(), .create(), .preload()]
+- "build_unityloader_d": "d()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, o(), s(), l()]
+- "build_unityloader_l": "l()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), d(), w()]
+- "build_unityloader_u": "u()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), f(), s()]
+- "commit:repo:github.com/naazeri/Game@79daffce261c9e5b616beac1bf4ac1be00bf0b0f": "79daffc add landing page" | kind=Commit | source=git | neighbors=[37be431 add ponge v1.1.3, main, 41bf5e3 add bola, flappy, hit the coin …, bootstrap.min.js]
+- "commit:repo:github.com/naazeri/Game@8ee78eb19ca12df9263fa5294ffdce752370e038": "8ee78eb change Bootstrap to v5.3.1" | kind=Commit | source=git | neighbors=[8ab3175 minify images, main, e7dfc30 add vega game, bootstrap.min.js]
+- "data_storagemanager_storagemanager_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L41 | neighbors=[StorageManager, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
+- "entities_centralball_getheattierforscore": "getHeatTierForScore()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L26 | neighbors=[CentralBall.ts, .drawGlow(), .spawnTrailParticle(), .updateScore()]
+- "js_bootstrap_min_ai_setcontent": "._setContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._maybeSanitize(), ._putElementInTemplate(), .toHtml()]
+- "js_bootstrap_min_ai_tohtml": ".toHtml()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._maybeSanitize(), ._setContent(), ._createTipElement()]
+- "js_bootstrap_min_fe_dataapikeydownhandler": ".dataApiKeydownHandler()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fe, ._selectMenuItem(), .prev(), .getOrCreateInstance()]
+- "js_bootstrap_min_fs_getchildren": "._getChildren()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, .constructor(), ._getActiveElem(), ._keydown()]
+- "js_bootstrap_min_fs_setattributeifnotexists": "._setAttributeIfNotExists()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributes(), ._setInitialAttributesOnChild(), ._setInitialAttributesOnTargetPanel()]
+- "js_bootstrap_min_fs_setinitialattributes": "._setInitialAttributes()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, .constructor(), ._setAttributeIfNotExists(), ._setInitialAttributesOnChild()]
+- "js_bootstrap_min_j": "J" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .jQueryInterface(), .NAME(), .toggle()]
+- "js_bootstrap_min_ne_applymanipulationcallback": "._applyManipulationCallback()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, e(), ._resetElementAttributes(), ._setElementAttributes()]
+- "js_bootstrap_min_ne_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, ._disableOverFlow(), .getWidth(), ._setElementAttributes()]
+- "js_bootstrap_min_ne_setelementattributes": "._setElementAttributes()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .hide(), ._applyManipulationCallback(), .getWidth()]
+- "js_bootstrap_min_ni_createtipelement": "._createTipElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .toHtml(), ._getTemplateFactory(), ._getTipElement()]
+- "js_bootstrap_min_ni_disposepopper": "._disposePopper()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .dispose(), .setContent(), .show()]
 
 ## Instructions
 

@@ -1,4 +1,4 @@
-# Node Description Batch 16 of 16
+# Node Description Batch 16 of 25
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,52 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "lib_gsap_min_vb": "Vb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_wc": "wc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_wd": "wd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_wx": "Wx()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_xd": "xd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_yd": "yd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_yl": "yl()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_zd": "zd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "scenes_aboutscene_aboutscene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L13 | neighbors=[AboutScene]
-- "scenes_aboutscene_aboutscene_create": ".create()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L17 | neighbors=[AboutScene]
-- "scenes_aboutscene_aboutscene_handleresize": ".handleResize()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L101 | neighbors=[AboutScene]
-- "scenes_bootscene_bootscene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/BootScene.ts:L5 | neighbors=[BootScene]
-- "scenes_bootscene_bootscene_create": ".create()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/BootScene.ts:L40 | neighbors=[BootScene]
-- "scenes_bootscene_bootscene_preload": ".preload()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/BootScene.ts:L9 | neighbors=[BootScene]
-- "scenes_gamescene_gamescene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L22 | neighbors=[GameScene]
-- "scenes_gamescene_gamescene_handlehit": ".handleHit()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L480 | neighbors=[GameScene]
-- "scenes_gamescene_gamescene_handlemiss": ".handleMiss()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L272 | neighbors=[GameScene]
-- "scenes_gamescene_gamescene_restartgame": ".restartGame()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L751 | neighbors=[GameScene]
-- "scenes_gamescene_gamescene_showgameoverscreen": ".showGameOverScreen()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L699 | neighbors=[GameScene]
-- "scenes_gamescene_gamescene_spawnpipepair": ".spawnPipePair()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L290 | neighbors=[GameScene]
-- "scenes_gamescene_gamestate": "GameState" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L4 | neighbors=[GameScene.ts]
-- "scenes_gamescene_pipepair": "PipePair" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L6 | neighbors=[GameScene.ts]
-- "scenes_menuscene_menuscene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L15 | neighbors=[MenuScene]
-- "scenes_menuscene_menuscene_handleresize": ".handleResize()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L159 | neighbors=[MenuScene]
-- "scenes_resultscene_resultdata": "ResultData" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L4 | neighbors=[ResultScene.ts]
-- "scenes_resultscene_resultscene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L21 | neighbors=[ResultScene]
-- "scenes_resultscene_resultscene_handleresize": ".handleResize()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L98 | neighbors=[ResultScene]
-- "src_main_config": "config" | kind=code-symbol | source=apps/hit-the-coin/src/main.ts:L9 | neighbors=[main.ts]
-- "src_main_game": "game" | kind=code-symbol | source=apps/hit-the-coin/src/main.ts:L23 | neighbors=[main.ts]
-- "src_main_phaserconfig": "phaserConfig" | kind=code-symbol | source=apps/flappy-bird/src/main.ts:L12 | neighbors=[main.ts]
-- "src_main_window": "Window" | kind=code-symbol | source=apps/flappy-bird/src/main.ts:L7 | neighbors=[main.ts]
-- "templatedata_unityprogress_unityprogress": "UnityProgress()" | kind=code-symbol | source=ponge/TemplateData/UnityProgress.js:L1 | neighbors=[UnityProgress.js]
-- "bola_index_rationale_391": "NOTE: We must explicitly pass the default, accessing it via" | kind=entity | source=bola/index.js:L391
-- "poke_index_rationale_391": "NOTE: We must explicitly pass the default, accessing it via" | kind=entity | source=poke/index.js:L391
+- "scenes_gamescene_gamescene_init": ".init()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L26 | neighbors=[GameScene, .clearPanicTicks()]
+- "scenes_gamescene_gamescene_setupinput": ".setupInput()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L428 | neighbors=[GameScene, .create()]
+- "scenes_gamescene_gamescene_setupinputs": ".setupInputs()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L275 | neighbors=[GameScene, .create()]
+- "scenes_gamescene_gamescene_showfloatingtext": ".showFloatingText()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L313 | neighbors=[GameScene, .handleCoinHit()]
+- "scenes_gamescene_gamescene_spawngameovereffect": ".spawnGameOverEffect()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L494 | neighbors=[GameScene, .handleGameOver()]
+- "scenes_gamescene_gamescene_spawnmatchparticles": ".spawnMatchParticles()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L455 | neighbors=[GameScene, .handlePillarHit()]
+- "scenes_gamescene_gamescene_spawnparticleburst": ".spawnParticleBurst()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L282 | neighbors=[GameScene, .handleCoinHit()]
+- "scenes_gamescene_gamescene_startcountdown": ".startCountdown()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L581 | neighbors=[GameScene, .clearMobs()]
+- "scenes_gamescene_gamescene_triggernewrecordcelebration": ".triggerNewRecordCelebration()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L397 | neighbors=[GameScene, .updatePipes()]
+- "scenes_gamescene_gamescene_triggerurgentcountdown": ".triggerUrgentCountdown()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L140 | neighbors=[GameScene, .clearPanicTicks()]
+- "scenes_gamescene_gamescene_updateenvironmentlighting": ".updateEnvironmentLighting()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L361 | neighbors=[GameScene, .updatePipes()]
+- "scenes_gamescene_gamescene_updatemobs": ".updateMobs()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L718 | neighbors=[GameScene, .update()]
+- "scenes_menuscene_menuscene_createbackgroundeffects": ".createBackgroundEffects()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L209 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createbutton": ".createButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L172 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createfullscreenbutton": ".createFullscreenButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L104 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createhalfbutton": ".createHalfButton()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L292 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createiconaction": ".createIconAction()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L365 | neighbors=[MenuScene, .createTopActionBar()]
+- "scenes_menuscene_menuscene_createlogoemblem": ".createLogoEmblem()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L125 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createmenubutton": ".createMenuButton()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L239 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_playmenumusic": ".playMenuMusic()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L82 | neighbors=[MenuScene, .create()]
+- "scenes_resultscene_resultscene_createbutton": ".createButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L112 | neighbors=[ResultScene, .create()]
+- "scenes_resultscene_resultscene_playmenumusic": ".playMenuMusic()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L146 | neighbors=[ResultScene, .create()]
+- "src_index": "index.ts" | kind=code-symbol | source=packages/shared/src/index.ts:L1 | neighbors=[4042c7c feat(poke): release v2.0.0 rema…, developer.ts]
+- "templatedata_unityprogress": "UnityProgress.js" | kind=code-symbol | source=ponge/TemplateData/UnityProgress.js:L1 | neighbors=[37be431 add ponge v1.1.3, UnityProgress()]
+- "ui_aboutmodal_aboutmodal_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/ui/AboutModal.ts:L11 | neighbors=[AboutModal, .createContent()]
+- "ui_aboutmodal_aboutmodal_createbutton": ".createButton()" | kind=code-symbol | source=apps/change-balls/src/ui/AboutModal.ts:L114 | neighbors=[AboutModal, .createContent()]
+- "ui_bannermanager_bannermanager_processnext": ".processNext()" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L29 | neighbors=[BannerManager, .show()]
+- "ui_bannermanager_bannermanager_show": ".show()" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L22 | neighbors=[BannerManager, .processNext()]
+- "ui_gameovermodal_gameovermodal_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/ui/GameOverModal.ts:L19 | neighbors=[GameOverModal, .createContent()]
+- "ui_gameovermodal_gameovermodal_createbutton": ".createButton()" | kind=code-symbol | source=apps/change-balls/src/ui/GameOverModal.ts:L171 | neighbors=[GameOverModal, .createContent()]
+- "ui_gameovermodal_gameovermodal_createnewrecordbadge": ".createNewRecordBadge()" | kind=code-symbol | source=apps/change-balls/src/ui/GameOverModal.ts:L139 | neighbors=[GameOverModal, .createContent()]
+- "ui_heartsui_heartsui_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/ui/HeartsUI.ts:L11 | neighbors=[HeartsUI, .createHearts()]
+- "ui_heartsui_heartsui_loselife": ".loseLife()" | kind=code-symbol | source=apps/change-balls/src/ui/HeartsUI.ts:L112 | neighbors=[HeartsUI, .spawnHeartShatter()]
+- "ui_heartsui_heartsui_reset": ".reset()" | kind=code-symbol | source=apps/change-balls/src/ui/HeartsUI.ts:L144 | neighbors=[HeartsUI, .setLives()]
+- "ui_heartsui_heartsui_spawnheartshatter": ".spawnHeartShatter()" | kind=code-symbol | source=apps/change-balls/src/ui/HeartsUI.ts:L169 | neighbors=[HeartsUI, .loseLife()]
+- "ui_heartsui_heartsui_spawnheartsparks": ".spawnHeartSparks()" | kind=code-symbol | source=apps/change-balls/src/ui/HeartsUI.ts:L148 | neighbors=[HeartsUI, .addLife()]
+- "ui_settingsmodal_settingsmodal_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/ui/SettingsModal.ts:L18 | neighbors=[SettingsModal, .createContent()]
+- "ui_settingsmodal_settingsmodal_createmediumbutton": ".createMediumButton()" | kind=code-symbol | source=apps/change-balls/src/ui/SettingsModal.ts:L174 | neighbors=[SettingsModal, .createContent()]
+- "ui_settingsmodal_settingsmodal_createsavebutton": ".createSaveButton()" | kind=code-symbol | source=apps/change-balls/src/ui/SettingsModal.ts:L209 | neighbors=[SettingsModal, .createContent()]
+- "ui_settingsmodal_settingsmodal_createsmallbutton": ".createSmallButton()" | kind=code-symbol | source=apps/change-balls/src/ui/SettingsModal.ts:L140 | neighbors=[SettingsModal, .createContent()]
 
 ## Instructions
 
