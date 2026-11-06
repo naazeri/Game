@@ -50,7 +50,7 @@ jobs:
           cp -r *.png favicon.ico _site/ 2>/dev/null || true
 
           # Copy legacy built games (until each is rewritten)
-          for dir in bola change-balls poke ponge vega; do
+          for dir in change-balls poke ponge vega; do
             if [ -d "$dir" ]; then
               cp -r "$dir" _site/
             fi
