@@ -19,9 +19,22 @@ export class GameScene extends Phaser.Scene {
   private ground!: Phaser.GameObjects.TileSprite;
   private groundBody!: Phaser.Physics.Arcade.Image;
 
-  // Player Bird
+  // Day / Night Cycle (0: Day, 1: Sunset, 2: Night)
+  private currentCycle = 0;
+
+  // High score celebration
+  private hasCelebratedNewHigh = false;
+
+  // Player Bird & Skins (0: Yellow, 1: Blue, 2: Red)
   private bird!: Phaser.Physics.Arcade.Sprite;
   private birdBobTween?: Phaser.Tweens.Tween;
+  private currentSkinIndex = 0;
+  private readonly SKINS = [
+    { id: 'bird', name: 'Classic Bird', texture: 'bird', anim: 'bird_flap', sfx: 'wing' },
+    { id: 'car', name: 'Cyber Car', texture: 'car', anim: 'car_fly', sfx: 'swoosh' },
+    { id: 'ufo', name: 'Alien UFO', texture: 'ufo', anim: 'ufo_fly', sfx: 'ufo_beam' },
+  ];
+  private skinBadgeText?: Phaser.GameObjects.Text;
 
   // Pipes
   private pipePairs: PipePair[] = [];
@@ -40,6 +53,7 @@ export class GameScene extends Phaser.Scene {
 
   // Global UI
   private fullscreenBtn!: Phaser.GameObjects.Container;
+  private muteBtn!: Phaser.GameObjects.Container;
   private exitBtn!: Phaser.GameObjects.Text;
   private versionText!: Phaser.GameObjects.Text;
 
@@ -52,10 +66,16 @@ export class GameScene extends Phaser.Scene {
     this.state = 'READY';
     this.score = 0;
     this.pipePairs = [];
+    this.currentCycle = 0;
+    this.hasCelebratedNewHigh = false;
 
     // Load High Score
     const saved = localStorage.getItem(GAME_CONFIG.STORAGE_KEY_HIGHSCORE);
     this.highScore = saved ? parseInt(saved, 10) : 0;
+
+    // Load Skin preference
+    const savedSkin = localStorage.getItem('flappy_bird_skin');
+    this.currentSkinIndex = savedSkin ? parseInt(savedSkin, 10) % this.SKINS.length : 0;
 
     // 1. Background (tiling)
     this.bg = this.add.tileSprite(0, 0, width, height, 'background')
@@ -83,6 +103,23 @@ export class GameScene extends Phaser.Scene {
     this.bird.setCircle(14, 11, 4); // Forgiving circular hitbox
     (this.bird.body as Phaser.Physics.Arcade.Body).setAllowGravity(false);
     this.bird.play('bird_flap');
+    this.applyBirdSkin();
+
+    // Click bird on Ready screen to change skin
+    this.bird.setInteractive({ useHandCursor: true });
+    this.bird.on('pointerdown', (_pointer: unknown, _x: unknown, _y: unknown, event: Phaser.Types.Input.EventData) => {
+      if (this.state !== 'READY') return;
+      event.stopPropagation();
+      this.cycleBirdSkin();
+    });
+    this.bird.on('pointerover', () => {
+      if (this.state === 'READY') {
+        this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
+      }
+    });
+    this.bird.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
+    });
 
     // Bird gentle hovering in ready state
     this.birdBobTween = this.tweens.add({
@@ -100,15 +137,24 @@ export class GameScene extends Phaser.Scene {
     });
 
     // 6. HUD / UI Elements
+    this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
     this.createReadyUI();
     this.createInGameHUD();
     this.createGameOverUI();
     this.createGlobalControls();
 
     // 7. Input Handlers
-    this.input.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
+    this.input.on('pointerdown', (pointer: Phaser.Input.Pointer, currentlyOver: Phaser.GameObjects.GameObject[]) => {
       // Ignore if clicking UI buttons at bottom
       if (pointer.y > height - 70) return;
+
+      // If in READY state and clicking bird or skin badge, do NOT start game!
+      if (this.state === 'READY' && currentlyOver && currentlyOver.length > 0) {
+        if (currentlyOver.includes(this.bird) || (this.skinBadgeText && currentlyOver.includes(this.skinBadgeText))) {
+          return;
+        }
+      }
+
       this.handleAction();
     });
 
@@ -118,9 +164,11 @@ export class GameScene extends Phaser.Scene {
       window.location.href = '../';
     });
 
-    // Handle Resize
+    // Handle Resize & Shutdown
     this.scale.on('resize', this.handleResize, this);
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.sound.stopByKey('bgm_play');
+      this.input.setDefaultCursor('default');
       this.scale.off('resize', this.handleResize, this);
       if (this.pipeSpawnTimer) this.pipeSpawnTimer.destroy();
     });
@@ -184,16 +232,26 @@ export class GameScene extends Phaser.Scene {
       this.birdBobTween.stop();
     }
 
-    // Hide Ready message
+    // Hide Ready message & skin badge
     this.tweens.add({
-      targets: this.readyMessage,
+      targets: [this.readyMessage, this.skinBadgeText],
       alpha: 0,
       scale: 0.9,
       duration: 220,
       onComplete: () => {
         this.readyMessage.setVisible(false);
+        if (this.skinBadgeText) this.skinBadgeText.setVisible(false);
       },
     });
+
+    // Start in-game music (silent in ready state)
+    let bgm = this.sound.get('bgm_play');
+    if (!bgm) {
+      bgm = this.sound.add('bgm_play', { loop: true, volume: 0.35 });
+    }
+    if (!bgm.isPlaying) {
+      bgm.play({ loop: true, volume: 0.35 });
+    }
 
     // Show score HUD
     this.scoreText.setVisible(true);
@@ -224,8 +282,9 @@ export class GameScene extends Phaser.Scene {
     // Snap angle slightly up for crisp feedback
     this.bird.angle = GAME_CONFIG.MAX_UP_ANGLE;
 
-    // Wing sound
-    this.sound.play('wing', { volume: 0.65 });
+    // Character-specific jump sound
+    const skin = this.SKINS[this.currentSkinIndex];
+    this.sound.play(skin?.sfx || 'wing', { volume: 0.65 });
   }
 
   private spawnPipePair(): void {
@@ -279,6 +338,15 @@ export class GameScene extends Phaser.Scene {
           duration: 90,
           yoyo: true,
         });
+
+        // Day / Night cycle (transitions every 20 pipes)
+        this.updateEnvironmentLighting();
+
+        // Celebration on breaking the high score
+        if (this.highScore > 0 && this.score > this.highScore && !this.hasCelebratedNewHigh) {
+          this.hasCelebratedNewHigh = true;
+          this.triggerNewRecordCelebration();
+        }
       }
 
       // Cleanup off-screen pipes
@@ -290,9 +358,131 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
+  private updateEnvironmentLighting(): void {
+    const cycle = Math.floor(this.score / 20) % 3;
+    if (cycle === this.currentCycle) return;
+    this.currentCycle = cycle;
+
+    // 0: Day (0xffffff), 1: Sunset (0xfb923c), 2: Night (0x334155)
+    const targetBgTints = [0xffffff, 0xfb923c, 0x334155];
+    const targetGroundTints = [0xffffff, 0xfde047, 0x64748b];
+    const targetBg = targetBgTints[cycle];
+    const targetGround = targetGroundTints[cycle];
+
+    const startBg = this.bg.tintTopLeft;
+    const startGround = this.ground.tintTopLeft;
+
+    this.tweens.addCounter({
+      from: 0,
+      to: 100,
+      duration: 1400,
+      onUpdate: (tween: any) => {
+        const val = Number(tween?.getValue() ?? 0) / 100;
+
+        // Interpolate BG tint
+        const bgR = Math.round(((startBg >> 16) & 0xff) + ((((targetBg >> 16) & 0xff) - ((startBg >> 16) & 0xff)) * val));
+        const bgG = Math.round(((startBg >> 8) & 0xff) + ((((targetBg >> 8) & 0xff) - ((startBg >> 8) & 0xff)) * val));
+        const bgB = Math.round((startBg & 0xff) + (((targetBg & 0xff) - (startBg & 0xff)) * val));
+        this.bg.setTint((bgR << 16) | (bgG << 8) | bgB);
+
+        // Interpolate Ground tint
+        const grR = Math.round(((startGround >> 16) & 0xff) + ((((targetGround >> 16) & 0xff) - ((startGround >> 16) & 0xff)) * val));
+        const grG = Math.round(((startGround >> 8) & 0xff) + ((((targetGround >> 8) & 0xff) - ((startGround >> 8) & 0xff)) * val));
+        const grB = Math.round((startGround & 0xff) + (((targetGround & 0xff) - (startGround & 0xff)) * val));
+        this.ground.setTint((grR << 16) | (grG << 8) | grB);
+      },
+    });
+  }
+
+  private triggerNewRecordCelebration(): void {
+    const { width, height } = this.scale;
+    const colors = [0xfacc15, 0xef4444, 0x3b82f6, 0x10b981, 0xec4899, 0xa855f7];
+
+    // Burst confetti particles
+    for (let i = 0; i < 35; i++) {
+      const x = width / 2 + Phaser.Math.Between(-140, 140);
+      const y = height * 0.28;
+      const p = this.add.rectangle(x, y, 7, 7, Phaser.Utils.Array.GetRandom(colors))
+        .setDepth(45);
+
+      const vx = Phaser.Math.Between(-200, 200);
+      const vy = Phaser.Math.Between(-280, -90);
+
+      this.tweens.add({
+        targets: p,
+        x: x + vx * 0.7,
+        y: y + vy * 0.3 + 320,
+        angle: Phaser.Math.Between(180, 720),
+        alpha: 0,
+        scale: 0.4,
+        duration: Phaser.Math.Between(850, 1400),
+        ease: 'Cubic.easeOut',
+        onComplete: () => p.destroy(),
+      });
+    }
+
+    // Triumphant banner
+    const banner = this.add.text(width / 2, height * 0.20, '★ NEW RECORD! ★', {
+      fontFamily: GAME_CONFIG.FONT_FAMILY,
+      fontSize: '32px',
+      color: '#facc15',
+      stroke: '#000000',
+      strokeThickness: 5,
+    }).setOrigin(0.5).setDepth(46);
+
+    this.tweens.add({
+      targets: banner,
+      scale: 1.25,
+      y: height * 0.18,
+      duration: 300,
+      yoyo: true,
+      repeat: 2,
+      onComplete: () => {
+        this.tweens.add({
+          targets: banner,
+          alpha: 0,
+          duration: 300,
+          onComplete: () => banner.destroy(),
+        });
+      },
+    });
+  }
+
+  private cycleBirdSkin(): void {
+    this.currentSkinIndex = (this.currentSkinIndex + 1) % this.SKINS.length;
+    localStorage.setItem('flappy_bird_skin', this.currentSkinIndex.toString());
+    this.applyBirdSkin();
+    const skin = this.SKINS[this.currentSkinIndex];
+    this.sound.play(skin?.sfx || 'wing', { volume: 0.6 });
+
+    // Little bounce animation
+    this.tweens.add({
+      targets: this.bird,
+      scaleX: 1.25,
+      scaleY: 1.25,
+      duration: 100,
+      yoyo: true,
+    });
+  }
+
+  private applyBirdSkin(): void {
+    if (!this.bird) return;
+    const skin = this.SKINS[this.currentSkinIndex];
+    if (!skin) return;
+    this.bird.setTexture(skin.texture);
+    this.bird.clearTint();
+    this.bird.play(skin.anim);
+    if (this.skinBadgeText) {
+      this.skinBadgeText.setText(`Skin: ${skin.name} (Tap to change)`);
+    }
+  }
+
   private handleHit(isGround: boolean): void {
     if (this.state === 'GAME_OVER') return;
     this.state = 'GAME_OVER';
+
+    // Stop gameplay music immediately on death
+    this.sound.stopByKey('bgm_play');
 
     // White flash & camera shake
     this.cameras.main.flash(180, 255, 255, 255);
@@ -333,8 +523,36 @@ export class GameScene extends Phaser.Scene {
 
   private createReadyUI(): void {
     const { width, height } = this.scale;
-    this.readyMessage = this.add.image(width / 2, height * 0.44, 'message')
+    this.readyMessage = this.add.image(width / 2, height * 0.40, 'message')
       .setDepth(50);
+
+    // Bird Skin Selector Badge under message, comfortably above the ground
+    this.skinBadgeText = this.add.text(width / 2, height * 0.70, `Skin: ${this.SKINS[this.currentSkinIndex].name} (Tap to change)`, {
+      fontFamily: GAME_CONFIG.FONT_FAMILY,
+      fontSize: '20px',
+      color: '#ffffff',
+      backgroundColor: '#00000077',
+      padding: { x: 14, y: 7 },
+    })
+      .setOrigin(0.5)
+      .setDepth(50)
+      .setInteractive({ useHandCursor: true });
+
+    this.skinBadgeText.on('pointerdown', (_pointer: unknown, _x: unknown, _y: unknown, event: Phaser.Types.Input.EventData) => {
+      if (this.state !== 'READY') return;
+      event.stopPropagation();
+      this.cycleBirdSkin();
+    });
+
+    this.skinBadgeText.on('pointerover', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
+      this.skinBadgeText?.setColor('#facc15');
+    });
+
+    this.skinBadgeText.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
+      this.skinBadgeText?.setColor('#ffffff');
+    });
   }
 
   private createInGameHUD(): void {
@@ -422,6 +640,18 @@ export class GameScene extends Phaser.Scene {
       .setName('medal_icon')
       .setVisible(false);
 
+    // No medal indicator (when score < 10)
+    const noMedalText = this.add.text(cardX - 105, cardY, 'X', {
+      fontFamily: GAME_CONFIG.FONT_FAMILY,
+      fontSize: '36px',
+      color: '#b45309',
+      stroke: '#543847',
+      strokeThickness: 3,
+    })
+      .setOrigin(0.5)
+      .setName('no_medal_text')
+      .setVisible(false);
+
     // "NEW" Record Ribbon
     const newRecordBadge = this.add.text(cardX + 18, cardY + 32, 'NEW', {
       fontFamily: GAME_CONFIG.FONT_FAMILY,
@@ -439,6 +669,7 @@ export class GameScene extends Phaser.Scene {
       bestVal,
       medalSlot,
       medalIcon,
+      noMedalText,
       newRecordBadge,
     ]);
 
@@ -448,10 +679,12 @@ export class GameScene extends Phaser.Scene {
       .setInteractive({ useHandCursor: true });
 
     this.playAgainBtn.on('pointerover', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
       this.playAgainBtn.setScale(3.1);
     });
 
     this.playAgainBtn.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
       this.playAgainBtn.setScale(2.91);
     });
 
@@ -470,6 +703,7 @@ export class GameScene extends Phaser.Scene {
     const cardScore = this.gameOverContainer.getByName('card_score') as Phaser.GameObjects.Text;
     const cardBest = this.gameOverContainer.getByName('card_best') as Phaser.GameObjects.Text;
     const medalIcon = this.gameOverContainer.getByName('medal_icon') as Phaser.GameObjects.Image;
+    const noMedalText = this.gameOverContainer.getByName('no_medal_text') as Phaser.GameObjects.Text;
     const newBadge = this.gameOverContainer.getByName('new_badge') as Phaser.GameObjects.Text;
 
     cardScore.setText(this.score.toString());
@@ -479,14 +713,19 @@ export class GameScene extends Phaser.Scene {
     // Determine Medal
     if (this.score >= 40) {
       medalIcon.setTexture('medal_platinum').setVisible(true);
+      noMedalText.setVisible(false);
     } else if (this.score >= 30) {
       medalIcon.setTexture('medal_gold').setVisible(true);
+      noMedalText.setVisible(false);
     } else if (this.score >= 20) {
       medalIcon.setTexture('medal_silver').setVisible(true);
+      noMedalText.setVisible(false);
     } else if (this.score >= 10) {
       medalIcon.setTexture('medal_bronze').setVisible(true);
+      noMedalText.setVisible(false);
     } else {
       medalIcon.setVisible(false);
+      noMedalText.setVisible(true);
     }
 
     // Pop-in animation
@@ -510,28 +749,27 @@ export class GameScene extends Phaser.Scene {
   }
 
   private restartGame(): void {
+    this.sound.stopByKey('bgm_play');
     this.scene.restart();
   }
 
   private createGlobalControls(): void {
     const { width, height } = this.scale;
 
-    // 1. Fullscreen Toggle (bottom-left)
-    this.fullscreenBtn = this.add.container(40, height - 36).setDepth(100);
+    // 1. Fullscreen Toggle (bottom-left, x: 38)
+    this.fullscreenBtn = this.add.container(38, height - 36).setDepth(100);
 
-    const fsBg = this.add.circle(0, 0, 22, 0x000000, 0.45)
+    const fsBg = this.add.circle(0, 0, 20, 0x000000, 0.45)
       .setInteractive({ useHandCursor: true });
 
     const fsIcon = this.add.graphics();
     const drawFsIcon = (isFs: boolean): void => {
       fsIcon.clear();
       fsIcon.lineStyle(2, 0xffffff, 1);
-      const s = 10;
+      const s = 9;
       if (!isFs) {
-        // Expand icon
         fsIcon.strokeRect(-s, -s, s * 2, s * 2);
       } else {
-        // Contract icon
         fsIcon.strokeRect(-s / 2, -s / 2, s, s);
       }
     };
@@ -549,28 +787,98 @@ export class GameScene extends Phaser.Scene {
       }
     });
 
-    fsBg.on('pointerover', () => fsBg.setFillStyle(0x000000, 0.7));
-    fsBg.on('pointerout', () => fsBg.setFillStyle(0x000000, 0.45));
+    fsBg.on('pointerover', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
+      fsBg.setFillStyle(0x000000, 0.7);
+    });
+    fsBg.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
+      fsBg.setFillStyle(0x000000, 0.45);
+    });
 
     this.fullscreenBtn.add([fsBg, fsIcon]);
 
-    // 2. Exit / Portal button (bottom-center)
-    this.exitBtn = this.add.text(width / 2, height - 36, '← Exit to Portal', {
+    // 2. Mute Toggle (bottom-left, x: 86)
+    this.muteBtn = this.add.container(86, height - 36).setDepth(100);
+
+    const muteBg = this.add.circle(0, 0, 20, 0x000000, 0.45)
+      .setInteractive({ useHandCursor: true });
+
+    const isMuted = localStorage.getItem('flappy_bird_muted') === 'true';
+    this.sound.mute = isMuted;
+
+    const muteIcon = this.add.graphics();
+    const drawMuteIcon = (muted: boolean): void => {
+      muteIcon.clear();
+      muteIcon.lineStyle(2, 0xffffff, 1);
+      muteIcon.fillStyle(0xffffff, 1);
+
+      // Speaker body
+      muteIcon.fillRect(-8, -4, 4, 8);
+      muteIcon.beginPath();
+      muteIcon.moveTo(-4, -4);
+      muteIcon.lineTo(1, -9);
+      muteIcon.lineTo(1, 9);
+      muteIcon.lineTo(-4, 4);
+      muteIcon.closePath();
+      muteIcon.fillPath();
+
+      if (!muted) {
+        // Soundwaves
+        muteIcon.beginPath();
+        muteIcon.arc(1, 0, 5, -Math.PI / 4, Math.PI / 4, false);
+        muteIcon.strokePath();
+        muteIcon.beginPath();
+        muteIcon.arc(1, 0, 9, -Math.PI / 4, Math.PI / 4, false);
+        muteIcon.strokePath();
+      } else {
+        // Diagonal slash
+        muteIcon.lineStyle(2, 0xef4444, 1);
+        muteIcon.lineBetween(-7, -7, 7, 7);
+      }
+    };
+    drawMuteIcon(this.sound.mute);
+
+    muteBg.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
+      pointer.event.stopPropagation();
+      this.sound.mute = !this.sound.mute;
+      localStorage.setItem('flappy_bird_muted', this.sound.mute ? 'true' : 'false');
+      drawMuteIcon(this.sound.mute);
+      if (!this.sound.mute) {
+        this.sound.play('ui_click', { volume: 0.4 });
+      }
+    });
+
+    muteBg.on('pointerover', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
+      muteBg.setFillStyle(0x000000, 0.7);
+    });
+    muteBg.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
+      muteBg.setFillStyle(0x000000, 0.45);
+    });
+
+    this.muteBtn.add([muteBg, muteIcon]);
+
+    // 3. Exit button (bottom-center)
+    this.exitBtn = this.add.text(width / 2, height - 36, 'Exit', {
       fontFamily: GAME_CONFIG.FONT_FAMILY,
       fontSize: '22px',
       color: '#ffffff',
       backgroundColor: '#00000066',
-      padding: { x: 12, y: 6 },
+      padding: { x: 16, y: 6 },
     })
       .setOrigin(0.5)
       .setDepth(100)
       .setInteractive({ useHandCursor: true });
 
     this.exitBtn.on('pointerover', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor_pointer.png) 7 1, pointer');
       this.exitBtn.setColor('#facc15');
     });
 
     this.exitBtn.on('pointerout', () => {
+      this.input.setDefaultCursor('url(assets/images/cursor.png) 0 0, default');
       this.exitBtn.setColor('#ffffff');
     });
 
@@ -580,7 +888,7 @@ export class GameScene extends Phaser.Scene {
       window.location.href = '../';
     });
 
-    // 3. Version tag (bottom-right)
+    // 4. Version tag (bottom-right)
     this.versionText = this.add.text(width - 25, height - 36, GAME_CONFIG.VERSION, {
       fontFamily: GAME_CONFIG.FONT_FAMILY,
       fontSize: '20px',
@@ -595,7 +903,8 @@ export class GameScene extends Phaser.Scene {
     this.bg.setSize(width, height);
     this.ground.setPosition(0, GAME_CONFIG.GROUND_Y);
     this.ground.setSize(width, height - GAME_CONFIG.GROUND_Y);
-    this.fullscreenBtn.setPosition(40, height - 36);
+    this.fullscreenBtn.setPosition(38, height - 36);
+    this.muteBtn.setPosition(86, height - 36);
     this.exitBtn.setPosition(width / 2, height - 36);
     this.versionText.setPosition(width - 25, height - 36);
   }

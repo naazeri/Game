@@ -24,9 +24,7 @@
         height: 100%;
         overflow: hidden;
         background-color: #000000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        cursor: url('./assets/images/cursor.png') 0 0, default;
       }
       #game-container {
         width: 100%;
@@ -34,11 +32,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #000000;
+      }
+      #game-container:fullscreen,
+      #game-container:-webkit-full-screen {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
       }
       canvas {
         display: block;
+        margin: auto !important;
         image-rendering: pixelated;
         image-rendering: crisp-edges;
+      }
+      canvas:fullscreen,
+      canvas:-webkit-full-screen {
+        margin: auto !important;
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
       }
     </style>
   </head>

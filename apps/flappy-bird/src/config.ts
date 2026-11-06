@@ -24,5 +24,5 @@ export const GAME_CONFIG = {
   PIPE_MIN_Y: 190,
   PIPE_MAX_Y: 520,
 
-  VERSION: '1.0.0',
+  VERSION: '1.2.0',
 };

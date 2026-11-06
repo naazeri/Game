@@ -37,13 +37,27 @@ export class BootScene extends Phaser.Scene {
       frameHeight: 36,
     });
 
+    // Cyber Car spritesheet (3 frames of 51x36)
+    this.load.spritesheet('car', 'assets/images/car.png', {
+      frameWidth: 51,
+      frameHeight: 36,
+    });
+
+    // Retro Alien UFO spritesheet (3 frames of 51x36)
+    this.load.spritesheet('ufo', 'assets/images/ufo.png', {
+      frameWidth: 51,
+      frameHeight: 36,
+    });
+
     // Audio SFX
     this.load.audio('wing', 'assets/sounds/wing.wav');
     this.load.audio('point', 'assets/sounds/point.wav');
     this.load.audio('hit', 'assets/sounds/hit.wav');
     this.load.audio('die', 'assets/sounds/die.wav');
     this.load.audio('swoosh', 'assets/sounds/swoosh.wav');
+    this.load.audio('ufo_beam', 'assets/sounds/ufo_beam.wav');
     this.load.audio('ui_click', 'assets/sounds/ui_click.wav');
+    this.load.audio('bgm_play', 'assets/sounds/bgm_play.mp3');
   }
 
   async create(): Promise<void> {
@@ -51,6 +65,22 @@ export class BootScene extends Phaser.Scene {
     this.anims.create({
       key: 'bird_flap',
       frames: this.anims.generateFrameNumbers('bird', { frames: [0, 1, 2, 1] }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    // Cyber Car jet flying animation
+    this.anims.create({
+      key: 'car_fly',
+      frames: this.anims.generateFrameNumbers('car', { frames: [0, 1, 2, 1] }),
+      frameRate: 12,
+      repeat: -1,
+    });
+
+    // Alien UFO flight animation
+    this.anims.create({
+      key: 'ufo_fly',
+      frames: this.anims.generateFrameNumbers('ufo', { frames: [0, 1, 2, 1] }),
       frameRate: 10,
       repeat: -1,
     });
