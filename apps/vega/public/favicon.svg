@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="vegaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#7928ca" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#090c15" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#090c15" stroke="#00f0ff" stroke-width="2"/>
+  <!-- Ambient glow -->
+  <circle cx="32" cy="32" r="22" fill="url(#vegaGlow)" opacity="0.45"/>
+  <!-- Crosshair Reticle -->
+  <circle cx="32" cy="32" r="16" fill="none" stroke="#7928ca" stroke-width="1.5" stroke-dasharray="4, 3"/>
+  <circle cx="32" cy="32" r="8" fill="none" stroke="#00f0ff" stroke-width="2"/>
+  <!-- Core Turret -->
+  <circle cx="32" cy="32" r="4.5" fill="#ffffff" filter="url(#bloom)"/>
+  <!-- Cannon Barrels -->
+  <line x1="32" y1="6" x2="32" y2="16" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32" y1="48" x2="32" y2="58" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="6" y1="32" x2="16" y2="32" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="48" y1="32" x2="58" y2="32" stroke="#00f0ff" stroke-width="3" stroke-linecap="round"/>
+</svg>
