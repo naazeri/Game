@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import { DEVELOPER_INFO } from '@games/shared';
+import profile from '../assets/profile.webp';
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/">
+      <svg class="brand__icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M7 6h10a5 5 0 0 1 4.9 6l-.8 4.1a3 3 0 0 1-5.2 1.4L14.4 16H9.6l-1.5 1.5a3 3 0 0 1-5.2-1.4L2.1 12A5 5 0 0 1 7 6Zm.5 3v1.5H6V12h1.5v1.5H9V12h1.5v-1.5H9V9H7.5Zm9 .5a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm2.5 2.2a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Z"
+        ></path>
+      </svg>
+      <span>Games</span>
+    </a>
+    <a class="author" href={DEVELOPER_INFO.websiteUrl} rel="noopener">
+      <Image src={profile} alt="" width={32} height={32} class="author__avatar" />
+      <span>{DEVELOPER_INFO.websiteDisplay}</span>
+    </a>
+  </div>
+</header>

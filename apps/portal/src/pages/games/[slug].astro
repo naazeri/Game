@@ -1,0 +1,217 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import GameCard from '../../components/GameCard.astro';
+import { getGames, REPO_URL, type Game } from '../../lib/games';
+import { DEVELOPER_INFO } from '@games/shared';
+
+export const getStaticPaths = (async () => {
+  const games = await getGames();
+  return games.map((game) => ({ params: { slug: game.slug }, props: { game, games } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  game: Game;
+  games: Game[];
+}
+
+const { game, games } = Astro.props;
+const { data } = game;
+const others = games.filter((g) => g.slug !== game.slug);
+const [mediaW, mediaH] = data.media;
+
+const platformLabel = data.platforms.map((p) => (p === 'desktop' ? 'Desktop' : 'Mobile')).join(' & ');
+const playLabel = `Play ${data.title} (opens in a new tab)`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: data.title,
+  description: data.description,
+  url: new URL(game.detailsUrl, Astro.site).href,
+  playMode: data.players.includes('2') ? ['SinglePlayer', 'MultiPlayer'] : 'SinglePlayer',
+  applicationCategory: 'Game',
+  gamePlatform: 'Web browser',
+  operatingSystem: 'Any',
+  ...(game.version ? { softwareVersion: game.version } : {}),
+  author: { '@type': 'Person', name: DEVELOPER_INFO.name, url: DEVELOPER_INFO.websiteUrl },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+---
+
+<Base title={`${data.title} - Game - nazeriland`} description={`${data.tagline} ${data.description}`} image={game.thumb} jsonLd={jsonLd}>
+  <div class="container game" style={`--accent: ${data.accent}`}>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Games</a></li>
+        <li aria-current="page">{data.title}</li>
+      </ol>
+    </nav>
+
+    <section class="game__top">
+      <div class="media" style={`--ar: ${mediaW / mediaH}`}>
+        {
+          game.clip ? (
+            <video
+              class="media__el"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              width={mediaW}
+              height={mediaH}
+              poster={game.clip.poster}
+              aria-label={`${data.title} gameplay preview`}
+              data-clip
+            >
+              <source src={game.clip.webm} type="video/webm" />
+              <source src={game.clip.mp4} type="video/mp4" />
+            </video>
+          ) : (
+            <Image class="media__el" src={game.thumb} alt={`${data.title} title screen`} widths={[640, 900]} sizes="(min-width: 900px) 560px, 92vw" loading="eager" />
+          )
+        }
+      </div>
+
+      <div class="game__info">
+        <h1>{data.title}</h1>
+        <p class="game__tagline">{data.tagline}</p>
+
+        <ul class="chips" role="list">
+          {game.version && <li class="chip chip--accent">v{game.version}</li>}
+          <li class="chip">{data.players}</li>
+          <li class="chip">{platformLabel}</li>
+          <li class="chip">{data.engine}</li>
+        </ul>
+
+        <p class="game__description">{data.description}</p>
+
+        <div class="actions">
+          <a class="btn btn--play" href={game.playUrl} target="_blank" rel="noopener" aria-label={playLabel}>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"></path></svg>
+            <span>PLAY</span>
+          </a>
+          <a class="btn btn--ghost" href={game.sourceUrl} target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="m8.6 16.6-4.6-4.6 4.6-4.6L10 8.8 6.8 12l3.2 3.2-1.4 1.4Zm6.8 0-1.4-1.4 3.2-3.2L14 8.8l1.4-1.4 4.6 4.6-4.6 4.6Z"></path></svg>
+            <span>Source code</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="game__sections">
+      <section aria-labelledby="how-heading">
+        <h2 id="how-heading">How to play</h2>
+        <div class="controls">
+          {
+            data.controls.desktop.length > 0 && (
+              <div class="panel">
+                <h3>Desktop</h3>
+                <ul>{data.controls.desktop.map((line) => <li>{line}</li>)}</ul>
+              </div>
+            )
+          }
+          {
+            data.controls.mobile.length > 0 && (
+              <div class="panel">
+                <h3>Mobile</h3>
+                <ul>{data.controls.mobile.map((line) => <li>{line}</li>)}</ul>
+              </div>
+            )
+          }
+        </div>
+      </section>
+
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading">Features</h2>
+        <ul class="features">{data.features.map((line) => <li>{line}</li>)}</ul>
+      </section>
+
+      {
+        game.shots.length > 0 && (
+          <section aria-labelledby="shots-heading">
+            <h2 id="shots-heading">Screenshots</h2>
+            <ul class="shots" role="list" data-gallery>
+              {game.shots.map((shot, i) => (
+                <li>
+                  <button type="button" class="shots__btn" data-full={shot.src} data-alt={`${data.title} screenshot ${i + 1}`} aria-label={`Enlarge screenshot ${i + 1} of ${game.shots.length}`}>
+                    <Image src={shot} alt={`${data.title} screenshot ${i + 1}`} widths={[320, 480, 640]} sizes="(min-width: 900px) 280px, 45vw" loading="lazy" />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <section aria-labelledby="more-heading">
+        <h2 id="more-heading">More games</h2>
+        <ul class="grid" role="list">
+          {others.map((other) => <GameCard game={other} />)}
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="play-bar">
+    <a class="btn btn--play" href={game.playUrl} target="_blank" rel="noopener" aria-label={playLabel} style={`--accent: ${data.accent}`}>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"></path></svg>
+      <span>PLAY</span>
+    </a>
+  </div>
+
+  {
+    game.shots.length > 0 && (
+      <dialog id="lightbox" class="lightbox" closedby="any" aria-label={`${data.title} screenshot`}>
+        <form method="dialog">
+          <button class="lightbox__close" aria-label="Close" autofocus>✕</button>
+        </form>
+        <img id="lightbox-img" alt="" />
+      </dialog>
+    )
+  }
+</Base>
+
+<script>
+  // Lightbox: one shared native <dialog>, opened modally for any screenshot.
+  const dialog = document.querySelector<HTMLDialogElement>('#lightbox');
+  const img = document.querySelector<HTMLImageElement>('#lightbox-img');
+  if (dialog && img) {
+    document.querySelectorAll<HTMLButtonElement>('[data-gallery] [data-full]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        img.src = btn.dataset.full ?? '';
+        img.alt = btn.dataset.alt ?? '';
+        dialog.showModal();
+      });
+    });
+
+    // `closedby="any"` is not supported everywhere (Safari): close on a real click outside the box.
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const r = dialog.getBoundingClientRect();
+        const inside = r.top <= event.clientY && event.clientY <= r.bottom && r.left <= event.clientX && event.clientX <= r.right;
+        if (!inside) dialog.close();
+      });
+    }
+  }
+
+  // Respect reduced motion: don't autoplay the preview clip, let the user start it.
+  const clip = document.querySelector<HTMLVideoElement>('video[data-clip]');
+  if (clip) {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const apply = () => {
+      if (query.matches) {
+        clip.pause();
+        clip.controls = true;
+      } else {
+        clip.controls = false;
+        void clip.play().catch(() => {});
+      }
+    };
+    apply();
+    query.addEventListener('change', apply);
+  }
+</script>

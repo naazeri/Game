@@ -1,0 +1,14 @@
+{
+  "name": "media-capture",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only bot that plays each game headlessly to record portal clips and screenshots. Not part of the pnpm workspace, so CI never installs it.",
+  "scripts": {
+    "capture": "node capture.mjs",
+    "smoke": "node smoke.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "playwright-core": "^1.65.0"
+  }
+}

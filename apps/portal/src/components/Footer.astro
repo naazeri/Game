@@ -1,0 +1,16 @@
+---
+import { DEVELOPER_INFO } from '@games/shared';
+import { REPO_URL } from '../lib/games';
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>
+      Made by <a href={DEVELOPER_INFO.websiteUrl} rel="noopener">{DEVELOPER_INFO.name}</a>
+    </p>
+    <ul class="site-footer__links">
+      <li><a href={REPO_URL} rel="noopener" target="_blank">Source code on GitHub</a></li>
+      <li><a href={DEVELOPER_INFO.websiteUrl} rel="noopener">{DEVELOPER_INFO.websiteDisplay}</a></li>
+    </ul>
+  </div>
+</footer>

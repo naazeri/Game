@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { getGames } from '../lib/games';
+
+const games = await getGames();
+---
+
+<Base title="Page not found - Game - nazeriland" description="This page does not exist." image={games[0].thumb} noindex>
+  <section class="container notfound">
+    <h1>404</h1>
+    <p>That page doesn't exist. Maybe the link is old, or mistyped.</p>
+    <a class="btn btn--play" href="/">Back to all games</a>
+  </section>
+</Base>

@@ -2,6 +2,9 @@
 _legacy_sources/
 node_modules/
 dist/
+_site/
+tools/media-capture/.tmp/
+.astro/
 .engram/cache/
 .engram/studio/
 .engram/20*/

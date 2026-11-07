@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import GameCard from '../components/GameCard.astro';
+import { getGames } from '../lib/games';
+
+const games = await getGames();
+---
+
+<Base
+  title="Game - nazeriland"
+  description="Play small, fast browser games by Reza Nazeri — Ponge, Poke, Change Balls, Flappy Bird and Hit The Coin. No installs, works on desktop and mobile."
+  image={games[0].thumb}
+>
+  <section class="container hero-intro">
+    <h1>Play in your browser</h1>
+    <p>Small, fast games that run on desktop and mobile.</p>
+  </section>
+
+  <section class="container" aria-labelledby="games-heading">
+    <h2 id="games-heading" class="sr-only">Games</h2>
+    <ul class="grid" role="list">
+      {games.map((game) => <GameCard game={game} />)}
+    </ul>
+  </section>
+</Base>

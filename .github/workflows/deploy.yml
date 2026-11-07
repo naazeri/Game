@@ -43,35 +43,8 @@ jobs:
         run: pnpm -r run build
 
       - name: Assemble GitHub Pages site
-        run: |
-          mkdir -p _site
-          # Copy landing page and root static files
-          cp -r index.html CNAME site.webmanifest assets _site/
-          cp -r *.png favicon.ico _site/ 2>/dev/null || true
-
-          # Copy legacy built games (until each is rewritten)
-          for dir in vega; do
-            if [ -d "$dir" ]; then
-              cp -r "$dir" _site/
-            fi
-          done
-
-          # Copy rebuilt games from apps/
-          if [ -d "apps/hit-the-coin/dist" ]; then
-            cp -r apps/hit-the-coin/dist _site/hit-the-coin
-          fi
-          if [ -d "apps/flappy-bird/dist" ]; then
-            cp -r apps/flappy-bird/dist _site/flappy-bird
-          fi
-          if [ -d "apps/poke/dist" ]; then
-            cp -r apps/poke/dist _site/poke
-          fi
-          if [ -d "apps/change-balls/dist" ]; then
-            cp -r apps/change-balls/dist _site/change-balls
-          fi
-          if [ -d "apps/ponge/dist" ]; then
-            cp -r apps/ponge/dist _site/ponge
-          fi
+        # Portal -> site root, each apps/<game>/dist -> /<game>/, legacy vega -> /vega/
+        run: node scripts/assemble-site.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

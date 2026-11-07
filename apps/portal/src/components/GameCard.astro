@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import type { Game } from '../lib/games';
+
+interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+const { data } = game;
+---
+
+<li class="card-item">
+  <a class="card" href={game.detailsUrl} style={`--accent: ${data.accent}`}>
+    <Image
+      class="card__thumb"
+      src={game.thumb}
+      alt={`${data.title} title screen`}
+      widths={[320, 480, 640]}
+      sizes="(min-width: 1000px) 340px, (min-width: 600px) 45vw, 92vw"
+      loading="lazy"
+    />
+    <span class="card__body">
+      <span class="card__title">{data.title}</span>
+      <span class="card__tagline">{data.tagline}</span>
+      <span class="card__meta">
+        <span class="chip">{data.players}</span>
+        {data.tags.slice(0, 2).map((tag) => <span class="chip chip--ghost">{tag}</span>)}
+      </span>
+    </span>
+  </a>
+</li>

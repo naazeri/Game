@@ -1,0 +1,152 @@
+[
+  {
+    "id": "ponge",
+    "title": "Ponge",
+    "tagline": "Icy retro pong against a bot or a friend.",
+    "description": "Pong with a slippery twist: the paddles glide on ice, so every move carries momentum. Take on three AI levels or a friend on the same keyboard, switch between Arcade mode with power-ups and the Classic rules, and pick the look you like.",
+    "published": true,
+    "order": 1,
+    "players": "1–2 players",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#22d3ee",
+    "media": [960, 600],
+    "controls": {
+      "desktop": [
+        "W / S or ↑ / ↓ — move your paddle",
+        "2 players: W / S for the left paddle, ↑ / ↓ for the right",
+        "R — restart the round, Esc — back to the menu"
+      ],
+      "mobile": ["On-screen ▲ / ▼ buttons move your paddle"]
+    },
+    "features": [
+      "1 or 2 players, with three AI levels (Bit Bot, Glider, Cyber Neo)",
+      "Arcade mode with Freeze, Extend and HyperSpeed power-ups",
+      "Classic mode with the original rules",
+      "Four themes: Cyber Neon, Pure Ice, Retro Atari and Synthwave",
+      "Match length of 5, 7, 10 points or endless",
+      "Your best rally is saved on your device"
+    ],
+    "tags": ["Arcade", "Retro", "2 players"]
+  },
+  {
+    "id": "poke",
+    "title": "Poke",
+    "tagline": "Dodge the dogs and survive as long as you can.",
+    "description": "Steer a tiny hamster through a yard full of running dogs. You score a point for every second you survive, and the dogs spawn faster the longer you last. One touch and it's over.",
+    "published": true,
+    "order": 2,
+    "players": "1 player",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#fb923c",
+    "media": [960, 540],
+    "controls": {
+      "desktop": [
+        "Move the mouse — the hamster follows it, no click needed",
+        "Arrow keys or WASD also work"
+      ],
+      "mobile": ["Drag anywhere on the screen — the hamster moves relative to your finger"]
+    },
+    "features": [
+      "Score is the number of seconds you survive",
+      "Difficulty ramps up as your score grows",
+      "Soft, colour-shifting background lights",
+      "Your best score is saved on your device",
+      "Fullscreen and mute buttons"
+    ],
+    "tags": ["Arcade", "Survival", "Quick rounds"]
+  },
+  {
+    "id": "change-balls",
+    "title": "Change Balls",
+    "tagline": "Match the colours and keep the rhythm.",
+    "description": "A ball bounces between two rotating pillars. Flip them at just the right moment so the ball meets the matching colour. The speed ramps up every 10 points, hearts keep you in the game, and a split-screen mode lets two players compete on one device.",
+    "published": true,
+    "order": 3,
+    "players": "1–2 players",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#a78bfa",
+    "media": [960, 540],
+    "controls": {
+      "desktop": [
+        "Click, Space or Enter — flip the pillars",
+        "2 players: Space or A for the left player, Enter or D for the right"
+      ],
+      "mobile": [
+        "Tap anywhere to flip the pillars",
+        "2 players: tap the left or right half of the screen"
+      ]
+    },
+    "features": [
+      "1 or 2 players on the same device",
+      "Speed increases every 10 points",
+      "An extra heart every 40 points and 20-hit combo streaks",
+      "Adjustable ball speed in the settings",
+      "Separate best scores for each mode, plus a statistics screen",
+      "Original music and sound effects"
+    ],
+    "tags": ["Rhythm", "Reflex", "2 players"]
+  },
+  {
+    "id": "flappy-bird",
+    "title": "Flappy Bird",
+    "tagline": "Tap to flap. Don't touch the pipes.",
+    "description": "The classic one-button challenge, rebuilt for the web. Fly through the gaps, earn medals from bronze to platinum, and switch between three skins: the classic bird, a cyber car or an alien UFO.",
+    "published": true,
+    "order": 4,
+    "players": "1 player",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#84cc16",
+    "media": [480, 854],
+    "controls": {
+      "desktop": ["Space, ↑ or click — flap", "Click the bird on the start screen to change skin"],
+      "mobile": ["Tap — flap", "Tap the bird on the start screen to change skin"]
+    },
+    "features": [
+      "Medals at 10, 20, 30 and 40 points",
+      "Three skins: Classic Bird, Cyber Car and Alien UFO",
+      "Particle effects and retro sound",
+      "Your best score and skin are saved on your device",
+      "Portrait layout that fits any screen"
+    ],
+    "tags": ["Classic", "One-button", "Quick rounds"]
+  },
+  {
+    "id": "hit-the-coin",
+    "title": "Hit The Coin",
+    "tagline": "15 seconds. One coin. Click fast.",
+    "description": "Click the spinning coin as many times as you can before the timer runs out. Special coins are worth double and add a second to the clock, and quick hits in a row build up combos.",
+    "published": true,
+    "order": 5,
+    "players": "1 player",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#f59e0b",
+    "media": [960, 540],
+    "controls": {
+      "desktop": ["Click the coin", "Esc — end the run early"],
+      "mobile": ["Tap the coin"]
+    },
+    "features": [
+      "15-second rounds",
+      "Special coins are worth 2 points and add 1 second",
+      "Combo bonus for hits within 1.5 seconds of each other",
+      "Urgent ticking in the final 3 seconds",
+      "Your best score is saved on your device"
+    ],
+    "tags": ["Arcade", "Reflex", "Quick rounds"]
+  },
+  {
+    "id": "vega",
+    "title": "Vega",
+    "tagline": "Space shooter (legacy build).",
+    "description": "Hidden until it is remade for the new engine. The old build is still served at /vega/.",
+    "published": false,
+    "order": 99,
+    "players": "1 player",
+    "platforms": ["desktop"],
+    "accent": "#f472b6",
+    "media": [960, 540],
+    "controls": { "desktop": [], "mobile": [] },
+    "features": ["Legacy Godot build"],
+    "tags": ["Legacy"]
+  }
+]

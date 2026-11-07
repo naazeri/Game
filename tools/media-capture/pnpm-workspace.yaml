@@ -1,0 +1,4 @@
+# Makes this folder its own pnpm root, separate from the games workspace,
+# so CI (which installs the root workspace) never downloads ffmpeg/Chromium tooling.
+allowBuilds:
+  ffmpeg-static: true

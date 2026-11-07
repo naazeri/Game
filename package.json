@@ -4,6 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "pnpm -r run build",
+    "site": "node scripts/assemble-site.mjs",
+    "preview:site": "pnpm build && pnpm site && sirv _site --port 4173",
+    "dev:portal": "pnpm --filter portal dev",
+    "build:portal": "pnpm --filter portal build",
     "dev:hit-the-coin": "pnpm --filter hit-the-coin dev",
     "build:hit-the-coin": "pnpm --filter hit-the-coin build",
     "dev:flappy-bird": "pnpm --filter flappy-bird dev",
@@ -14,5 +18,8 @@
     "build:change-balls": "pnpm --filter change-balls build",
     "dev:ponge": "pnpm --filter ponge dev",
     "build:ponge": "pnpm --filter ponge build"
+  },
+  "devDependencies": {
+    "sirv-cli": "^3.0.1"
   }
 }
