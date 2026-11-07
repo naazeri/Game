@@ -4,6 +4,7 @@ node_modules/
 dist/
 .engram/cache/
 .engram/studio/
+.engram/20*/
 *.local
 
 # Private Remake Documentation

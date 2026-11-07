@@ -1,4 +1,4 @@
-# Node Description Batch 6 of 25
+# Node Description Batch 6 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,20 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "js_bootstrap_min_ni_gettemplatefactory": "._getTemplateFactory()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._createTipElement(), Ai, .changeContent()]
-- "js_bootstrap_min_ni_gettipelement": "._getTipElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._createTipElement(), .hide(), .show()]
-- "js_bootstrap_min_ni_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._getTipElement(), .eventName(), ._queueCallback()]
-- "js_bootstrap_min_ni_leave": "._leave()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._isWithActiveTrigger(), ._setTimeout(), .toggle()]
-- "js_bootstrap_min_os_cleartimeout": "._clearTimeout()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, .dispose(), ._onInteraction(), .show()]
-- "js_bootstrap_min_ot_getactive": "._getActive()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._slide(), .to(), ._updateInterval()]
-- "js_bootstrap_min_ot_getitemindex": "._getItemIndex()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._getItems(), ._slide(), .to()]
-- "js_bootstrap_min_ot_getitems": "._getItems()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._getItemIndex(), ._slide(), .to()]
-- "js_bootstrap_min_q_mergeconfigobj": "._mergeConfigObj()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[._getConfig(), q, ._getConfig(), ._getConfig()]
-- "js_bootstrap_min_rt_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Rt, ._addAriaAndCollapsedClass(), ._getDimension(), ._queueCallback()]
-- "js_bootstrap_min_rt_initializechildren": "._initializeChildren()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Rt, .constructor(), ._addAriaAndCollapsedClass(), ._getFirstLevelChildren()]
-- "js_bootstrap_min_ue_adjustdialog": "._adjustDialog()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ue, .getWidth(), .handleUpdate(), .show()]
-- "js_bootstrap_min_w_eventname": ".eventName()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[.hide(), ._setListeners(), .show(), W]
-- "js_bootstrap_min_we_emulateanimation": "._emulateAnimation()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we, ._getElement(), .hide(), .show()]
 - "js_bootstrap_min_we_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we, ._append(), ._emulateAnimation(), ._getElement()]
 - "lib_gsap_min_ab": "Ab()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, t(), zb(), cb()]
 - "lib_gsap_min_be": "be()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), ka(), Pd()]
@@ -57,6 +43,20 @@ one-sentence description — no prose, no markdown fences.
 - "ui_statsmodal_statsmodal_createcontent": ".createContent()" | kind=code-symbol | source=apps/change-balls/src/ui/StatsModal.ts:L24 | neighbors=[StatsModal, .constructor(), .createCloseButton(), .createStatRow()]
 - "assets_index_ctaeemyb_ce_restartgame": ".restartGame()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .getSpeedSetting(), .clear()]
 - "assets_index_ctaeemyb_ce_update": ".update()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .handlePillarHit(), .getX()]
+- "assets_index_ctaeemyb_de_createhearts": ".createHearts()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .constructor(), .drawHeart()]
+- "assets_index_ctaeemyb_de_loselife": ".loseLife()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), de, .spawnHeartShatter()]
+- "assets_index_ctaeemyb_de_setlives": ".setLives()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .reset(), .drawHeart()]
+- "assets_index_ctaeemyb_he_createcontent": ".createContent()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[he, .createCloseButton(), .createStatRow()]
+- "assets_index_ctaeemyb_he_show": ".show()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[he, .getBestScore(), .getGamesPlayed()]
+- "assets_index_ctaeemyb_kt_constructor": ".constructor()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .drawPivot(), .drawRod()]
+- "assets_index_ctaeemyb_kt_drawpivot": ".drawPivot()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .constructor(), .clear()]
+- "assets_index_ctaeemyb_kt_drawrod": ".drawRod()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .constructor(), .clear()]
+- "assets_index_ctaeemyb_le_createtopactionbar": ".createTopActionBar()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[le, .create(), .createIconAction()]
+- "assets_index_ctaeemyb_ue_activateshield": ".activateShield()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), ue, .clear()]
+- "assets_index_ctaeemyb_ue_spawntrailparticle": ".spawnTrailParticle()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ue, Nt(), .update()]
+- "assets_index_d2py_agh_et": "et()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L1 | neighbors=[index-D2py_AGH.js, j(), .cycleAmbientColors()]
+- "assets_index_d2py_agh_nt_clearmobs": ".clearMobs()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .showMenu(), .startCountdown()]
+- "assets_index_d2py_agh_nt_createaboutmodal": ".createAboutModal()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .create(), .createButton()]
 
 ## Instructions
 

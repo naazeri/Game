@@ -1,4 +1,4 @@
-# Node Description Batch 15 of 25
+# Node Description Batch 15 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,27 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "lib_gsap_min_db": "db()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, eb()]
-- "lib_gsap_min_ee": "ee()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
-- "lib_gsap_min_fc": "Fc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ec()]
-- "lib_gsap_min_gc": "gc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween()]
-- "lib_gsap_min_ie": "ie()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, je()]
-- "lib_gsap_min_jc": "Jc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Lc()]
-- "lib_gsap_min_la": "la()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Q()]
-- "lib_gsap_min_ld": "Ld()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
-- "lib_gsap_min_le": "le()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ke()]
-- "lib_gsap_min_ma": "ma()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, na()]
-- "lib_gsap_min_na": "na()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ma()]
-- "lib_gsap_min_oa": "oa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r()]
-- "lib_gsap_min_q": "Q()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, la()]
-- "lib_gsap_min_sb": "Sb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ha()]
-- "lib_gsap_min_sd": "Sd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Od()]
-- "lib_gsap_min_ta": "ta()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, v()]
-- "lib_gsap_min_tb": "tb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, za()]
-- "lib_gsap_min_td": "Td()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Od()]
-- "lib_gsap_min_ud": "Ud()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, vd()]
-- "lib_gsap_min_vd": "vd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ud()]
-- "lib_gsap_min_ve": "ve()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r()]
 - "lib_gsap_min_we": "we()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, xe()]
 - "lib_gsap_min_x": "x()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, wb()]
 - "lib_gsap_min_xa": "xa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ka()]
@@ -57,6 +36,27 @@ one-sentence description — no prose, no markdown fences.
 - "scenes_gamescene_gamescene_handlekeyboardmovement": ".handleKeyboardMovement()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L500 | neighbors=[GameScene, .update()]
 - "scenes_gamescene_gamescene_handleresize": ".handleResize()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L356 | neighbors=[GameScene, .repositionCoin()]
 - "scenes_gamescene_gamescene_hideabout": ".hideAbout()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L335 | neighbors=[GameScene, .showMenu()]
+- "scenes_gamescene_gamescene_init": ".init()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L26 | neighbors=[GameScene, .clearPanicTicks()]
+- "scenes_gamescene_gamescene_setupinput": ".setupInput()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L428 | neighbors=[GameScene, .create()]
+- "scenes_gamescene_gamescene_setupinputs": ".setupInputs()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L275 | neighbors=[GameScene, .create()]
+- "scenes_gamescene_gamescene_showfloatingtext": ".showFloatingText()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L313 | neighbors=[GameScene, .handleCoinHit()]
+- "scenes_gamescene_gamescene_spawngameovereffect": ".spawnGameOverEffect()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L494 | neighbors=[GameScene, .handleGameOver()]
+- "scenes_gamescene_gamescene_spawnmatchparticles": ".spawnMatchParticles()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L455 | neighbors=[GameScene, .handlePillarHit()]
+- "scenes_gamescene_gamescene_spawnparticleburst": ".spawnParticleBurst()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L282 | neighbors=[GameScene, .handleCoinHit()]
+- "scenes_gamescene_gamescene_startcountdown": ".startCountdown()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L581 | neighbors=[GameScene, .clearMobs()]
+- "scenes_gamescene_gamescene_triggernewrecordcelebration": ".triggerNewRecordCelebration()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L397 | neighbors=[GameScene, .updatePipes()]
+- "scenes_gamescene_gamescene_triggerurgentcountdown": ".triggerUrgentCountdown()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L140 | neighbors=[GameScene, .clearPanicTicks()]
+- "scenes_gamescene_gamescene_updateenvironmentlighting": ".updateEnvironmentLighting()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L361 | neighbors=[GameScene, .updatePipes()]
+- "scenes_gamescene_gamescene_updatemobs": ".updateMobs()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L718 | neighbors=[GameScene, .update()]
+- "scenes_menuscene_menuscene_createbackgroundeffects": ".createBackgroundEffects()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L209 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createbutton": ".createButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L172 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createfullscreenbutton": ".createFullscreenButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L104 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createhalfbutton": ".createHalfButton()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L292 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createiconaction": ".createIconAction()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L365 | neighbors=[MenuScene, .createTopActionBar()]
+- "scenes_menuscene_menuscene_createlogoemblem": ".createLogoEmblem()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L125 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_createmenubutton": ".createMenuButton()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L239 | neighbors=[MenuScene, .create()]
+- "scenes_menuscene_menuscene_playmenumusic": ".playMenuMusic()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L82 | neighbors=[MenuScene, .create()]
+- "scenes_resultscene_resultscene_createbutton": ".createButton()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L112 | neighbors=[ResultScene, .create()]
 
 ## Instructions
 

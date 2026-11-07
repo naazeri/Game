@@ -1,4 +1,4 @@
-# Node Description Batch 23 of 25
+# Node Description Batch 23 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,28 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "js_bootstrap_min_we_defaulttype": ".DefaultType()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we]
-- "js_bootstrap_min_we_dispose": ".dispose()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we]
-- "js_bootstrap_min_we_name": ".NAME()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we]
-- "js_bootstrap_min_z": "z()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js]
-- "lib_gsap_min_ad": "Ad()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_bd": "Bd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_ca": "Ca()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_cd": "Cd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_dd": "Dd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_de": "de()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_ed": "Ed()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_fd": "Fd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_gd": "Gd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_gn": "gn()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_inheritsloose": "_inheritsLoose()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_jd": "Jd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_matchmedia": "MatchMedia()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_md": "Md()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_oc": "oc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_p": "P()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_pa": "pa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
-- "lib_gsap_min_proptween": "PropTween()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
 - "lib_gsap_min_qb": "Qb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
 - "lib_gsap_min_rb": "rb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
 - "lib_gsap_min_ub": "Ub()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js]
@@ -57,6 +35,28 @@ one-sentence description — no prose, no markdown fences.
 - "scenes_bootscene_bootscene_constructor": ".constructor()" | kind=code-symbol | source=apps/poke/src/scenes/BootScene.ts:L5 | neighbors=[BootScene]
 - "scenes_bootscene_bootscene_create": ".create()" | kind=code-symbol | source=apps/poke/src/scenes/BootScene.ts:L36 | neighbors=[BootScene]
 - "scenes_bootscene_bootscene_preload": ".preload()" | kind=code-symbol | source=apps/poke/src/scenes/BootScene.ts:L9 | neighbors=[BootScene]
+- "scenes_gamescene_dogmob": "DogMob" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L5 | neighbors=[GameScene.ts]
+- "scenes_gamescene_gamescene_constructor": ".constructor()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L63 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_cycleambientcolors": ".cycleAmbientColors()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L160 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_flipbothpillars": ".flipBothPillars()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L331 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_flipleftpillar": ".flipLeftPillar()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L321 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_fliprightpillar": ".flipRightPillar()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L326 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_handlehit": ".handleHit()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L480 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_handlemiss": ".handleMiss()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L272 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_incrementscore": ".incrementScore()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L642 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_restartgame": ".restartGame()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L751 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_returntomenu": ".returnToMenu()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L544 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_showabout": ".showAbout()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L327 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_showgameoverscreen": ".showGameOverScreen()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L699 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_spawndogmob": ".spawnDogMob()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L659 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_spawnpipepair": ".spawnPipePair()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L290 | neighbors=[GameScene]
+- "scenes_gamescene_gamescene_togglefullscreen": ".toggleFullscreen()" | kind=code-symbol | source=apps/change-balls/src/scenes/GameScene.ts:L267 | neighbors=[GameScene]
+- "scenes_gamescene_gamestate": "GameState" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L4 | neighbors=[GameScene.ts]
+- "scenes_gamescene_pipepair": "PipePair" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L6 | neighbors=[GameScene.ts]
+- "scenes_menuscene_menuscene_constructor": ".constructor()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L15 | neighbors=[MenuScene]
+- "scenes_menuscene_menuscene_handleresize": ".handleResize()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/MenuScene.ts:L159 | neighbors=[MenuScene]
+- "scenes_menuscene_menuscene_startgame": ".startGame()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L410 | neighbors=[MenuScene]
+- "scenes_menuscene_menuscene_togglefullscreen": ".toggleFullscreen()" | kind=code-symbol | source=apps/change-balls/src/scenes/MenuScene.ts:L402 | neighbors=[MenuScene]
 
 ## Instructions
 

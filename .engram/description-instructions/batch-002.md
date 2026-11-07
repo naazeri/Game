@@ -1,4 +1,4 @@
-# Node Description Batch 3 of 25
+# Node Description Batch 3 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -24,10 +24,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "build_unityloader_w": "w()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), c(), g(), h(), l()]
-- "commit:repo:github.com/naazeri/Game@0d024c8a1fd991ba158b44d17c0fb269f79a6d04": "0d024c8 feat(flappy-bird): rebuild with phaser 3, typescript and vite" | kind=Commit | source=git | neighbors=[main, c3fedc4 feat(flappy-bird): release v1.2…, vite.config.ts, BootScene.ts, GameScene.ts, config.ts]
-- "js_bootstrap_min_mi": "Mi" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .Default(), .DefaultType(), ._getContent(), ._getContentForTemplate(), ._isWithContent()]
-- "js_bootstrap_min_q": "q" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._configAfterMerge(), .Default(), .DefaultType(), ._getConfig(), ._mergeConfigObj()]
 - "lib_gsap_min_v": "v()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _a(), ac(), ea(), eb(), gb()]
 - "ui_aboutmodal_aboutmodal": "AboutModal" | kind=code-symbol | source=apps/change-balls/src/ui/AboutModal.ts:L6 | neighbors=[MenuScene.ts, AboutModal.ts, .constructor(), .createButton(), .createContent(), .getVisible()]
 - "ui_texthelper_createcrisptext": "createCrispText()" | kind=code-symbol | source=apps/change-balls/src/ui/TextHelper.ts:L5 | neighbors=[GameScene.ts, MenuScene.ts, AboutModal.ts, BannerManager.ts, GameOverModal.ts, SettingsModal.ts]
@@ -35,7 +31,6 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_ctaeemyb_ue_drawglow": ".drawGlow()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ue, .constructor(), Nt(), .clear(), .reset(), .switchColor()]
 - "assets_index_ctaeemyb_ve_clear": ".clear()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.restartGame(), .drawHeart(), .drawPivot(), .drawRod(), .activateShield(), .drawGlow()]
 - "assets_index_d2py_agh_nt_create": ".create()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .createAboutModal(), .createAmbientGlows(), .createGlobalControls(), .createHUD(), .setupInput()]
-- "build_unityloader_f": "f()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, c(), g(), n(), u(), v()]
 - "commit:repo:github.com/naazeri/Game@385e2dec823273ba03c163ee3887a02d0972eb94": "385e2de fix(hit-the-coin): prevent duplicate bgm_menu on return from result sce…" | kind=Commit | source=git | neighbors=[index-B4CLjEYc.js, main, 0d024c8 feat(flappy-bird): rebuild with…, GameScene.ts, MenuScene.ts, ResultScene.ts]
 - "js_bootstrap_min_fs_setinitialattributesonchild": "._setInitialAttributesOnChild()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributes(), ._elemIsActive(), ._getInnerElement(), ._getOuterElement(), ._setAttributeIfNotExists()]
 - "lib_gsap_min_d": "_d()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, be(), fa(), ia(), Pd(), oe()]
@@ -50,11 +45,6 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_ctaeemyb_ct_getspeedsetting": ".getSpeedSetting()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.create(), .restartGame(), Ct, .getKey(), .constructor(), .show()]
 - "assets_index_ctaeemyb_ve": "ve" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .create(), .clear(), .constructor(), .processNext(), .show()]
 - "assets_index_ufwfauyg_gt_create": ".create()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .applyBirdSkin(), .createGameOverUI(), .createGlobalControls(), .createInGameHUD(), .createReadyUI()]
-- "build_unityloader_c": "c()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), f(), i(), n(), w()]
-- "build_unityloader_g": "g()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, f(), a(), n(), v(), w()]
-- "build_unityloader_i": "i()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), c(), e(), n(), o()]
-- "build_unityloader_o": "o()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), d(), i(), n(), w()]
-- "build_unityloader_s": "s()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), d(), m(), u(), w()]
 - "entities_ballpillar": "BallPillar.ts" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L1 | neighbors=[bb72e0b feat(change-balls): release v2.…, BallPillar, config.ts, BallColor, COLORS, GameScene.ts]
 - "entities_centralball_centralball_drawglow": ".drawGlow()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L104 | neighbors=[CentralBall, .constructor(), getHeatTierForScore(), .reset(), .switchColor(), .updateScore()]
 - "js_bootstrap_min_n": "N()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, D(), F(), I(), L(), O()]
@@ -64,6 +54,16 @@ one-sentence description — no prose, no markdown fences.
 - "lib_gsap_min_gb": "gb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, fb(), s(), t(), v(), Wa()]
 - "lib_gsap_min_ka": "ka()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, be(), ja(), t(), xa(), za()]
 - "scenes_aboutscene": "AboutScene.ts" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L1 | neighbors=[4042c7c feat(poke): release v2.0.0 rema…, fdf34ba feat: rebuild Hit The Coin with…, AboutScene, config.ts, GAME_CONFIG, main.ts]
+- "scenes_gamescene_gamescene_update": ".update()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L119 | neighbors=[GameScene, .checkCollisions(), .handleKeyboardMovement(), .handlePillarHit(), .updateMobs(), .updatePipes()]
+- "ui_bannermanager_bannermanager": "BannerManager" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L12 | neighbors=[GameScene.ts, BannerManager.ts, .clear(), .constructor(), .processNext(), .show()]
+- "assets_index_b4cljeyc_nt_clearpanicticks": ".clearPanicTicks()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .endGame(), .handleCoinHit(), .init(), .triggerUrgentCountdown()]
+- "assets_index_b4cljeyc_nt_handlecoinhit": ".handleCoinHit()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .clearPanicTicks(), .repositionCoin(), .showFloatingText(), .spawnParticleBurst()]
+- "assets_index_ctaeemyb_ce_createhud": ".createHUD()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create(), .createIconButton(), .getBestScore(), de]
+- "assets_index_ctaeemyb_de_drawheart": ".drawHeart()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .addLife(), .createHearts(), .clear(), .setLives()]
+- "audio_audiomanager_audiomanager_playbgm": ".playBgm()" | kind=code-symbol | source=apps/change-balls/src/audio/AudioManager.ts:L44 | neighbors=[AudioManager, .stopMusic(), .playGameMusic(), .playMenuMusic(), .toggleMusic()]
+- "commit:repo:github.com/naazeri/Game@e7dfc308b5fac5933c0665914a820d82e6412c30": "e7dfc30 add vega game" | kind=Commit | source=git | neighbors=[8ee78eb change Bootstrap to v5.3.1, index-3509133a.js, main, 993d092 add vega link but commented, gsap.min.js]
+- "js_bootstrap_min_fs_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._activate(), ._deactivate(), ._elemIsActive(), ._getActiveElem()]
+- "js_bootstrap_min_ne_getwidth": ".getWidth()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .hide(), .isOverflowing(), ._setElementAttributes(), ._adjustDialog()]
 
 ## Instructions
 

@@ -1,4 +1,4 @@
-# Node Description Batch 7 of 25
+# Node Description Batch 7 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -26,32 +26,16 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "assets_index_ctaeemyb_de_createhearts": ".createHearts()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .constructor(), .drawHeart()] | lang=en
-- "assets_index_ctaeemyb_de_loselife": ".loseLife()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), de, .spawnHeartShatter()] | lang=en
-- "assets_index_ctaeemyb_de_setlives": ".setLives()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .reset(), .drawHeart()] | lang=en
-- "assets_index_ctaeemyb_he_createcontent": ".createContent()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[he, .createCloseButton(), .createStatRow()] | lang=en
-- "assets_index_ctaeemyb_he_show": ".show()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[he, .getBestScore(), .getGamesPlayed()] | lang=en
-- "assets_index_ctaeemyb_kt_constructor": ".constructor()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .drawPivot(), .drawRod()] | lang=en
-- "assets_index_ctaeemyb_kt_drawpivot": ".drawPivot()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .constructor(), .clear()] | lang=en
-- "assets_index_ctaeemyb_kt_drawrod": ".drawRod()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Kt, .constructor(), .clear()] | lang=en
-- "assets_index_ctaeemyb_le_createtopactionbar": ".createTopActionBar()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[le, .create(), .createIconAction()] | lang=en
-- "assets_index_ctaeemyb_ue_activateshield": ".activateShield()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), ue, .clear()] | lang=en
-- "assets_index_ctaeemyb_ue_spawntrailparticle": ".spawnTrailParticle()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ue, Nt(), .update()] | lang=en
-- "assets_index_d2py_agh_et": "et()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L1 | neighbors=[index-D2py_AGH.js, j(), .cycleAmbientColors()] | lang=en
-- "assets_index_d2py_agh_nt_clearmobs": ".clearMobs()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .showMenu(), .startCountdown()] | lang=en
-- "assets_index_d2py_agh_nt_createaboutmodal": ".createAboutModal()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .create(), .createButton()] | lang=en
 - "assets_index_d2py_agh_nt_createbutton": ".createButton()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .createAboutModal(), .createHUD()] | lang=en
 - "assets_index_d2py_agh_nt_createhud": ".createHUD()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .create(), .createButton()] | lang=en
 - "assets_index_ufwfauyg_gt_applybirdskin": ".applyBirdSkin()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create(), .cycleBirdSkin()] | lang=en
 - "assets_index_ufwfauyg_gt_flap": ".flap()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .handleAction(), .startGame()] | lang=en
 - "assets_index_ufwfauyg_gt_handleaction": ".handleAction()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .flap(), .startGame()] | lang=en
 - "assets_index_ufwfauyg_gt_startgame": ".startGame()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .handleAction(), .flap()] | lang=en
-- "build_unityloader_h": "h()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, f(), w()] | lang=en
-- "build_unityloader_m": "m()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, a(), s()] | lang=en
-- "build_unityloader_v": "v()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L2 | neighbors=[UnityLoader.js, f(), g()] | lang=en
 - "commit:repo:github.com/naazeri/Game@07c6be398a252b0331a07df06ee4c77d47f651e5": "07c6be3 add change balls v1.2.1" | kind=Commit | source=git | neighbors=[main, e3d3949 add hit-the-coin gmae, 19f781f add bola game] | lang=en
 - "commit:repo:github.com/naazeri/Game@1270fdf0bb0536382d1c4a761554facc583ae9af": "1270fdf change text and hover color" | kind=Commit | source=git | neighbors=[main, 8ab3175 minify images, d7ef535 Update index.html] | lang=en
 - "commit:repo:github.com/naazeri/Game@19f781f008f5290cc5d83b7953f5c010312888f7": "19f781f add bola game" | kind=Commit | source=git | neighbors=[main, 07c6be3 add change balls v1.2.1, 7d1691c change flappy-bird to GLES2] | lang=en
+- "commit:repo:github.com/naazeri/Game@37be431084c5a7bdcc3d355d5e08259d198626bb": "37be431 add ponge v1.1.3" | kind=Commit | source=git | neighbors=[main, 79daffc add landing page, e3d3949 add hit-the-coin gmae] | lang=en
 - "commit:repo:github.com/naazeri/Game@41bf5e35e0869f59de8626a71a7f69548a18c3fb": "41bf5e3 add bola, flappy, hit the coin images" | kind=Commit | source=git | neighbors=[main, a4c2e32 remove preloader and unused libs, 79daffc add landing page] | lang=en
 - "commit:repo:github.com/naazeri/Game@53277901c1e24f89bb53a3c9f00854533b7704a6": "5327790 add deadzone to flappy bird sky" | kind=Commit | source=git | neighbors=[main, a902dcb Update README.md, 993d092 add vega link but commented] | lang=en
 - "commit:repo:github.com/naazeri/Game@5e62a519e8a77b084d3f9023af64eb0c981febdd": "5e62a51 update change-balls to version 1.3.0" | kind=Commit | source=git | neighbors=[main, fdf34ba feat: rebuild Hit The Coin with…, ebd193e change domain and convert image…] | lang=en
@@ -66,6 +50,22 @@ one-sentence description — no prose, no markdown fences.
 - "commit:repo:github.com/naazeri/Game@a4c2e32222bd9e99704d905756f49a2d644690bf": "a4c2e32 remove preloader and unused libs" | kind=Commit | source=git | neighbors=[41bf5e3 add bola, flappy, hit the coin …, main, a834ef4 add favicon] | lang=en
 - "commit:repo:github.com/naazeri/Game@a834ef4971b93a92d62138accec36ace87cf1ffd": "a834ef4 add favicon" | kind=Commit | source=git | neighbors=[a4c2e32 remove preloader and unused libs, main, bcc967b fix header] | lang=pt
 - "commit:repo:github.com/naazeri/Game@a902dcb640b40bb29c6ac7040d69e9c2f20c5688": "a902dcb Update README.md" | kind=Commit | source=git | neighbors=[5327790 add deadzone to flappy bird sky, main, 60c8c84 Update CNAME] | lang=pt
+- "commit:repo:github.com/naazeri/Game@b3188a4e4cdbeab702f15447ff80c13ba68d998a": "b3188a4 Create CNAME" | kind=Commit | source=git | neighbors=[main, cd3f55a add flappy bird game, ea8f4f5 Initial commit] | lang=pt
+- "commit:repo:github.com/naazeri/Game@b714fad0f3a1c714faa4b102287ed463c4e7cd52": "b714fad chore(memory): initialize Engram knowledge graph and Antigravity agent …" | kind=Commit | source=git | neighbors=[main, a06c4ec chore: remove bola game and upd…, c3fedc4 feat(flappy-bird): release v1.2…] | lang=en
+- "commit:repo:github.com/naazeri/Game@bcc967b0ad878f8c66beacccffe35f5ec830aa22": "bcc967b fix header" | kind=Commit | source=git | neighbors=[a834ef4 add favicon, main, d7ef535 Update index.html] | lang=en
+- "commit:repo:github.com/naazeri/Game@cd3f55a0cf14f975805265ec03e0d10ea82cdb21": "cd3f55a add flappy bird game" | kind=Commit | source=git | neighbors=[b3188a4 Create CNAME, main, 7a5a4cf Update README.md] | lang=pt
+- "commit:repo:github.com/naazeri/Game@d7ef535fb4469a4914d5732d3290ad084ce64975": "d7ef535 Update index.html" | kind=Commit | source=git | neighbors=[bcc967b fix header, main, 1270fdf change text and hover color] | lang=en
+- "commit:repo:github.com/naazeri/Game@e3d39499515f4517bc8299fa3942f2dbddfc0a27": "e3d3949 add hit-the-coin gmae" | kind=Commit | source=git | neighbors=[07c6be3 add change balls v1.2.1, main, 37be431 add ponge v1.1.3] | lang=en
+- "commit:repo:github.com/naazeri/Game@ebd193e532d5857242e3d01f84ea1744cce80547": "ebd193e change domain and convert images to webp" | kind=Commit | source=git | neighbors=[60c8c84 Update CNAME, main, 5e62a51 update change-balls to version …] | lang=en
+- "data_storagemanager_storagemanager_getbestscore": ".getBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L10 | neighbors=[StorageManager, .getKey(), .saveBestScore()] | lang=en
+- "data_storagemanager_storagemanager_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L36 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
+- "data_storagemanager_storagemanager_savebestscore": ".saveBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L16 | neighbors=[StorageManager, .getBestScore(), .getKey()] | lang=en
+- "data_storagemanager_storagemanager_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L31 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
+- "entities_ballpillar_ballpillar_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L24 | neighbors=[BallPillar, .drawPivot(), .drawRod()] | lang=en
+- "entities_centralball_centralball_spawntrailparticle": ".spawnTrailParticle()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L149 | neighbors=[CentralBall, getHeatTierForScore(), .update()] | lang=en
+- "entities_centralball_centralball_updatescore": ".updateScore()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L75 | neighbors=[CentralBall, .drawGlow(), getHeatTierForScore()] | lang=en
+- "js_bootstrap_min_ai_changecontent": ".changeContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._checkContent(), ._getTemplateFactory()] | lang=en
+- "js_bootstrap_min_ai_checkcontent": "._checkContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .changeContent(), ._typeCheckConfig()] | lang=en
 
 ## Instructions
 

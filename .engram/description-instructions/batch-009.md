@@ -1,4 +1,4 @@
-# Node Description Batch 10 of 25
+# Node Description Batch 10 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,22 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "lib_gsap_min_kd": "Kd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ee(), Ld()]
-- "lib_gsap_min_lb": "lb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r(), Wa()]
-- "lib_gsap_min_ob": "ob()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, hb(), r()]
-- "lib_gsap_min_od": "Od()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Sd(), Td()]
-- "lib_gsap_min_oe": "oe()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), ia()]
-- "lib_gsap_min_qa": "qa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), wb()]
-- "lib_gsap_min_sa": "Sa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Aa(), Ra()]
-- "lib_gsap_min_timeline": "Timeline()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _assertThisInitialized(), w()]
-- "lib_gsap_min_u": "u()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ac(), ga()]
-- "lib_gsap_min_ua": "ua()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), wb()]
-- "lib_gsap_min_xe": "xe()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), we()]
-- "lib_gsap_min_za": "za()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ka(), tb()]
-- "scenes_gamescene_gamescene_applybirdskin": ".applyBirdSkin()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L468 | neighbors=[GameScene, .create(), .cycleBirdSkin()]
-- "scenes_gamescene_gamescene_clearmobs": ".clearMobs()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L736 | neighbors=[GameScene, .showMenu(), .startCountdown()]
-- "scenes_gamescene_gamescene_createaboutmodal": ".createAboutModal()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L277 | neighbors=[GameScene, .create(), .createButton()]
-- "scenes_gamescene_gamescene_createbutton": ".createButton()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L240 | neighbors=[GameScene, .createAboutModal(), .createHUD()]
 - "scenes_gamescene_gamescene_flap": ".flap()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L276 | neighbors=[GameScene, .handleAction(), .startGame()]
 - "scenes_gamescene_gamescene_handleaction": ".handleAction()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L219 | neighbors=[GameScene, .flap(), .startGame()]
 - "scenes_gamescene_gamescene_startgame": ".startGame()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L605 | neighbors=[GameScene, .handleAction(), .flap()]
@@ -57,6 +41,22 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_b4cljeyc_nt_showfloatingtext": ".showFloatingText()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .handleCoinHit()]
 - "assets_index_b4cljeyc_nt_spawnparticleburst": ".spawnParticleBurst()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .handleCoinHit()]
 - "assets_index_b4cljeyc_nt_triggerurgentcountdown": ".triggerUrgentCountdown()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .clearPanicTicks()]
+- "assets_index_ctaeemyb_ce_createbackgroundaesthetics": ".createBackgroundAesthetics()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create()]
+- "assets_index_ctaeemyb_ce_createiconbutton": ".createIconButton()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .createHUD()]
+- "assets_index_ctaeemyb_ce_createtwoplayerdivider": ".createTwoPlayerDivider()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create()]
+- "assets_index_ctaeemyb_ce_flipbothpillars": ".flipBothPillars()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .flip()]
+- "assets_index_ctaeemyb_ce_flipleftpillar": ".flipLeftPillar()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .flip()]
+- "assets_index_ctaeemyb_ce_fliprightpillar": ".flipRightPillar()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .flip()]
+- "assets_index_ctaeemyb_ce_init": ".init()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create()]
+- "assets_index_ctaeemyb_ce_setupinputs": ".setupInputs()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create()]
+- "assets_index_ctaeemyb_ce_spawngameovereffect": ".spawnGameOverEffect()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .handleGameOver()]
+- "assets_index_ctaeemyb_ce_spawnmatchparticles": ".spawnMatchParticles()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .handlePillarHit()]
+- "assets_index_ctaeemyb_ct_getcurrentscore": ".getCurrentScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
+- "assets_index_ctaeemyb_ct_ismusicenabled": ".isMusicEnabled()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
+- "assets_index_ctaeemyb_ct_issoundenabled": ".isSoundEnabled()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
+- "assets_index_ctaeemyb_ct_savespeedsetting": ".saveSpeedSetting()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
+- "assets_index_ctaeemyb_ct_setmusicenabled": ".setMusicEnabled()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
+- "assets_index_ctaeemyb_ct_setsoundenabled": ".setSoundEnabled()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey()]
 
 ## Instructions
 

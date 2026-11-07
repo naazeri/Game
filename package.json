@@ -11,6 +11,8 @@
     "dev:poke": "pnpm --filter poke dev",
     "build:poke": "pnpm --filter poke build",
     "dev:change-balls": "pnpm --filter change-balls dev",
-    "build:change-balls": "pnpm --filter change-balls build"
+    "build:change-balls": "pnpm --filter change-balls build",
+    "dev:ponge": "pnpm --filter ponge dev",
+    "build:ponge": "pnpm --filter ponge build"
   }
 }

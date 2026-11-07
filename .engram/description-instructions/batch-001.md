@@ -1,4 +1,4 @@
-# Node Description Batch 2 of 25
+# Node Description Batch 2 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -24,8 +24,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "js_bootstrap_min_gi": "gi" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._addEventListeners(), .constructor(), .Default(), .DefaultType(), .dispose()]
-- "js_bootstrap_min_ne": "Ne" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .show(), ._applyManipulationCallback(), .constructor(), ._disableOverFlow(), .getWidth()]
 - "lib_gsap_min_tween": "Tween()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _assertThisInitialized(), ea(), eb(), gc(), ja()]
 - "assets_index_ctaeemyb_ce_handlepillarhit": ".handlePillarHit()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .handleGameOver(), .spawnMatchParticles(), .addLife(), .getLives(), .loseLife()]
 - "assets_index_ctaeemyb_de": "de" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .createHUD(), .addLife(), .constructor(), .createHearts(), .drawHeart()]
@@ -50,7 +48,6 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_ctaeemyb_he": "he" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .createCloseButton(), .createContent(), .createStatRow(), .getVisible()]
 - "assets_index_ctaeemyb_kt": "Kt" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .create(), .constructor(), .drawPivot(), .drawRod(), .flip()]
 - "assets_index_ctaeemyb_le_create": ".create()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[le, ae, he, .createBackgroundEffects(), .createHalfButton(), .createLogoEmblem()]
-- "build_unityloader_n": "n()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), f(), g(), i(), c()]
 - "commit:repo:github.com/naazeri/Game@c3fedc40348fafff40e7476ded1c75366062ef6d": "c3fedc4 feat(flappy-bird): release v1.2.0 enhanced remake with custom character…" | kind=Commit | source=git | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, index-UfWfaUyg.js, main, b714fad chore(memory): initialize Engra…, vite.config.ts, BootScene.ts]
 - "data_storagemanager": "StorageManager.ts" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L1 | neighbors=[AudioManager.ts, bb72e0b feat(change-balls): release v2.…, StorageManager, config.ts, GameMode, GameScene.ts]
 - "entities_ballpillar_ballpillar": "BallPillar" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L10 | neighbors=[BallPillar.ts, .constructor(), .drawPivot(), .drawRod(), .flip(), .getActiveBallWorldPosition()]
@@ -64,6 +61,9 @@ one-sentence description — no prose, no markdown fences.
 - "ui_statsmodal_statsmodal": "StatsModal" | kind=code-symbol | source=apps/change-balls/src/ui/StatsModal.ts:L6 | neighbors=[MenuScene.ts, StatsModal.ts, .constructor(), .createCloseButton(), .createContent(), .createStatRow()]
 - "ui_texthelper": "TextHelper.ts" | kind=code-symbol | source=apps/change-balls/src/ui/TextHelper.ts:L1 | neighbors=[bb72e0b feat(change-balls): release v2.…, GameScene.ts, MenuScene.ts, AboutModal.ts, BannerManager.ts, GameOverModal.ts]
 - "assets_index_ctaeemyb_ae": "ae" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .createButton(), .createContent(), .getVisible(), .hide()]
+- "commit:repo:github.com/naazeri/Game@0d024c8a1fd991ba158b44d17c0fb269f79a6d04": "0d024c8 feat(flappy-bird): rebuild with phaser 3, typescript and vite" | kind=Commit | source=git | neighbors=[main, c3fedc4 feat(flappy-bird): release v1.2…, vite.config.ts, BootScene.ts, GameScene.ts, config.ts]
+- "js_bootstrap_min_mi": "Mi" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .Default(), .DefaultType(), ._getContent(), ._getContentForTemplate(), ._isWithContent()]
+- "js_bootstrap_min_q": "q" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._configAfterMerge(), .Default(), .DefaultType(), ._getConfig(), ._mergeConfigObj()]
 
 ## Instructions
 

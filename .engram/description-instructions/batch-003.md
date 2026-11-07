@@ -1,4 +1,4 @@
-# Node Description Batch 4 of 25
+# Node Description Batch 4 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,29 +12,11 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "scenes_gamescene_gamescene_update": ".update()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L119 | neighbors=[GameScene, .checkCollisions(), .handleKeyboardMovement(), .handlePillarHit(), .updateMobs(), .updatePipes()]
-- "ui_bannermanager_bannermanager": "BannerManager" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L12 | neighbors=[GameScene.ts, BannerManager.ts, .clear(), .constructor(), .processNext(), .show()]
-- "assets_index_b4cljeyc_nt_clearpanicticks": ".clearPanicTicks()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .endGame(), .handleCoinHit(), .init(), .triggerUrgentCountdown()]
-- "assets_index_b4cljeyc_nt_handlecoinhit": ".handleCoinHit()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .clearPanicTicks(), .repositionCoin(), .showFloatingText(), .spawnParticleBurst()]
-- "assets_index_ctaeemyb_ce_createhud": ".createHUD()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create(), .createIconButton(), .getBestScore(), de]
-- "assets_index_ctaeemyb_de_drawheart": ".drawHeart()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .addLife(), .createHearts(), .clear(), .setLives()]
-- "audio_audiomanager_audiomanager_playbgm": ".playBgm()" | kind=code-symbol | source=apps/change-balls/src/audio/AudioManager.ts:L44 | neighbors=[AudioManager, .stopMusic(), .playGameMusic(), .playMenuMusic(), .toggleMusic()]
-- "commit:repo:github.com/naazeri/Game@37be431084c5a7bdcc3d355d5e08259d198626bb": "37be431 add ponge v1.1.3" | kind=Commit | source=git | neighbors=[main, UnityLoader.js, 79daffc add landing page, UnityProgress.js, e3d3949 add hit-the-coin gmae]
-- "commit:repo:github.com/naazeri/Game@e7dfc308b5fac5933c0665914a820d82e6412c30": "e7dfc30 add vega game" | kind=Commit | source=git | neighbors=[8ee78eb change Bootstrap to v5.3.1, index-3509133a.js, main, 993d092 add vega link but commented, gsap.min.js]
-- "js_bootstrap_min_fs_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._activate(), ._deactivate(), ._elemIsActive(), ._getActiveElem()]
-- "js_bootstrap_min_ne_getwidth": ".getWidth()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .hide(), .isOverflowing(), ._setElementAttributes(), ._adjustDialog()]
 - "js_bootstrap_min_ni_gettitle": "._getTitle()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[._getContentForTemplate(), ._isWithContent(), Ni, ._getContentForTemplate(), ._isWithContent()]
 - "js_bootstrap_min_ni_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._disposePopper(), ._getTipElement(), .eventName(), ._queueCallback()]
 - "js_bootstrap_min_ot_prev": ".prev()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[.constructor(), .dataApiKeydownHandler(), Ot, ._slide(), ._activateParents()]
@@ -64,6 +46,17 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_3509133a_s": "S" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, r(), .constructor(), .draw()]
 - "assets_index_3509133a_t": "T" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, .constructor(), .draw(), .update()]
 - "assets_index_b4cljeyc_it": "It" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .preload()]
+- "assets_index_b4cljeyc_nt_repositioncoin": ".repositionCoin()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .create(), .handleCoinHit(), .handleResize()]
+- "assets_index_b4cljeyc_zt": "zt" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .handleResize()]
+- "assets_index_ctaeemyb_ce_handlegameover": ".handleGameOver()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .spawnGameOverEffect(), .getX(), .handlePillarHit()]
+- "assets_index_ctaeemyb_ct_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
+- "assets_index_ctaeemyb_ct_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
+- "assets_index_ctaeemyb_ct_savebestscore": ".saveBestScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getBestScore(), .getKey(), .show()]
+- "assets_index_ctaeemyb_ct_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
+- "assets_index_ctaeemyb_de_addlife": ".addLife()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), de, .drawHeart(), .spawnHeartSparks()]
+- "assets_index_ctaeemyb_fe_show": ".show()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[fe, .getBestScore(), .saveBestScore(), .saveCurrentScore()]
+- "assets_index_ctaeemyb_kt_flip": ".flip()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.flipBothPillars(), .flipLeftPillar(), .flipRightPillar(), Kt]
+- "assets_index_ctaeemyb_ne": "ne" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .create(), .preload()]
 
 ## Instructions
 

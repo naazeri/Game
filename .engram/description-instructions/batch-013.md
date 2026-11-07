@@ -1,4 +1,4 @@
-# Node Description Batch 14 of 25
+# Node Description Batch 14 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,27 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "js_bootstrap_min_ni_dispose": ".dispose()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._disposePopper()]
-- "js_bootstrap_min_ni_fixtitle": "._fixTitle()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .constructor()]
-- "js_bootstrap_min_ni_getconfig": "._getConfig()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._mergeConfigObj()]
-- "js_bootstrap_min_ni_getcontentfortemplate": "._getContentForTemplate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._getTitle()]
-- "js_bootstrap_min_ni_getdelegateconfig": "._getDelegateConfig()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._initializeOnDelegatedTarget()]
-- "js_bootstrap_min_ni_iswithactivetrigger": "._isWithActiveTrigger()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._leave()]
-- "js_bootstrap_min_ni_iswithcontent": "._isWithContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._getTitle()]
-- "js_bootstrap_min_ni_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .getOrCreateInstance()]
-- "js_bootstrap_min_ni_setcontent": ".setContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._disposePopper()]
-- "js_bootstrap_min_ni_setlisteners": "._setListeners()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .eventName()]
-- "js_bootstrap_min_os_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, .getOrCreateInstance()]
-- "js_bootstrap_min_os_maybeschedulehide": "._maybeScheduleHide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, ._onInteraction()]
-- "js_bootstrap_min_ot_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .cycle()]
-- "js_bootstrap_min_ot_directiontoorder": "._directionToOrder()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._keydown()]
-- "js_bootstrap_min_ot_maybeenablecycle": "._maybeEnableCycle()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .cycle()]
-- "js_bootstrap_min_ot_next": ".next()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._slide()]
-- "js_bootstrap_min_ot_setactiveindicatorelement": "._setActiveIndicatorElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._slide()]
-- "js_bootstrap_min_q_getconfig": "._getConfig()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[q, ._mergeConfigObj()]
-- "js_bootstrap_min_qi_constructor": ".constructor()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Qi, .refresh()]
-- "js_bootstrap_min_qi_getnewobserver": "._getNewObserver()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Qi, .refresh()]
-- "js_bootstrap_min_qi_initializetargetsandobservables": "._initializeTargetsAndObservables()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Qi, .refresh()]
 - "js_bootstrap_min_qi_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Qi, .getOrCreateInstance()]
 - "js_bootstrap_min_qi_maybeenablesmoothscroll": "._maybeEnableSmoothScroll()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Qi, .refresh()]
 - "js_bootstrap_min_rt_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Rt, .getOrCreateInstance()]
@@ -57,6 +36,27 @@ one-sentence description — no prose, no markdown fences.
 - "lib_gsap_min_a": "_a()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, v()]
 - "lib_gsap_min_animation": "Animation()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ra()]
 - "lib_gsap_min_context": "Context()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, cb()]
+- "lib_gsap_min_db": "db()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, eb()]
+- "lib_gsap_min_ee": "ee()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
+- "lib_gsap_min_fc": "Fc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ec()]
+- "lib_gsap_min_gc": "gc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween()]
+- "lib_gsap_min_ie": "ie()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, je()]
+- "lib_gsap_min_jc": "Jc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Lc()]
+- "lib_gsap_min_la": "la()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Q()]
+- "lib_gsap_min_ld": "Ld()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
+- "lib_gsap_min_le": "le()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ke()]
+- "lib_gsap_min_ma": "ma()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, na()]
+- "lib_gsap_min_na": "na()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ma()]
+- "lib_gsap_min_oa": "oa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r()]
+- "lib_gsap_min_q": "Q()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, la()]
+- "lib_gsap_min_sb": "Sb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ha()]
+- "lib_gsap_min_sd": "Sd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Od()]
+- "lib_gsap_min_ta": "ta()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, v()]
+- "lib_gsap_min_tb": "tb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, za()]
+- "lib_gsap_min_td": "Td()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Od()]
+- "lib_gsap_min_ud": "Ud()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, vd()]
+- "lib_gsap_min_vd": "vd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ud()]
+- "lib_gsap_min_ve": "ve()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r()]
 
 ## Instructions
 

@@ -1,4 +1,4 @@
-# Node Description Batch 9 of 25
+# Node Description Batch 9 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -17,22 +17,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "js_bootstrap_min_mi_getcontentfortemplate": "._getContentForTemplate()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Mi, ._getContent(), ._getTitle()]
-- "js_bootstrap_min_mi_iswithcontent": "._isWithContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Mi, ._getContent(), ._getTitle()]
-- "js_bootstrap_min_ne_disableoverflow": "._disableOverFlow()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, ._saveInitialAttribute(), .hide()]
-- "js_bootstrap_min_ne_resetelementattributes": "._resetElementAttributes()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .reset(), ._applyManipulationCallback()]
-- "js_bootstrap_min_ni_enter": "._enter()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._setTimeout(), .toggle()]
-- "js_bootstrap_min_ni_initializeondelegatedtarget": "._initializeOnDelegatedTarget()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._getDelegateConfig(), .getOrCreateInstance()]
-- "js_bootstrap_min_ni_settimeout": "._setTimeout()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._enter(), ._leave()]
-- "js_bootstrap_min_ni_toggle": ".toggle()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._enter(), ._leave()]
-- "js_bootstrap_min_o": "O()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, N(), L()]
-- "js_bootstrap_min_os_dispose": ".dispose()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, ._clearTimeout(), .isShown()]
-- "js_bootstrap_min_os_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, .isShown(), ._queueCallback()]
-- "js_bootstrap_min_os_isshown": ".isShown()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, .dispose(), .hide()]
-- "js_bootstrap_min_os_oninteraction": "._onInteraction()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, ._clearTimeout(), ._maybeScheduleHide()]
-- "js_bootstrap_min_os_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, ._clearTimeout(), ._queueCallback()]
-- "js_bootstrap_min_ot_addeventlisteners": "._addEventListeners()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .isSupported(), ._addTouchEventListeners()]
-- "js_bootstrap_min_ot_addtoucheventlisteners": "._addTouchEventListeners()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._addEventListeners(), at]
 - "js_bootstrap_min_ot_clearinterval": "._clearInterval()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .cycle(), .pause()]
 - "js_bootstrap_min_ot_jqueryinterface": ".jQueryInterface()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .to(), .getOrCreateInstance()]
 - "js_bootstrap_min_ot_keydown": "._keydown()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._directionToOrder(), ._slide()]
@@ -57,6 +41,22 @@ one-sentence description — no prose, no markdown fences.
 - "lib_gsap_min_ew": "Ew()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, cb(), s()]
 - "lib_gsap_min_ga": "ga()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, s(), u()]
 - "lib_gsap_min_hb": "hb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Wa(), ob()]
+- "lib_gsap_min_kd": "Kd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ee(), Ld()]
+- "lib_gsap_min_lb": "lb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r(), Wa()]
+- "lib_gsap_min_ob": "ob()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, hb(), r()]
+- "lib_gsap_min_od": "Od()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Sd(), Td()]
+- "lib_gsap_min_oe": "oe()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), ia()]
+- "lib_gsap_min_qa": "qa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), wb()]
+- "lib_gsap_min_sa": "Sa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Aa(), Ra()]
+- "lib_gsap_min_timeline": "Timeline()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _assertThisInitialized(), w()]
+- "lib_gsap_min_u": "u()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ac(), ga()]
+- "lib_gsap_min_ua": "ua()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), wb()]
+- "lib_gsap_min_xe": "xe()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), we()]
+- "lib_gsap_min_za": "za()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ka(), tb()]
+- "scenes_gamescene_gamescene_applybirdskin": ".applyBirdSkin()" | kind=code-symbol | source=apps/flappy-bird/src/scenes/GameScene.ts:L468 | neighbors=[GameScene, .create(), .cycleBirdSkin()]
+- "scenes_gamescene_gamescene_clearmobs": ".clearMobs()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L736 | neighbors=[GameScene, .showMenu(), .startCountdown()]
+- "scenes_gamescene_gamescene_createaboutmodal": ".createAboutModal()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L277 | neighbors=[GameScene, .create(), .createButton()]
+- "scenes_gamescene_gamescene_createbutton": ".createButton()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L240 | neighbors=[GameScene, .createAboutModal(), .createHUD()]
 
 ## Instructions
 

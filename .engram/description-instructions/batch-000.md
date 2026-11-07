@@ -1,4 +1,4 @@
-# Node Description Batch 1 of 25
+# Node Description Batch 1 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -27,19 +27,18 @@ one-sentence description — no prose, no markdown fences.
 - "lib_gsap_min": "gsap.min.js" | kind=code-symbol | source=vega/lib/gsap.min.js:L1 | neighbors=[e7dfc30 add vega game, _a(), Aa(), Ab(), ac(), Ad()]
 - "scenes_gamescene_gamescene": "GameScene" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L10 | neighbors=[GameScene.ts, .applyBirdSkin(), .checkCollisions(), .clearMobs(), .clearPanicTicks(), .constructor()]
 - "js_bootstrap_min_ni": "Ni" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._configAfterMerge(), .constructor(), ._createPopper(), ._createTipElement(), .Default()]
-- "branch:repo:github.com/naazeri/Game#main": "main" | kind=Branch | source=git | neighbors=[07c6be3 add change balls v1.2.1, 0d024c8 feat(flappy-bird): rebuild with…, 1270fdf change text and hover color, 19f781f add bola game, 37be431 add ponge v1.1.3, 385e2de fix(hit-the-coin): prevent dupl…]
+- "branch:repo:github.com/naazeri/Game#main": "main" | kind=Branch | source=git | neighbors=[07c6be3 add change balls v1.2.1, 0d024c8 feat(flappy-bird): rebuild with…, 1270fdf change text and hover color, 19f781f add bola game, 37acf29 chore(engram): update knowledge…, 37be431 add ponge v1.1.3]
 - "js_bootstrap_min": "bootstrap.min.js" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L1 | neighbors=[79daffc add landing page, 8ee78eb change Bootstrap to v5.3.1, Ai, at, D(), e()]
 - "scenes_gamescene": "GameScene.ts" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L1 | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, 385e2de fix(hit-the-coin): prevent dupl…, 4042c7c feat(poke): release v2.0.0 rema…, bb72e0b feat(change-balls): release v2.…, c3fedc4 feat(flappy-bird): release v1.2…, fdf34ba feat: rebuild Hit The Coin with…]
 - "js_bootstrap_min_ot": "Ot" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._addEventListeners(), ._addTouchEventListeners(), ._clearInterval(), ._configAfterMerge(), .constructor()]
 - "audio_audiomanager_audiomanager": "AudioManager" | kind=code-symbol | source=apps/change-balls/src/audio/AudioManager.ts:L4 | neighbors=[AudioManager.ts, .constructor(), .getInstance(), .init(), .isMusicOn(), .isSoundOn()]
 - "assets_index_ctaeemyb": "index-CTAEEmYb.js" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L1 | neighbors=[ae, at, ce, Ct, de, Et]
 - "assets_index_d2py_agh_nt": "Nt" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[index-D2py_AGH.js, .checkCollisions(), .clearMobs(), .constructor(), .create(), .createAboutModal()]
-- "build_unityloader": "UnityLoader.js" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[a(), b(), c(), d(), e(), f()]
 - "js_bootstrap_min_fe": "fe" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .clearMenus(), ._completeHide(), .constructor(), ._createPopper(), .dataApiKeydownHandler()]
 - "src_main": "main.ts" | kind=code-symbol | source=apps/poke/src/main.ts:L1 | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, 4042c7c feat(poke): release v2.0.0 rema…, bb72e0b feat(change-balls): release v2.…, c3fedc4 feat(flappy-bird): release v1.2…, fdf34ba feat: rebuild Hit The Coin with…, AboutScene.ts]
 - "assets_index_ufwfauyg_gt": "Gt" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[index-UfWfaUyg.js, .applyBirdSkin(), .constructor(), .create(), .createGameOverUI(), .createGlobalControls()]
+- "commit:repo:github.com/naazeri/Game@bb72e0bc9f915f398116d9ed29e7b23f89e42ea9": "bb72e0b feat(change-balls): release v2.0.0 remake with phaser 3, typescript, en…" | kind=Commit | source=git | neighbors=[66591ee chore(titles): clean game title…, index-CTAEEmYb.js, AudioManager.ts, main, vite.config.ts, 37acf29 chore(engram): update knowledge…]
 - "assets_index_ctaeemyb_ce": "ce" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .create(), .createBackgroundAesthetics(), .createHUD(), .createIconButton()]
-- "commit:repo:github.com/naazeri/Game@bb72e0bc9f915f398116d9ed29e7b23f89e42ea9": "bb72e0b feat(change-balls): release v2.0.0 remake with phaser 3, typescript, en…" | kind=Commit | source=git | neighbors=[66591ee chore(titles): clean game title…, index-CTAEEmYb.js, AudioManager.ts, main, vite.config.ts, StorageManager.ts]
 - "js_bootstrap_min_ue": "Ue" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._addEventListeners(), ._adjustDialog(), .constructor(), .Default(), .DefaultType()]
 - "src_config": "config.ts" | kind=code-symbol | source=apps/poke/src/config.ts:L1 | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, 4042c7c feat(poke): release v2.0.0 rema…, bb72e0b feat(change-balls): release v2.…, c3fedc4 feat(flappy-bird): release v1.2…, fdf34ba feat: rebuild Hit The Coin with…, StorageManager.ts]
 - "data_storagemanager_storagemanager": "StorageManager" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L5 | neighbors=[AudioManager.ts, StorageManager.ts, .getBestScore(), .getCurrentScore(), .getGamesPlayed(), .getKey()]
@@ -56,7 +55,6 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_b4cljeyc": "index-B4CLjEYc.js" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L1 | neighbors=[dt, Gt, It, j(), k(), Nt]
 - "assets_index_ctaeemyb_ct": "Ct" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .getBestScore(), .getCurrentScore(), .getGamesPlayed(), .getKey(), .getSpeedSetting()]
 - "assets_index_ctaeemyb_ue": "ue" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .create(), .activateShield(), .bounceAndDecideColor(), .constructor(), .drawGlow()]
-- "build_unityloader_a": "a()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, b(), c(), i(), l(), m()]
 - "entities_centralball_centralball": "CentralBall" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L31 | neighbors=[CentralBall.ts, .activateShield(), .bounceAndDecideColor(), .constructor(), .drawGlow(), .getX()]
 - "js_bootstrap_min_at": "at" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .constructor(), .Default(), .DefaultType(), .dispose(), ._end()]
 - "js_bootstrap_min_os": "Os" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._clearTimeout(), .constructor(), .Default(), .DefaultType(), .dispose()]
@@ -64,6 +62,8 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_b4cljeyc_nt": "Nt" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .clearPanicTicks(), .constructor(), .create(), .endGame(), .handleCoinHit()]
 - "assets_index_ctaeemyb_ct_getkey": ".getKey()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getBestScore(), .getCurrentScore(), .getGamesPlayed(), .getSpeedSetting(), .incrementGamesPlayed()]
 - "data_storagemanager_storagemanager_getkey": ".getKey()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L6 | neighbors=[StorageManager, .getBestScore(), .getCurrentScore(), .getGamesPlayed(), .getSpeedSetting(), .incrementGamesPlayed()]
+- "js_bootstrap_min_gi": "gi" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, ._addEventListeners(), .constructor(), .Default(), .DefaultType(), .dispose()]
+- "js_bootstrap_min_ne": "Ne" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, .show(), ._applyManipulationCallback(), .constructor(), ._disableOverFlow(), .getWidth()]
 
 ## Instructions
 

@@ -1,4 +1,4 @@
-# Node Description Batch 5 of 25
+# Node Description Batch 5 of 24
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -24,17 +24,6 @@ No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "assets_index_b4cljeyc_nt_repositioncoin": ".repositionCoin()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .create(), .handleCoinHit(), .handleResize()]
-- "assets_index_b4cljeyc_zt": "zt" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .handleResize()]
-- "assets_index_ctaeemyb_ce_handlegameover": ".handleGameOver()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .spawnGameOverEffect(), .getX(), .handlePillarHit()]
-- "assets_index_ctaeemyb_ct_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
-- "assets_index_ctaeemyb_ct_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
-- "assets_index_ctaeemyb_ct_savebestscore": ".saveBestScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getBestScore(), .getKey(), .show()]
-- "assets_index_ctaeemyb_ct_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[Ct, .getKey(), .incrementGamesPlayed(), .show()]
-- "assets_index_ctaeemyb_de_addlife": ".addLife()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handlePillarHit(), de, .drawHeart(), .spawnHeartSparks()]
-- "assets_index_ctaeemyb_fe_show": ".show()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[fe, .getBestScore(), .saveBestScore(), .saveCurrentScore()]
-- "assets_index_ctaeemyb_kt_flip": ".flip()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.flipBothPillars(), .flipLeftPillar(), .flipRightPillar(), Kt]
-- "assets_index_ctaeemyb_ne": "ne" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .constructor(), .create(), .preload()]
 - "assets_index_ctaeemyb_nt": "Nt()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .drawGlow(), .spawnTrailParticle(), .updateScore()]
 - "assets_index_ctaeemyb_oe_createcontent": ".createContent()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[oe, .createMediumButton(), .createSaveButton(), .createSmallButton()]
 - "assets_index_ctaeemyb_ue_getx": ".getX()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.handleGameOver(), .handlePillarHit(), .update(), ue]
@@ -45,9 +34,6 @@ one-sentence description — no prose, no markdown fences.
 - "assets_index_d2py_agh_nt_update": ".update()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .checkCollisions(), .handleKeyboardMovement(), .updateMobs()]
 - "assets_index_ufwfauyg_gt_updatepipes": ".updatePipes()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .update(), .triggerNewRecordCelebration(), .updateEnvironmentLighting()]
 - "assets_index_ufwfauyg_it": "It" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[index-UfWfaUyg.js, .constructor(), .create(), .preload()]
-- "build_unityloader_d": "d()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, o(), s(), l()]
-- "build_unityloader_l": "l()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), d(), w()]
-- "build_unityloader_u": "u()" | kind=code-symbol | source=ponge/Build/UnityLoader.js:L1 | neighbors=[UnityLoader.js, a(), f(), s()]
 - "commit:repo:github.com/naazeri/Game@79daffce261c9e5b616beac1bf4ac1be00bf0b0f": "79daffc add landing page" | kind=Commit | source=git | neighbors=[37be431 add ponge v1.1.3, main, 41bf5e3 add bola, flappy, hit the coin …, bootstrap.min.js]
 - "commit:repo:github.com/naazeri/Game@8ee78eb19ca12df9263fa5294ffdce752370e038": "8ee78eb change Bootstrap to v5.3.1" | kind=Commit | source=git | neighbors=[8ab3175 minify images, main, e7dfc30 add vega game, bootstrap.min.js]
 - "data_storagemanager_storagemanager_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L41 | neighbors=[StorageManager, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
@@ -64,6 +50,20 @@ one-sentence description — no prose, no markdown fences.
 - "js_bootstrap_min_ne_setelementattributes": "._setElementAttributes()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .hide(), ._applyManipulationCallback(), .getWidth()]
 - "js_bootstrap_min_ni_createtipelement": "._createTipElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .toHtml(), ._getTemplateFactory(), ._getTipElement()]
 - "js_bootstrap_min_ni_disposepopper": "._disposePopper()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, .dispose(), .setContent(), .show()]
+- "js_bootstrap_min_ni_gettemplatefactory": "._getTemplateFactory()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._createTipElement(), Ai, .changeContent()]
+- "js_bootstrap_min_ni_gettipelement": "._getTipElement()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._createTipElement(), .hide(), .show()]
+- "js_bootstrap_min_ni_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._getTipElement(), .eventName(), ._queueCallback()]
+- "js_bootstrap_min_ni_leave": "._leave()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ni, ._isWithActiveTrigger(), ._setTimeout(), .toggle()]
+- "js_bootstrap_min_os_cleartimeout": "._clearTimeout()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Os, .dispose(), ._onInteraction(), .show()]
+- "js_bootstrap_min_ot_getactive": "._getActive()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._slide(), .to(), ._updateInterval()]
+- "js_bootstrap_min_ot_getitemindex": "._getItemIndex()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._getItems(), ._slide(), .to()]
+- "js_bootstrap_min_ot_getitems": "._getItems()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, ._getItemIndex(), ._slide(), .to()]
+- "js_bootstrap_min_q_mergeconfigobj": "._mergeConfigObj()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[._getConfig(), q, ._getConfig(), ._getConfig()]
+- "js_bootstrap_min_rt_hide": ".hide()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Rt, ._addAriaAndCollapsedClass(), ._getDimension(), ._queueCallback()]
+- "js_bootstrap_min_rt_initializechildren": "._initializeChildren()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Rt, .constructor(), ._addAriaAndCollapsedClass(), ._getFirstLevelChildren()]
+- "js_bootstrap_min_ue_adjustdialog": "._adjustDialog()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ue, .getWidth(), .handleUpdate(), .show()]
+- "js_bootstrap_min_w_eventname": ".eventName()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[.hide(), ._setListeners(), .show(), W]
+- "js_bootstrap_min_we_emulateanimation": "._emulateAnimation()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[we, ._getElement(), .hide(), .show()]
 
 ## Instructions
 

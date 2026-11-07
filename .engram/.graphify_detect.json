@@ -43,8 +43,6 @@
       "packages/shared/src/developer.ts",
       "packages/shared/src/index.ts",
       "poke/assets/index-D2py_AGH.js",
-      "ponge/Build/UnityLoader.js",
-      "ponge/TemplateData/UnityProgress.js",
       "vega/assets/index-3509133a.js",
       "vega/lib/gsap.min.js"
     ],
@@ -68,7 +66,15 @@
       ".engram/description-instructions/batch-013.md",
       ".engram/description-instructions/batch-014.md",
       ".engram/description-instructions/batch-015.md",
-      ".engram/label-instructions/communities.md",
+      ".engram/description-instructions/batch-016.md",
+      ".engram/description-instructions/batch-017.md",
+      ".engram/description-instructions/batch-018.md",
+      ".engram/description-instructions/batch-019.md",
+      ".engram/description-instructions/batch-020.md",
+      ".engram/description-instructions/batch-021.md",
+      ".engram/description-instructions/batch-022.md",
+      ".engram/description-instructions/batch-023.md",
+      ".engram/description-instructions/batch-024.md",
       ".github/workflows/deploy.yml",
       "README.md",
       "apps/change-balls/index.html",
@@ -180,15 +186,7 @@
       "poke/assets/images/icon-white.webp",
       "poke/assets/images/icon.webp",
       "poke/assets/images/pixel.webp",
-      "poke/assets/images/white-glow.webp",
-      "ponge/TemplateData/fullscreen.png",
-      "ponge/TemplateData/progressEmpty.Dark.png",
-      "ponge/TemplateData/progressEmpty.Light.png",
-      "ponge/TemplateData/progressFull.Dark.png",
-      "ponge/TemplateData/progressFull.Light.png",
-      "ponge/TemplateData/progressLogo.Dark.png",
-      "ponge/TemplateData/progressLogo.Light.png",
-      "ponge/TemplateData/webgl-logo.png"
+      "poke/assets/images/white-glow.webp"
     ],
     "video": [
       "apps/change-balls/public/assets/sounds/bgm_game.mp3",
@@ -253,15 +251,15 @@
       "vega/music/startGame.mp3"
     ]
   },
-  "total_files": 243,
-  "total_words": 241042,
+  "total_files": 241,
+  "total_words": 245287,
   "needs_graph": true,
   "warning": null,
   "skipped_sensitive": [],
-  "graphifyignore_patterns": 7,
+  "graphifyignore_patterns": 8,
   "git": {
     "source_owner": "git",
-    "source_hash": "bb72e0bc9f915f398116d9ed29e7b23f89e42ea9",
+    "source_hash": "37acf29c64b204f496f317feda8ec135634ff05c",
     "branches": [
       "main"
     ],
@@ -273,13 +271,13 @@
     "source": "default-auto",
     "root": ".",
     "git_root": ".",
-    "head": "bb72e0bc9f915f398116d9ed29e7b23f89e42ea9",
-    "candidate_count": 290,
-    "included_count": 243,
-    "excluded_untracked_count": 0,
-    "excluded_ignored_count": 74206,
+    "head": "37acf29c64b204f496f317feda8ec135634ff05c",
+    "candidate_count": 298,
+    "included_count": 241,
+    "excluded_untracked_count": 44,
+    "excluded_ignored_count": 79450,
     "excluded_sensitive_count": 0,
-    "missing_committed_count": 0,
+    "missing_committed_count": 16,
     "warnings": [],
     "recommendation": "Use --scope all or graphify.yaml inputs.corpus for a knowledge-base folder."
   }
