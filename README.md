@@ -50,6 +50,8 @@ node smoke.mjs              # end-to-end checks of the assembled site
 
 The bot drives the installed Microsoft Edge (`PW_CHANNEL=chrome` to use Chrome).
 
+Full step-by-step guide (how the bots work, adding a recipe for a new game, encoding settings, quality checklist, troubleshooting): [`tools/media-capture/README.md`](tools/media-capture/README.md).
+
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which builds everything, runs `scripts/assemble-site.mjs` and publishes `_site/` to GitHub Pages.

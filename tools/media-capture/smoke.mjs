@@ -3,7 +3,7 @@
 import { chromium } from 'playwright-core';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:4173';
-const SLUGS = ['ponge', 'poke', 'change-balls', 'flappy-bird', 'hit-the-coin'];
+const SLUGS = ['ponge', 'poke', 'change-balls', 'flappy-bird', 'hit-the-coin', 'vega'];
 const REPO = 'https://github.com/naazeri/Game/tree/main/apps/';
 
 const failures = [];
@@ -29,7 +29,6 @@ check(
   SLUGS.every((s) => cardLinks.includes(`/games/${s}/`)),
   'every card links to /games/<slug>/',
 );
-check(!(await page.content()).includes('/vega'), 'Vega is not listed on the portal');
 check((await page.title()) === 'Game - nazeriland', 'landing page title');
 check(((await page.locator('meta[name=description]').getAttribute('content')) ?? '').length > 40, 'landing page has a meta description');
 
@@ -64,8 +63,6 @@ for (const slug of SLUGS) {
 
 // ---- hidden / legacy / 404 ----
 // (sirv answers unknown paths with an empty 404; GitHub Pages serves /404.html for them, so check that file itself.)
-check((await page.request.get(`${BASE}/games/vega/`)).status() === 404, '/games/vega/ is not published (404)');
-check((await page.request.get(`${BASE}/vega/`)).status() === 200, 'legacy /vega/ is still served');
 check((await page.request.get(`${BASE}/definitely-not-here/`)).status() === 404, 'unknown URL returns 404');
 const notFoundPage = await page.goto(`${BASE}/404.html`);
 check(notFoundPage.ok() && (await page.content()).includes('Back to all games'), 'custom 404.html is generated');

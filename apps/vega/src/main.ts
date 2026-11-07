@@ -30,5 +30,6 @@ const config: Phaser.Types.Core.GameConfig = {
 
 window.addEventListener('load', () => {
   const game = new Phaser.Game(config);
-  (window as unknown as { __game: Phaser.Game }).__game = game;
+  (window as unknown as { __game: Phaser.Game; game: Phaser.Game }).__game = game;
+  (window as unknown as { __game: Phaser.Game; game: Phaser.Game }).game = game;
 });

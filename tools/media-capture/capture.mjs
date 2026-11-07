@@ -194,6 +194,64 @@ const GAMES = {
       }
     },
   },
+
+  vega: {
+    viewport: { width: 1280, height: 720 },
+    ready: 'MenuScene',
+    start: () => [355, 425], // "START MISSION" button in game coordinates
+    recordMs: 9500,
+    trimMs: 500,
+    shotsAt: [2500, 5200, 7800],
+    async bot(c) {
+      let isMouseDown = false;
+      while (!c.stopped()) {
+        const s = await c.page.evaluate(`(() => {
+          const sc = ${GAME}.scene.getScene('GameScene');
+          if (!sc || !sc.scene.isActive() || sc.isGameOver) return null;
+          const enemies = (sc.enemies || []).filter(e => e.active).map(e => ({ x: e.x, y: e.y, r: e.radius, hp: e.hp }));
+          return {
+            enemies,
+            shields: sc.player ? sc.player.shields : 0,
+            bombs: sc.player ? sc.player.empBombs : 0
+          };
+        })()`);
+
+        if (s) {
+          if (!isMouseDown) {
+            await c.page.mouse.down();
+            isMouseDown = true;
+          }
+
+          let target = null;
+          let minDist = Infinity;
+          for (const e of s.enemies) {
+            const d = Math.hypot(e.x - 480, e.y - 300);
+            if (d < minDist) {
+              minDist = d;
+              target = e;
+            }
+          }
+
+          if (target) {
+            const [cx, cy] = c.toClient(target.x, target.y);
+            await c.page.mouse.move(cx, cy);
+          } else {
+            const t = Date.now() / 600;
+            const [cx, cy] = c.toClient(480 + Math.cos(t) * 150, 300 + Math.sin(t) * 150);
+            await c.page.mouse.move(cx, cy);
+          }
+
+          if (s.bombs > 0 && minDist < 90) {
+            await c.page.keyboard.press('Space');
+          }
+        }
+        await sleep(25);
+      }
+      if (isMouseDown) {
+        await c.page.mouse.up();
+      }
+    },
+  },
 };
 
 function ffmpeg(args) {
