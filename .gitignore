@@ -5,9 +5,7 @@ dist/
 _site/
 tools/media-capture/.tmp/
 .astro/
-.engram/cache/
-.engram/studio/
-.engram/20*/
+graphify-out/cache/
 *.local
 
 # Private Remake Documentation

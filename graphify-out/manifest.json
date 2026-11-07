@@ -1,0 +1,1496 @@
+{
+  ".github/workflows/deploy.yml": {
+    "mtime": 1794067515.3728304,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c0689e5af470a3900ddcdd023a964240",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/package.json": {
+    "mtime": 1793999118.4333172,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2aefd4bc76ea68806200a7145a255bf8",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/audio/AudioManager.ts": {
+    "mtime": 1794006475.8146904,
+    "seen": 1794085275.6790385,
+    "ast_hash": "165128bed3ebd7a14e2d0e5aed23588a",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/config.ts": {
+    "mtime": 1794000401.1719935,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9c301eeb7b3cd47fad83af9f1222e30f",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/data/StorageManager.ts": {
+    "mtime": 1793999223.2465837,
+    "seen": 1794085275.6790385,
+    "ast_hash": "355cc4f1695c09930502710bbaced6f3",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/entities/BallPillar.ts": {
+    "mtime": 1794000414.7543972,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b52491bb2f05e02a9af8e6c8b5eb7050",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/entities/CentralBall.ts": {
+    "mtime": 1794002889.8691485,
+    "seen": 1794085275.6790385,
+    "ast_hash": "41b484a501f56cadcd063baad2a70545",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/main.ts": {
+    "mtime": 1794005081.6354578,
+    "seen": 1794085275.6790385,
+    "ast_hash": "96d9c59c9a51e5c07e459c9af992741e",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/scenes/BootScene.ts": {
+    "mtime": 1794005029.3061533,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6702054205cb5043d46046f2de1d924a",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/scenes/GameScene.ts": {
+    "mtime": 1794006410.2537384,
+    "seen": 1794085275.6790385,
+    "ast_hash": "618a2b44373a57bc1549b5ee70dd267e",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/scenes/MenuScene.ts": {
+    "mtime": 1794005098.346521,
+    "seen": 1794085275.6790385,
+    "ast_hash": "36805c5cff645bf0c49a446d378a053d",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/AboutModal.ts": {
+    "mtime": 1794007120.3126106,
+    "seen": 1794085275.6790385,
+    "ast_hash": "af179fb937dfd2988f01332f63958921",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/BannerManager.ts": {
+    "mtime": 1794002734.4870026,
+    "seen": 1794085275.6790385,
+    "ast_hash": "833431d11dd81f00779a6266ad68febc",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/GameOverModal.ts": {
+    "mtime": 1794004982.6046712,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4c8150ed6a41c723ef4d564bde876d55",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/HeartsUI.ts": {
+    "mtime": 1794006373.6206808,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ed224cfd363a5754c3e373e3760c064c",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/SettingsModal.ts": {
+    "mtime": 1794005002.852686,
+    "seen": 1794085275.6790385,
+    "ast_hash": "97a023c4b4bd92ae033433f1eb3a6458",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/StatsModal.ts": {
+    "mtime": 1794005007.9275072,
+    "seen": 1794085275.6790385,
+    "ast_hash": "04a39dff8c8f85bb96cee755fbf0d025",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/src/ui/TextHelper.ts": {
+    "mtime": 1794001222.9477353,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2a352d2b488f82073b70f4abe537d291",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/tsconfig.json": {
+    "mtime": 1793999123.030103,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6657c444d03f116d8e877c5326e33750",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/vite.config.ts": {
+    "mtime": 1793999127.7195249,
+    "seen": 1794085275.6790385,
+    "ast_hash": "99befb8e55ab13c84b3b4c434340c5bd",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/package.json": {
+    "mtime": 1793922486.8727238,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b70a371fb272c4e0ad458e33b86703c3",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/src/config.ts": {
+    "mtime": 1793922471.948159,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ddfb171e6a884b4749962777cc4b1350",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/src/main.ts": {
+    "mtime": 1793922444.616407,
+    "seen": 1794085275.6790385,
+    "ast_hash": "39fbeb46f5e843e872d08560ba4eba08",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/src/scenes/BootScene.ts": {
+    "mtime": 1793925750.0769732,
+    "seen": 1794085275.6790385,
+    "ast_hash": "750f36e1e5dcddebb649439711effc7b",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/src/scenes/GameScene.ts": {
+    "mtime": 1793925809.602976,
+    "seen": 1794085275.6790385,
+    "ast_hash": "5fd629506aec0280bf836f5fe346d65b",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/test/e2e.cjs": {
+    "mtime": 1793918268.900756,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c6de42db2026d4901477f3309b0a6be9",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/tsconfig.json": {
+    "mtime": 1793917992.4830117,
+    "seen": 1794085275.6790385,
+    "ast_hash": "62fc1929773c5cb92490a8045226fa87",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/vite.config.ts": {
+    "mtime": 1793921384.925543,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a4a802c40911ffa391e7b51f44c87804",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/package.json": {
+    "mtime": 1793929748.4794383,
+    "seen": 1794085275.6790385,
+    "ast_hash": "bb4d2d7532f754e499ee8d2e56015e84",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/scripts/generate-sfx.cjs": {
+    "mtime": 1793916098.065653,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4dedefca05a1a7e757d4fafd9544f1a3",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/config.ts": {
+    "mtime": 1793913399.722595,
+    "seen": 1794085275.6790385,
+    "ast_hash": "43a30116aa4e811c9d747d421f59d46d",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/main.ts": {
+    "mtime": 1793913419.5085402,
+    "seen": 1794085275.6790385,
+    "ast_hash": "766af11fb444a69c1e434191ca41a4cb",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/scenes/AboutScene.ts": {
+    "mtime": 1793929776.5058742,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4fd32bdac36952e474da57056b862698",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/scenes/BootScene.ts": {
+    "mtime": 1793914509.9346695,
+    "seen": 1794085275.6790385,
+    "ast_hash": "36017632c0245abc2ac6f88eb3898ff0",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/scenes/GameScene.ts": {
+    "mtime": 1793917439.8092158,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6953ed924bcc823eba621a7223965d47",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/scenes/MenuScene.ts": {
+    "mtime": 1793917418.6216903,
+    "seen": 1794085275.6790385,
+    "ast_hash": "69b3cccc05d523fc608a86c743811843",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/src/scenes/ResultScene.ts": {
+    "mtime": 1793917434.0287967,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e957751365db95e8bd7d0d5d65d8cc16",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/test/e2e.cjs": {
+    "mtime": 1793917491.274041,
+    "seen": 1794085275.6790385,
+    "ast_hash": "dccceb0400e6022f7fae5d55a258d360",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/tsconfig.json": {
+    "mtime": 1793911357.0665228,
+    "seen": 1794085275.6790385,
+    "ast_hash": "62fc1929773c5cb92490a8045226fa87",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/vite.config.ts": {
+    "mtime": 1793911361.4492943,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a4a802c40911ffa391e7b51f44c87804",
+    "semantic_hash": ""
+  },
+  "apps/poke/package.json": {
+    "mtime": 1793929809.1491787,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c486eed306162cef21060dfa464f3f4e",
+    "semantic_hash": ""
+  },
+  "apps/poke/src/config.ts": {
+    "mtime": 1793995849.98574,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a2819476984fc6ea8db22e01153900dc",
+    "semantic_hash": ""
+  },
+  "apps/poke/src/main.ts": {
+    "mtime": 1793995262.9584506,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a19eed77de17fc5f1be1dd060afcfb50",
+    "semantic_hash": ""
+  },
+  "apps/poke/src/scenes/BootScene.ts": {
+    "mtime": 1793929907.1280878,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2dd8d62e871c646ee8d81010c54595a8",
+    "semantic_hash": ""
+  },
+  "apps/poke/src/scenes/GameScene.ts": {
+    "mtime": 1793931849.6365502,
+    "seen": 1794085275.6790385,
+    "ast_hash": "401b7100e67640d4302e85005300aebb",
+    "semantic_hash": ""
+  },
+  "apps/poke/tsconfig.json": {
+    "mtime": 1793929814.910861,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6657c444d03f116d8e877c5326e33750",
+    "semantic_hash": ""
+  },
+  "apps/poke/vite.config.ts": {
+    "mtime": 1793929821.3443663,
+    "seen": 1794085275.6790385,
+    "ast_hash": "99befb8e55ab13c84b3b4c434340c5bd",
+    "semantic_hash": ""
+  },
+  "apps/ponge/package.json": {
+    "mtime": 1794009218.4290297,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0ec30a24b628295f3c65b9ff18a89b1a",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/audio/AudioManager.ts": {
+    "mtime": 1794015939.6415384,
+    "seen": 1794085275.6790385,
+    "ast_hash": "16603444ce40d3e298d275880f38baa7",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/config.ts": {
+    "mtime": 1794015771.3318994,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c6ed9412750e8f1184569c37bc0781c8",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/main.ts": {
+    "mtime": 1794009585.2552896,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e44c62483d5d042f9fe41694f11f3fea",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/objects/AIPaddle.ts": {
+    "mtime": 1794016001.0009055,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c01d7f32bdbcab0c7bd2b179be143284",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/objects/Ball.ts": {
+    "mtime": 1794015983.7053864,
+    "seen": 1794085275.6790385,
+    "ast_hash": "17e5f01fe37ad7b2b2f55e872fe36ff0",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/objects/Paddle.ts": {
+    "mtime": 1794015962.3794613,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9efacf9ab5a3fc6c52eb8cc0dda47bfc",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/objects/PlayerPaddle.ts": {
+    "mtime": 1794009383.6523323,
+    "seen": 1794085275.6790385,
+    "ast_hash": "30ee9145328961aebc9d0ef5a4308646",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/objects/PowerUp.ts": {
+    "mtime": 1794015798.6080582,
+    "seen": 1794085275.6790385,
+    "ast_hash": "63951fb62d384f00dca200e33a7c5067",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/scenes/BootScene.ts": {
+    "mtime": 1794009494.4171267,
+    "seen": 1794085275.6790385,
+    "ast_hash": "382aefe236a66583b694ab010d8f96d4",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/scenes/GameScene.ts": {
+    "mtime": 1794017824.2784126,
+    "seen": 1794085275.6790385,
+    "ast_hash": "f2162be49457ffca0d75ec2a31579a83",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/scenes/MenuScene.ts": {
+    "mtime": 1794009517.7569034,
+    "seen": 1794085275.6790385,
+    "ast_hash": "40c5edd885b08bd12099cc443a0b5380",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/ui/AboutModal.ts": {
+    "mtime": 1794009436.6501758,
+    "seen": 1794085275.6790385,
+    "ast_hash": "57beabd0736b7e36d8dfcd7d628d7358",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/ui/GameOverModal.ts": {
+    "mtime": 1794016086.1880424,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e4c7192d996aaaf0e6ec4b2a71e0dc2f",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/ui/HelpModal.ts": {
+    "mtime": 1794016192.2683089,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1c43ecc35463bd512820c3e214f82954",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/ui/SettingsModal.ts": {
+    "mtime": 1794017797.3194757,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ffbab9dcfb9adea120168a8b4e1fe84d",
+    "semantic_hash": ""
+  },
+  "apps/ponge/src/ui/TextHelper.ts": {
+    "mtime": 1794015065.0753205,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9df5fc81f5b99d1339a522f951e4db92",
+    "semantic_hash": ""
+  },
+  "apps/ponge/tsconfig.json": {
+    "mtime": 1794009226.6030245,
+    "seen": 1794085275.6790385,
+    "ast_hash": "77cc6f713285da11b92b9656d50d7a62",
+    "semantic_hash": ""
+  },
+  "apps/ponge/vite.config.ts": {
+    "mtime": 1794009233.7108612,
+    "seen": 1794085275.6790385,
+    "ast_hash": "99befb8e55ab13c84b3b4c434340c5bd",
+    "semantic_hash": ""
+  },
+  "apps/portal/astro.config.mjs": {
+    "mtime": 1794067053.9011507,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4b5fda8fc47672e849feadd6ef320551",
+    "semantic_hash": ""
+  },
+  "apps/portal/package.json": {
+    "mtime": 1794067481.2553625,
+    "seen": 1794085275.6790385,
+    "ast_hash": "681c47d802c030a98c0129af7c6ae945",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/components/Footer.astro": {
+    "mtime": 1794067274.7452037,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a90fe9f799ac631ad0d6b98f826de6db",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/components/GameCard.astro": {
+    "mtime": 1794067274.904631,
+    "seen": 1794085275.6790385,
+    "ast_hash": "cce6025493f6eca2a64a5d72ffc2667c",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/components/Header.astro": {
+    "mtime": 1794067274.5967314,
+    "seen": 1794085275.6790385,
+    "ast_hash": "d2b90ef662c62feb67e3af67395488ee",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/content.config.ts": {
+    "mtime": 1794067874.6568637,
+    "seen": 1794085275.6790385,
+    "ast_hash": "54100103036bb40e69b7033796fa2925",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/content/games.json": {
+    "mtime": 1794082662.3976383,
+    "seen": 1794085275.6790385,
+    "ast_hash": "335fd91a70b312782a8cb84c015704a2",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/layouts/Base.astro": {
+    "mtime": 1794067274.4395711,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c38e7d29f8239832c5486ac3357fbda1",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/lib/games.ts": {
+    "mtime": 1794067874.5237584,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b75666ddd2c1420d6619cd424a151faf",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/pages/404.astro": {
+    "mtime": 1794067300.784842,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e174fb1635c09aba52da02cc7f5ac047",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/pages/games/[slug].astro": {
+    "mtime": 1794067300.5871072,
+    "seen": 1794085275.6790385,
+    "ast_hash": "915a6f14592072818f59cccf09feb34a",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/pages/index.astro": {
+    "mtime": 1794069733.248328,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1b3af5f98e160ad9447f8924715a5e00",
+    "semantic_hash": ""
+  },
+  "apps/portal/tsconfig.json": {
+    "mtime": 1794067054.0336685,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1d3613ac08bdda17e2b82251613dbc21",
+    "semantic_hash": ""
+  },
+  "apps/vega/package.json": {
+    "mtime": 1794073674.8786087,
+    "seen": 1794085275.6790385,
+    "ast_hash": "75efe455bafb435c1d919f34dbe28af3",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/audio/AudioManager.ts": {
+    "mtime": 1794074248.366911,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2a0d6cb89d201e0902dac449b77e796b",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/config.ts": {
+    "mtime": 1794082250.305787,
+    "seen": 1794085275.6790385,
+    "ast_hash": "de16707962709ff70524215bf16b65c7",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/main.ts": {
+    "mtime": 1794091469.389892,
+    "seen": 1794091969.0679078,
+    "ast_hash": "61a82be97a43c59c96b4476f1c8b0092",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/objects/Enemy.ts": {
+    "mtime": 1794082284.934445,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4681b6bca2725469f5ef48998d3cece4",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/objects/PlayerCore.ts": {
+    "mtime": 1794073841.566166,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a305c5d709204a7193ac0b081bc04d4a",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/objects/PowerUpCrystal.ts": {
+    "mtime": 1794073822.7271304,
+    "seen": 1794085275.6790385,
+    "ast_hash": "7001602f61d2441a37f605768fd5afd5",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/objects/Projectile.ts": {
+    "mtime": 1794073789.8810778,
+    "seen": 1794085275.6790385,
+    "ast_hash": "eab4de1068bf86bbaa7e5f8928b1e250",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/objects/Starfield.ts": {
+    "mtime": 1794073775.2337487,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6721fafc9221b391e8fec2cfbf4614e7",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/scenes/BootScene.ts": {
+    "mtime": 1794073956.901353,
+    "seen": 1794085275.6790385,
+    "ast_hash": "31f0d18906f1788be0ed8c9b59eaa0e5",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/scenes/GameScene.ts": {
+    "mtime": 1794082485.374501,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6b845c773de5f1d1dd7670e3a13a92dd",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/scenes/MenuScene.ts": {
+    "mtime": 1794082368.2091541,
+    "seen": 1794085275.6790385,
+    "ast_hash": "071f2fdb908eabaf95bf0388b3b47849",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/ui/AboutModal.ts": {
+    "mtime": 1794074251.609895,
+    "seen": 1794085275.6790385,
+    "ast_hash": "254913c6fd9d2221a3dfee9a090e7c59",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/ui/GameOverModal.ts": {
+    "mtime": 1794073948.4099083,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4aa7c9e47e6ac743dcf6932f7202dd49",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/ui/HelpModal.ts": {
+    "mtime": 1794074272.879029,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b5b1e61c8f1080d64db1b60e8b9d7fa4",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/ui/SettingsModal.ts": {
+    "mtime": 1794074276.6063013,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0bea16a447d2a799ddadf13efb7f0dbf",
+    "semantic_hash": ""
+  },
+  "apps/vega/src/ui/TextHelper.ts": {
+    "mtime": 1794073743.3687637,
+    "seen": 1794085275.6790385,
+    "ast_hash": "306aa2e8b79aba5abc06594fb81e68a8",
+    "semantic_hash": ""
+  },
+  "apps/vega/tsconfig.json": {
+    "mtime": 1794073687.6613047,
+    "seen": 1794085275.6790385,
+    "ast_hash": "77cc6f713285da11b92b9656d50d7a62",
+    "semantic_hash": ""
+  },
+  "apps/vega/vite.config.ts": {
+    "mtime": 1794073681.213284,
+    "seen": 1794085275.6790385,
+    "ast_hash": "99befb8e55ab13c84b3b4c434340c5bd",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1794073713.6265247,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0dc746936e9e897b8fe14992374805f7",
+    "semantic_hash": ""
+  },
+  "packages/shared/package.json": {
+    "mtime": 1793929722.1156416,
+    "seen": 1794085275.6790385,
+    "ast_hash": "eae5f5ed1d83f822d826ffbc1b465d28",
+    "semantic_hash": ""
+  },
+  "packages/shared/src/developer.ts": {
+    "mtime": 1793929728.5130284,
+    "seen": 1794085275.6790385,
+    "ast_hash": "cf6d8231393455d1d3e96cf03b889cd7",
+    "semantic_hash": ""
+  },
+  "packages/shared/src/index.ts": {
+    "mtime": 1793929733.0526154,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2f61d4bb3aeea1e7933518bee34b6efa",
+    "semantic_hash": ""
+  },
+  "packages/shared/tsconfig.json": {
+    "mtime": 1793929737.4447794,
+    "seen": 1794085275.6790385,
+    "ast_hash": "014240601ef96b83b44a1228c6a5bc35",
+    "semantic_hash": ""
+  },
+  "pnpm-workspace.yaml": {
+    "mtime": 1793911467.4016643,
+    "seen": 1794085275.6790385,
+    "ast_hash": "59915d573117c490bb1ee46224d91dab",
+    "semantic_hash": ""
+  },
+  "scripts/assemble-site.mjs": {
+    "mtime": 1794082668.0516102,
+    "seen": 1794085275.6790385,
+    "ast_hash": "5a28c1d401780f8f70f0a9c1c3aebb75",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/capture.mjs": {
+    "mtime": 1794091491.0474582,
+    "seen": 1794091969.0679078,
+    "ast_hash": "874c64ceb79baa7021738a89dec3cc44",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/package.json": {
+    "mtime": 1794067628.055913,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3754fcd799b305f26e3c3587b9eb04a4",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/pnpm-workspace.yaml": {
+    "mtime": 1794067644.6191955,
+    "seen": 1794085275.6790385,
+    "ast_hash": "799118048540081d5125b63ad5d29799",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/smoke.mjs": {
+    "mtime": 1794091684.9674275,
+    "seen": 1794091969.0679078,
+    "ast_hash": "c74af6a42625cd9c2dd535348f7dabb5",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1794091322.002971,
+    "seen": 1794091969.0679078,
+    "ast_hash": "85db55846b71ab2ffb94cee13600541f",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/index.html": {
+    "mtime": 1794006184.051033,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1942125869c2b92fdc1e9bbc6a6a34a1",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/index.html": {
+    "mtime": 1793922423.2963438,
+    "seen": 1794085275.6790385,
+    "ast_hash": "d7f4dacb556b5e556aa676be3df7710e",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/index.html": {
+    "mtime": 1793913431.4150882,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ac0fdcdc81490df412ba0ccb0f0e2439",
+    "semantic_hash": ""
+  },
+  "apps/poke/index.html": {
+    "mtime": 1793998099.0437956,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2a2cc9214be61d14cd7353035bb4d0de",
+    "semantic_hash": ""
+  },
+  "apps/ponge/index.html": {
+    "mtime": 1794009844.8296485,
+    "seen": 1794085275.6790385,
+    "ast_hash": "276b74d1dee7786ee21fb11f7faf4a62",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/robots.txt": {
+    "mtime": 1794067300.9216733,
+    "seen": 1794085275.6790385,
+    "ast_hash": "77da323d7546d3c341ad5b26e4f44af5",
+    "semantic_hash": ""
+  },
+  "apps/vega/index.html": {
+    "mtime": 1794073697.0325012,
+    "seen": 1794085275.6790385,
+    "ast_hash": "75c1c9ca42b03c2ebe870f4a3f6cfda3",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/images/black_ball.png": {
+    "mtime": 1793908438.1432288,
+    "seen": 1794085275.6790385,
+    "ast_hash": "508d0a151f3d58f672c42327c3d20228",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/images/icon.jpg": {
+    "mtime": 1793908438.1258976,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9f0e9ccbf68d221e3e342007069998b9",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/images/white_ball.png": {
+    "mtime": 1793908438.1588602,
+    "seen": 1794085275.6790385,
+    "ast_hash": "21b428a19880b995ab50c6b6b3545bc4",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/favicon-32x32.png": {
+    "mtime": 1794006144.3473432,
+    "seen": 1794085275.6790385,
+    "ast_hash": "dc091c6dd978a7fa8691258300882804",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/favicon.svg": {
+    "mtime": 1794006142.3495955,
+    "seen": 1794085275.6790385,
+    "ast_hash": "99c6923f7c334a6647070686121f0df1",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/PlayButton.png": {
+    "mtime": 1793908451.441506,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6306b36e6bf6cd8fd81caf2eadf07c4d",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/background.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c53c2b95aed16d595a46e48195df3943",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/bird.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6339c8a542b134a11fa532ff94fceb5e",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/bird_icon.png": {
+    "mtime": 1793908451.477062,
+    "seen": 1794085275.6790385,
+    "ast_hash": "bea72c4f74ff0eca2a26e1b95fdd837d",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/car.png": {
+    "mtime": 1793925114.2031095,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a2c29c09c9211b94ce490ac14651cd2b",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/cursor.png": {
+    "mtime": 1793922396.41232,
+    "seen": 1794085275.6790385,
+    "ast_hash": "425512ab1274ea76cf21c4a60c265e30",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/cursor_pointer.png": {
+    "mtime": 1793922396.41232,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0ff8bca05f8114f5de6b0d1763c9f642",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/gameover.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6da2eb086f2f3a4c883d2e55b3798284",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/ground.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "53d79fdfe8ed1a0af3702ad57553a098",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/medal_bronze.png": {
+    "mtime": 1793918074.360743,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3535bbc0c5d5752871120f594e2f1cc3",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/medal_gold.png": {
+    "mtime": 1793918074.3774552,
+    "seen": 1794085275.6790385,
+    "ast_hash": "af39e2970ce8bcc1c4ad7ae2abab21b4",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/medal_platinum.png": {
+    "mtime": 1793918074.3774552,
+    "seen": 1794085275.6790385,
+    "ast_hash": "da9a36a4c7b2b0a0ca58cdf97b76d4e2",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/medal_silver.png": {
+    "mtime": 1793918074.3774552,
+    "seen": 1794085275.6790385,
+    "ast_hash": "32f9e9528927903b33dfdf4b3f295f48",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/message.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b6db6f1804511d0e42b4119a0d46ec1e",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/pipe.png": {
+    "mtime": 1793908451.457152,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1dcea5233bf217b8f288913de7bcd1f9",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/images/ufo.png": {
+    "mtime": 1793925667.623147,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e571e3c60dbdb0da9cc579bf1217fcde",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/images/Coin_Spin_1.png": {
+    "mtime": 1793908459.1933587,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ac3c26a81239ea4478e049a2f54a7a5e",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/images/Coin_Spin_2.png": {
+    "mtime": 1793908459.1933587,
+    "seen": 1794085275.6790385,
+    "ast_hash": "615989038f67447e3ece8a791dede36f",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/images/Coin_Spin_3.png": {
+    "mtime": 1793908459.2022588,
+    "seen": 1794085275.6790385,
+    "ast_hash": "748b57a31b4ac8b91e0743f4651993a4",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/images/Coin_Spin_4.png": {
+    "mtime": 1793908459.2022588,
+    "seen": 1794085275.6790385,
+    "ast_hash": "7274ac677efce34d80cf3a6b99757c7b",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/images/pixel.png": {
+    "mtime": 1793908459.2232437,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ce21cbdd9b894e6af794813eb3fdaf60",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/cursor.png": {
+    "mtime": 1793922396.41232,
+    "seen": 1794085275.6790385,
+    "ast_hash": "425512ab1274ea76cf21c4a60c265e30",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/cursor_pointer.png": {
+    "mtime": 1793922396.41232,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0ff8bca05f8114f5de6b0d1763c9f642",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/dog-run-1.webp": {
+    "mtime": 1793995232.668166,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c9f57e72da4f421f6dc477d894b6ed24",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/dog-run-2.webp": {
+    "mtime": 1793995232.7183688,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4065a1470b41d02f1fc24ce1521aad35",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/dog-run-3.webp": {
+    "mtime": 1793995232.762293,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0677fe8751367b7845fdf5ccb4e978f8",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamster-1.webp": {
+    "mtime": 1793929495.625293,
+    "seen": 1794085275.6790385,
+    "ast_hash": "807f358eef81466b9294c25ba7f4d34d",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamster-2.webp": {
+    "mtime": 1793929495.625293,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4cf6fefac4981c8bada26242fdbbeeec",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamster-3.webp": {
+    "mtime": 1793929495.625293,
+    "seen": 1794085275.6790385,
+    "ast_hash": "588ef0d81e278e9ae2ecc6f9640885fd",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamster-4.webp": {
+    "mtime": 1793929495.625293,
+    "seen": 1794085275.6790385,
+    "ast_hash": "412d391d8e1e9ea22064648a3685f8c1",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamtaro-1.webp": {
+    "mtime": 1793929495.63897,
+    "seen": 1794085275.6790385,
+    "ast_hash": "61f8fccc8ed0e77b8969a06a142ae7fe",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/hamtaro-2.webp": {
+    "mtime": 1793929495.642148,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ddad4d16bd170d49b4a913ff46c2aa06",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/icon-white.webp": {
+    "mtime": 1793929495.642148,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4694e7ef656179ef22037eae30b856da",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/icon.webp": {
+    "mtime": 1793929495.642148,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3e05f38c62a36c0e7862a3b3bbfd43cb",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/pixel.webp": {
+    "mtime": 1793929495.642148,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3ad5ad5c4e608d26ef7725b5fb860d35",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/images/white-glow.webp": {
+    "mtime": 1793929495.661588,
+    "seen": 1794085275.6790385,
+    "ast_hash": "dff17dcb4ceaac8fc16a5abf661d3ccc",
+    "semantic_hash": ""
+  },
+  "apps/ponge/public/favicon-32x32.png": {
+    "mtime": 1794009260.225897,
+    "seen": 1794085275.6790385,
+    "ast_hash": "06731086942bcafdfb1d7120af114aab",
+    "semantic_hash": ""
+  },
+  "apps/ponge/public/favicon.svg": {
+    "mtime": 1794009260.2208955,
+    "seen": 1794085275.6790385,
+    "ast_hash": "f64e94268861b25def01c473ecfac38b",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/android-chrome-192x192.png": {
+    "mtime": 1793907476.210562,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b08fe01f30408ed185e02065bb82f777",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/android-chrome-512x512.png": {
+    "mtime": 1793907476.2262588,
+    "seen": 1794085275.6790385,
+    "ast_hash": "5b53c76ce84fcbd3f34582351e32fef5",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/apple-touch-icon.png": {
+    "mtime": 1793907476.2262588,
+    "seen": 1794085275.6790385,
+    "ast_hash": "f8bddb1fbe4fcd8f1fa06f7dd1e7efd5",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/favicon-16x16.png": {
+    "mtime": 1793907476.4944558,
+    "seen": 1794085275.6790385,
+    "ast_hash": "45bfac40577cd569d60c99c0f2c4367e",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/favicon-32x32.png": {
+    "mtime": 1793907476.4944558,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1ac3554fa36b5c13cf3d7e12e024cb8c",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/change-balls/poster.webp": {
+    "mtime": 1794068102.174375,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e830ecc08d4bfc8c838f5c3cba14834f",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/flappy-bird/poster.webp": {
+    "mtime": 1794068143.275477,
+    "seen": 1794085275.6790385,
+    "ast_hash": "242deea957188a821a6f749d549c0d22",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/hit-the-coin/poster.webp": {
+    "mtime": 1794068177.7914248,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a2e649b83f2929b4a8a8b41e223a6c03",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/poke/poster.webp": {
+    "mtime": 1794068075.6058407,
+    "seen": 1794085275.6790385,
+    "ast_hash": "bfe124d5494690aaaa41995869873053",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/ponge/poster.webp": {
+    "mtime": 1794068021.0094674,
+    "seen": 1794085275.6790385,
+    "ast_hash": "d0022b514cff48d9c99fea04f9962d18",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/change-balls/shot-1.webp": {
+    "mtime": 1794068102.5592,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9406509b8ac2118ae8b66ed12fa76c58",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/change-balls/shot-2.webp": {
+    "mtime": 1794068102.8062904,
+    "seen": 1794085275.6790385,
+    "ast_hash": "388400379a22149acd2ca50b084a4c49",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/change-balls/shot-3.webp": {
+    "mtime": 1794068103.209706,
+    "seen": 1794085275.6790385,
+    "ast_hash": "fe6b6e62f254c426c53ecfa3d75eeabb",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/change-balls/thumb.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4ba4b6ae1b80a6303713a238d395cdc1",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/flappy-bird/shot-1.webp": {
+    "mtime": 1794068143.3910294,
+    "seen": 1794085275.6790385,
+    "ast_hash": "eb8b3d54aef932589f342c80855c699c",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/flappy-bird/shot-2.webp": {
+    "mtime": 1794068143.5077245,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6e65071e43efdaa286c117b64f389268",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/flappy-bird/shot-3.webp": {
+    "mtime": 1794068143.6261106,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0753d78ed69b4e9b15c0a2d0a4129674",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/flappy-bird/thumb.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "112c98573da17f8d8415eeba6ea25c3b",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/hit-the-coin/shot-1.webp": {
+    "mtime": 1794068178.025141,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c0553a1864099bc0f3973519dd7bc6ab",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/hit-the-coin/shot-2.webp": {
+    "mtime": 1794068178.2746203,
+    "seen": 1794085275.6790385,
+    "ast_hash": "981edb67a24584abb994363a5462d8ce",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/hit-the-coin/shot-3.webp": {
+    "mtime": 1794068178.5079782,
+    "seen": 1794085275.6790385,
+    "ast_hash": "555bd9a94d4c0d5f8c49f8b47612ac43",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/hit-the-coin/thumb.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "14b3b16a6adfaa103ea08c845b82b55c",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/poke/shot-1.webp": {
+    "mtime": 1794068075.8759372,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e31a9797d28a1a7798b75fffd5914b39",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/poke/shot-2.webp": {
+    "mtime": 1794068076.1578841,
+    "seen": 1794085275.6790385,
+    "ast_hash": "76881d8fbb856a288068789609770422",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/poke/shot-3.webp": {
+    "mtime": 1794068076.4075089,
+    "seen": 1794085275.6790385,
+    "ast_hash": "7edb61f1450f0ebf4359415525108515",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/poke/thumb.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c2bc29f54e69840716cba34dc404d5c0",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/ponge/shot-1.webp": {
+    "mtime": 1794068021.27399,
+    "seen": 1794085275.6790385,
+    "ast_hash": "bc5a23be442e0fecece4c83ddb05989e",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/ponge/shot-2.webp": {
+    "mtime": 1794068021.5258315,
+    "seen": 1794085275.6790385,
+    "ast_hash": "0244f7d8969ec81c741111a5a810a041",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/ponge/shot-3.webp": {
+    "mtime": 1794068021.7741494,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9ac5408dd2d09d3c615f194baf614beb",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/ponge/thumb.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "de11372e20cf5571afb57932e5b9363e",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/vega/shot-1.webp": {
+    "mtime": 1794091787.1593704,
+    "seen": 1794091969.0679078,
+    "ast_hash": "1c1c4337b3387956357397513ee18f2e",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/vega/shot-2.webp": {
+    "mtime": 1794091787.3937066,
+    "seen": 1794091969.0679078,
+    "ast_hash": "c7338b8bdd83463288249bb470d8aca3",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/vega/shot-3.webp": {
+    "mtime": 1794091787.6287608,
+    "seen": 1794091969.0679078,
+    "ast_hash": "566794739ee277ab1d796e57403b325f",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/games/vega/thumb.webp": {
+    "mtime": 1794082615.372882,
+    "seen": 1794085275.6790385,
+    "ast_hash": "11c529e1ab45553d1123a521667bfffe",
+    "semantic_hash": ""
+  },
+  "apps/portal/src/assets/profile.webp": {
+    "mtime": 1793907476.2418127,
+    "seen": 1794085275.6790385,
+    "ast_hash": "4bb4ea5cd94b5d681f0e064abad663aa",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/favicon-32x32.png": {
+    "mtime": 1794009260.225897,
+    "seen": 1794085275.6790385,
+    "ast_hash": "06731086942bcafdfb1d7120af114aab",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/favicon.svg": {
+    "mtime": 1794073660.993057,
+    "seen": 1794085275.6790385,
+    "ast_hash": "5c2cc068fe7773924f1dbbb3b7d249fc",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/bgm_game.mp3": {
+    "mtime": 1793914439.3506236,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c21366529f3f616f3bb3067395cbcb67",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/bgm_menu.mp3": {
+    "mtime": 1793914435.4745746,
+    "seen": 1794085275.6790385,
+    "ast_hash": "541dadf6766a682a39c075d1215412eb",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/color_switch.wav": {
+    "mtime": 1793999088.6053553,
+    "seen": 1794085275.6790385,
+    "ast_hash": "1abe385200d30bd89a39d8c227a87d8f",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/game_over.wav": {
+    "mtime": 1793999088.6189342,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9348bf9caa427db56524fe95bc1da233",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/heart_break.wav": {
+    "mtime": 1794006313.325379,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b75766900d2f72d2503b89d5f2354dc2",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/heart_up.wav": {
+    "mtime": 1794006313.2960353,
+    "seen": 1794085275.6790385,
+    "ast_hash": "262704c294be433cffa5ec0ef6a70672",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/match.wav": {
+    "mtime": 1793999088.5800505,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9a79fe054247f6b1d0df900647da1e68",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/rotate.wav": {
+    "mtime": 1793999088.5590448,
+    "seen": 1794085275.6790385,
+    "ast_hash": "fbd44cb9bff2de01f636f8fa385f9146",
+    "semantic_hash": ""
+  },
+  "apps/change-balls/public/assets/sounds/ui_click.wav": {
+    "mtime": 1793999088.6273222,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6797eb1e68619bafc0ef76efc448db07",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/bgm_play.mp3": {
+    "mtime": 1793914439.3506236,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c21366529f3f616f3bb3067395cbcb67",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/die.wav": {
+    "mtime": 1793908451.425988,
+    "seen": 1794085275.6790385,
+    "ast_hash": "16436c886c305a4bb2f8aa04e0e00919",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/hit.wav": {
+    "mtime": 1793908451.441506,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3cf321a7a65534a5abd59dc9aacae746",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/point.wav": {
+    "mtime": 1793908451.441506,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e1458a87070cab0b76f245fbcacc334b",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/swoosh.wav": {
+    "mtime": 1793918059.4280093,
+    "seen": 1794085275.6790385,
+    "ast_hash": "fc7b02040d2bea565fa89081747d25a8",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/ufo_beam.wav": {
+    "mtime": 1793925730.1638339,
+    "seen": 1794085275.6790385,
+    "ast_hash": "6f08bc9f593fccff55f8b25e8e152e3a",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/ui_click.wav": {
+    "mtime": 1793916105.19646,
+    "seen": 1794085275.6790385,
+    "ast_hash": "35b2d936b356555b917b40ede707d0b6",
+    "semantic_hash": ""
+  },
+  "apps/flappy-bird/public/assets/sounds/wing.wav": {
+    "mtime": 1793908451.441506,
+    "seen": 1794085275.6790385,
+    "ast_hash": "802e8685100ebd33c49630e01407641e",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/bgm_game.mp3": {
+    "mtime": 1793914439.3506236,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c21366529f3f616f3bb3067395cbcb67",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/bgm_menu.mp3": {
+    "mtime": 1793914435.4745746,
+    "seen": 1794085275.6790385,
+    "ast_hash": "541dadf6766a682a39c075d1215412eb",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/coin.wav": {
+    "mtime": 1793908459.2242901,
+    "seen": 1794085275.6790385,
+    "ast_hash": "021a8dbf8ad9201f9845229d4177629b",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/fail.wav": {
+    "mtime": 1793908459.2242901,
+    "seen": 1794085275.6790385,
+    "ast_hash": "9b4070251408e75b6e9d241ebcc2b97d",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/tick.wav": {
+    "mtime": 1793916105.207832,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c2482ef18931f67432eac2e15da65ea7",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/ui_click.wav": {
+    "mtime": 1793916105.19646,
+    "seen": 1794085275.6790385,
+    "ast_hash": "35b2d936b356555b917b40ede707d0b6",
+    "semantic_hash": ""
+  },
+  "apps/hit-the-coin/public/assets/sounds/ui_hover.wav": {
+    "mtime": 1793916105.177461,
+    "seen": 1794085275.6790385,
+    "ast_hash": "b6800b27ffb4726b6f69ed58132318a1",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/sounds/bgm.ogg": {
+    "mtime": 1793929505.3979218,
+    "seen": 1794085275.6790385,
+    "ast_hash": "09820ed7e0c85e7d8a0a074b585b96ab",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/sounds/boom.wav": {
+    "mtime": 1793929865.2770026,
+    "seen": 1794085275.6790385,
+    "ast_hash": "cfe3af2dbb5d0f2fb39c547b330cb5fd",
+    "semantic_hash": ""
+  },
+  "apps/poke/public/assets/sounds/ui_click.wav": {
+    "mtime": 1793916105.19646,
+    "seen": 1794085275.6790385,
+    "ast_hash": "35b2d936b356555b917b40ede707d0b6",
+    "semantic_hash": ""
+  },
+  "apps/ponge/public/assets/sounds/bounce1.wav": {
+    "mtime": 1793908447.337456,
+    "seen": 1794085275.6790385,
+    "ast_hash": "3d8264290b29931e0abc2de4c6290588",
+    "semantic_hash": ""
+  },
+  "apps/ponge/public/assets/sounds/bounce2.wav": {
+    "mtime": 1793908447.337456,
+    "seen": 1794085275.6790385,
+    "ast_hash": "91395b01539802123b73784ca169a487",
+    "semantic_hash": ""
+  },
+  "apps/ponge/public/assets/sounds/explosion.wav": {
+    "mtime": 1793908447.3441255,
+    "seen": 1794085275.6790385,
+    "ast_hash": "bb0d2374b0d0972944458f9c7de8697d",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/change-balls/clip.mp4": {
+    "mtime": 1794068101.879938,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c33544821612e4a0dc1116f01f867fa5",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/change-balls/clip.webm": {
+    "mtime": 1794068099.674589,
+    "seen": 1794085275.6790385,
+    "ast_hash": "c1cf0f11c65f580d7b1f77bf689dbd55",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/flappy-bird/clip.mp4": {
+    "mtime": 1794068143.1065483,
+    "seen": 1794085275.6790385,
+    "ast_hash": "72217b02a6d19f8a7c5a96b50a42180b",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/flappy-bird/clip.webm": {
+    "mtime": 1794068139.4270504,
+    "seen": 1794085275.6790385,
+    "ast_hash": "63afb3a138fb975b0350e0e2cebdd5ad",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/hit-the-coin/clip.mp4": {
+    "mtime": 1794068177.5079298,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2d4968f61ce09de91a05ad62c85de8a6",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/hit-the-coin/clip.webm": {
+    "mtime": 1794068172.3084788,
+    "seen": 1794085275.6790385,
+    "ast_hash": "a4f43df1b3d26a78ad69632e576aab8e",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/poke/clip.mp4": {
+    "mtime": 1794068075.3242483,
+    "seen": 1794085275.6790385,
+    "ast_hash": "ae8b9a79e0fa323e8b74c3e51778638b",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/poke/clip.webm": {
+    "mtime": 1794068071.590889,
+    "seen": 1794085275.6790385,
+    "ast_hash": "2be192ae39de76c917fd146191ee3c52",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/ponge/clip.mp4": {
+    "mtime": 1794068020.7742531,
+    "seen": 1794085275.6790385,
+    "ast_hash": "39584b7d50bdd1e0890990e4b6a129f3",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/ponge/clip.webm": {
+    "mtime": 1794068018.1937227,
+    "seen": 1794085275.6790385,
+    "ast_hash": "8b4786792508470d4ed28283d8010f0f",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/backgroundMusic.mp3": {
+    "mtime": 1793908455.6762426,
+    "seen": 1794085275.6790385,
+    "ast_hash": "66aae2643e7e00c208cf22517d0011d9",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/endGame.mp3": {
+    "mtime": 1793908455.67786,
+    "seen": 1794085275.6790385,
+    "ast_hash": "5fc17740badb106de59d3260d37b6710",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/enemyEliminated.mp3": {
+    "mtime": 1793908455.6810036,
+    "seen": 1794085275.6790385,
+    "ast_hash": "253c33924ea467ee804e58dceba0409d",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/enemyHit.mp3": {
+    "mtime": 1793908455.681498,
+    "seen": 1794085275.6790385,
+    "ast_hash": "8b02a8a1e9552af05eceaa3c37c7add2",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/shoot.mp3": {
+    "mtime": 1793908455.681498,
+    "seen": 1794085275.6790385,
+    "ast_hash": "f5bde685159091ea426581cd53145198",
+    "semantic_hash": ""
+  },
+  "apps/vega/public/assets/sounds/startGame.mp3": {
+    "mtime": 1793908455.681498,
+    "seen": 1794085275.6790385,
+    "ast_hash": "e1cf0713d627b80aff4c8733783acd65",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/README.md": {
+    "mtime": 1794091312.3951018,
+    "seen": 1794091969.0679078,
+    "ast_hash": "0d718a08fa413c821380e1f07a1ac0b4",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/vega/poster.webp": {
+    "mtime": 1794091786.8989832,
+    "seen": 1794091969.0679078,
+    "ast_hash": "8e48e3d4780e271cf432b0dcf054ccbf",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/vega/clip.mp4": {
+    "mtime": 1794091786.4792068,
+    "seen": 1794091969.0704918,
+    "ast_hash": "f50c5b67c7a7c4bd78dce8e382460152",
+    "semantic_hash": ""
+  },
+  "apps/portal/public/media/vega/clip.webm": {
+    "mtime": 1794091783.1435542,
+    "seen": 1794091969.0704918,
+    "ast_hash": "e4512c787286989db8ce1859fa7354fd",
+    "semantic_hash": ""
+  },
+  "pnpm-lock.yaml": {
+    "mtime": 1794073724.8966582,
+    "seen": 1794085275.6790385,
+    "ast_hash": "733bdd9e297d31e0bf664bfc2fda21ef",
+    "semantic_hash": ""
+  },
+  "tools/media-capture/pnpm-lock.yaml": {
+    "mtime": 1794067638.1059117,
+    "seen": 1794085275.6790385,
+    "ast_hash": "7e9b61321f9a524421df56e930c83e08",
+    "semantic_hash": ""
+  }
+}
