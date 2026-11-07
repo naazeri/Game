@@ -285,24 +285,24 @@ export class GameScene extends Phaser.Scene {
     // Boss Health Bar (Hidden until boss wave)
     this.bossBarContainer = this.add.container(GAME_WIDTH / 2, 60).setVisible(false);
     const bossBarBg = this.add.graphics();
-    bossBarBg.fillStyle(0x0e1422, 0.9);
-    bossBarBg.fillRoundedRect(-140, -10, 280, 20, 4);
-    bossBarBg.lineStyle(1.5, 0xef4444, 0.8);
-    bossBarBg.strokeRoundedRect(-140, -10, 280, 20, 4);
+    bossBarBg.fillStyle(0x070b14, 0.95);
+    bossBarBg.fillRoundedRect(-150, -11, 300, 22, 6);
+    bossBarBg.lineStyle(1.5, 0xef4444, 0.85);
+    bossBarBg.strokeRoundedRect(-150, -11, 300, 22, 6);
     this.bossBarFill = this.add.graphics();
-    this.bossBarLabel = createCrispText(this, 0, 0, 'DREADNOUGHT WARSHIP', {
+    this.bossBarLabel = createCrispText(this, 0, 0, 'DREADNOUGHT WARSHIP [100%]', {
       fontFamily: FONTS.RETRO,
-      fontSize: '10px',
+      fontSize: '11px',
       color: '#ffffff',
     }).setOrigin(0.5);
     this.bossBarContainer.add([bossBarBg, this.bossBarFill, this.bossBarLabel]);
     this.hudContainer.add(this.bossBarContainer);
 
-    // 3. TOP-RIGHT: Shields, EMP Bombs, Pause, Menu
+    // 3. TOP-RIGHT: Shields, EMP Bombs, Fullscreen, Pause, Settings
     const rightBox = this.add.container(GAME_WIDTH - 20, 24);
 
     // Shields display
-    this.shieldsContainer = this.add.container(-220, 0);
+    this.shieldsContainer = this.add.container(-255, 0);
     const shieldLabel = createCrispText(this, -55, 0, 'SHIELD', {
       fontFamily: FONTS.RETRO,
       fontSize: '11px',
@@ -312,7 +312,7 @@ export class GameScene extends Phaser.Scene {
     rightBox.add(this.shieldsContainer);
 
     // EMP Bombs display
-    this.empContainer = this.add.container(-110, 0);
+    this.empContainer = this.add.container(-150, 0);
     const empLabel = createCrispText(this, -45, 0, 'EMP', {
       fontFamily: FONTS.RETRO,
       fontSize: '11px',
@@ -321,12 +321,35 @@ export class GameScene extends Phaser.Scene {
     this.empContainer.add(empLabel);
     rightBox.add(this.empContainer);
 
+    // Fullscreen button
+    const fsBtn = this.createHeaderButton(-66, 0, this.scale.isFullscreen ? '🗗' : '⛶', () => {
+      if (this.scale.isFullscreen) {
+        this.scale.stopFullscreen();
+      } else {
+        this.scale.startFullscreen();
+      }
+    });
+    rightBox.add(fsBtn);
+
+    const updateFsIcon = () => {
+      const fsLabel = fsBtn.getByName('btn_label') as Phaser.GameObjects.Text;
+      if (fsLabel) {
+        fsLabel.setText(this.scale.isFullscreen ? '🗗' : '⛶');
+      }
+    };
+    this.scale.on(Phaser.Scale.Events.ENTER_FULLSCREEN, updateFsIcon);
+    this.scale.on(Phaser.Scale.Events.LEAVE_FULLSCREEN, updateFsIcon);
+    this.events.once('shutdown', () => {
+      this.scale.off(Phaser.Scale.Events.ENTER_FULLSCREEN, updateFsIcon);
+      this.scale.off(Phaser.Scale.Events.LEAVE_FULLSCREEN, updateFsIcon);
+    });
+
     // Pause button
-    const pauseBtn = this.createHeaderButton(-30, 0, '⏸', () => this.togglePause());
+    const pauseBtn = this.createHeaderButton(-33, 0, '⏸', () => this.togglePause());
     rightBox.add(pauseBtn);
 
-    // Menu button
-    const menuBtn = this.createHeaderButton(10, 0, '⚙', () => {
+    // Settings button
+    const menuBtn = this.createHeaderButton(0, 0, '⚙', () => {
       this.isPaused = true;
       this.settingsModal.show();
     });
@@ -447,7 +470,7 @@ export class GameScene extends Phaser.Scene {
       fontFamily: 'sans-serif',
       fontSize: '14px',
       color: '#00f0ff',
-    }).setOrigin(0.5);
+    }).setOrigin(0.5).setName('btn_label');
     btn.add(label);
 
     const hit = this.add.rectangle(0, 0, 28, 28, 0, 0).setInteractive({ useHandCursor: true });
@@ -726,9 +749,11 @@ export class GameScene extends Phaser.Scene {
     if (this.activeDreadnought && this.activeDreadnought.active) {
       this.bossBarContainer.setVisible(true);
       const hpRatio = Math.max(0, this.activeDreadnought.hp / this.activeDreadnought.maxHp);
+      const hpPct = Math.round(hpRatio * 100);
       this.bossBarFill.clear();
       this.bossBarFill.fillStyle(0xef4444, 0.9);
-      this.bossBarFill.fillRoundedRect(-138, -8, 276 * hpRatio, 16, 3);
+      this.bossBarFill.fillRoundedRect(-148, -9, 296 * hpRatio, 18, 4);
+      this.bossBarLabel.setText(`DREADNOUGHT WARSHIP [${hpPct}%]`);
     } else {
       this.bossBarContainer.setVisible(false);
       this.activeDreadnought = null;
@@ -893,7 +918,7 @@ export class GameScene extends Phaser.Scene {
         const offsetAng = Phaser.Math.FloatBetween(0, Math.PI * 2);
         const fragX = enemy.x + Math.cos(offsetAng) * 15;
         const fragY = enemy.y + Math.sin(offsetAng) * 15;
-        const frag = new Enemy(this, fragX, fragY, EnemyType.Asteroid, true);
+        const frag = new Enemy(this, fragX, fragY, EnemyType.Asteroid, true, this.wave);
         this.enemies.push(frag);
       }
     }
@@ -955,16 +980,28 @@ export class GameScene extends Phaser.Scene {
   // POWER-UPS
   // ==========================================
   private spawnPowerUp(x: number, y: number, specificType?: PowerUpType): void {
-    const types = [
-      PowerUpType.Triple,
-      PowerUpType.Railgun,
-      PowerUpType.Homing,
-      PowerUpType.ShieldHeal,
-      PowerUpType.EmpBomb,
-      PowerUpType.ChronoFreeze,
-    ];
+    let type: PowerUpType;
+    if (specificType) {
+      type = specificType;
+    } else {
+      const roll = Math.random();
+      const canShield = this.player.shields < PLAYER_CONFIG.maxShields;
+      // ShieldHeal is rare (6%) and strictly impossible if player already has full shields
+      if (canShield && roll < 0.06) {
+        type = PowerUpType.ShieldHeal;
+      } else if (roll < 0.31) {
+        type = PowerUpType.Triple;
+      } else if (roll < 0.54) {
+        type = PowerUpType.Railgun;
+      } else if (roll < 0.76) {
+        type = PowerUpType.Homing;
+      } else if (roll < 0.90) {
+        type = PowerUpType.ChronoFreeze;
+      } else {
+        type = PowerUpType.EmpBomb;
+      }
+    }
 
-    const type = specificType ?? types[Phaser.Math.Between(0, types.length - 1)];
     const crystal = new PowerUpCrystal(this, x, y, type);
     this.powerUps.push(crystal);
   }
@@ -1135,7 +1172,7 @@ export class GameScene extends Phaser.Scene {
       else type = EnemyType.Asteroid;
     }
 
-    const enemy = new Enemy(this, x, y, type);
+    const enemy = new Enemy(this, x, y, type, false, this.wave);
     this.enemies.push(enemy);
     this.enemiesSpawnedThisWave++;
 
@@ -1144,7 +1181,18 @@ export class GameScene extends Phaser.Scene {
       const bossAng = angle + Math.PI;
       const bx = CENTER_X + Math.cos(bossAng) * (spawnDist + 50);
       const by = CENTER_Y + Math.sin(bossAng) * (spawnDist + 50);
-      const boss = new Enemy(this, bx, by, EnemyType.Dreadnought);
+      const boss = new Enemy(this, bx, by, EnemyType.Dreadnought, false, this.wave);
+      
+      // Dreadnought launches counter-threats towards the core
+      boss.onFireCounter = (bossX, bossY) => {
+        if (!this.isGameOver && !this.isPaused) {
+          this.audio.playMissileEffect();
+          const frag = new Enemy(this, bossX, bossY, EnemyType.Drone, false, this.wave);
+          this.enemies.push(frag);
+          this.showFloatingCombatText(bossX, bossY - 24, 'COUNTER DRONE DEPLOYED!', '#ef4444', 12);
+        }
+      };
+
       this.enemies.push(boss);
       this.activeDreadnought = boss;
       this.showWaveBanner('WARNING: DREADNOUGHT WARSHIP!', '#ef4444');
@@ -1166,14 +1214,21 @@ export class GameScene extends Phaser.Scene {
     this.waveText.setText(`SECTOR ${this.wave}`);
     this.enemiesSpawnedThisWave = 0;
     this.enemiesToSpawnThisWave = 10 + this.wave * 3;
-    this.spawnInterval = Math.max(0.65, 1.4 - this.wave * 0.08);
+    this.spawnInterval = Math.max(0.38, 1.25 - this.wave * 0.09);
     this.isWaveInProgress = true;
 
-    // Spawn bonus Power-Up crystal each sector
+    // Spawn bonus offensive Weapon crystal each sector (NEVER free shield)
     const pAng = Math.random() * Math.PI * 2;
     const px = CENTER_X + Math.cos(pAng) * 220;
     const py = CENTER_Y + Math.sin(pAng) * 220;
-    this.spawnPowerUp(px, py);
+    const offensiveGifts = [
+      PowerUpType.Triple,
+      PowerUpType.Railgun,
+      PowerUpType.Homing,
+      PowerUpType.ChronoFreeze,
+    ];
+    const waveGift = offensiveGifts[Phaser.Math.Between(0, offensiveGifts.length - 1)];
+    this.spawnPowerUp(px, py, waveGift);
 
     this.showWaveBanner(`SECTOR ${this.wave}: ENEMY INCOMING`, '#00f0ff');
   }

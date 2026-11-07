@@ -13,7 +13,7 @@ export const PLAYER_CONFIG = {
   maxEmpBombs: 3,
   startingEmpBombs: 1,
   fireRate: 0.18, // seconds between blaster shots (~5.5 shots/sec)
-  invulnerabilityDuration: 1.6, // seconds after taking a hit
+  invulnerabilityDuration: 1.0, // seconds after taking a hit (tighter recovery)
 };
 
 export enum WeaponType {

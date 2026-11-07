@@ -11,6 +11,7 @@ Everything lives in this monorepo (pnpm workspaces): each game is a Phaser 3 + T
 | Change Balls | [/games/change-balls/](https://game.nazeriland.ir/games/change-balls/) | [`apps/change-balls`](apps/change-balls) |
 | Flappy Bird | [/games/flappy-bird/](https://game.nazeriland.ir/games/flappy-bird/) | [`apps/flappy-bird`](apps/flappy-bird) |
 | Hit The Coin | [/games/hit-the-coin/](https://game.nazeriland.ir/games/hit-the-coin/) | [`apps/hit-the-coin`](apps/hit-the-coin) |
+| Vega | [/games/vega/](https://game.nazeriland.ir/games/vega/) | [`apps/vega`](apps/vega) |
 
 ## Layout
 
@@ -20,7 +21,6 @@ Everything lives in this monorepo (pnpm workspaces): each game is a Phaser 3 + T
 - `packages/shared` – shared code (developer info used by every game).
 - `scripts/assemble-site.mjs` – combines the portal and every game build into `_site/`, which is what gets deployed.
 - `tools/media-capture` – dev-only bot that plays each game to record the portal's clips and screenshots (not part of the workspace).
-- `vega/` – legacy build, still served at `/vega/` but not listed on the portal.
 
 ## Commands
 

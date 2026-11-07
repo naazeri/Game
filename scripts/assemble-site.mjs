@@ -13,7 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, '_site');
 const appsDir = path.join(root, 'apps');
 const PORTAL = 'portal';
-const LEGACY = ['vega'];
+const LEGACY = [];
 
 function fail(message) {
   console.error(`assemble-site: ${message}`);

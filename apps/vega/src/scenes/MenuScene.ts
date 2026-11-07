@@ -54,11 +54,11 @@ export class MenuScene extends Phaser.Scene {
     this.spawnAttractAsteroids();
 
     // Title container
-    const titleContainer = this.add.container(cx, 130).setDepth(10);
+    const titleContainer = this.add.container(cx, 105).setDepth(10);
 
     const titleGlow = createCrispText(this, 0, 0, 'VEGA', {
       fontFamily: FONTS.RETRO,
-      fontSize: '76px',
+      fontSize: '72px',
       color: '#00ffff',
       stroke: '#005577',
       strokeThickness: 8,
@@ -66,13 +66,13 @@ export class MenuScene extends Phaser.Scene {
 
     const titleMain = createCrispText(this, 0, 0, 'VEGA', {
       fontFamily: FONTS.RETRO,
-      fontSize: '76px',
+      fontSize: '72px',
       color: '#ffffff',
     }).setOrigin(0.5);
 
-    const subtitle = createCrispText(this, 0, 52, '— ORBITAL DEFENSE —', {
+    const subtitle = createCrispText(this, 0, 48, '— ORBITAL DEFENSE —', {
       fontFamily: FONTS.RETRO,
-      fontSize: '15px',
+      fontSize: '14px',
       color: '#7f9bc8',
       stroke: '#000000',
       strokeThickness: 2,
@@ -94,7 +94,7 @@ export class MenuScene extends Phaser.Scene {
     // Best Score Display
     const bestScore = parseInt(localStorage.getItem('vega_best_score') || '0', 10);
     if (bestScore > 0) {
-      const bestText = createCrispText(this, cx, 195, `HIGH SCORE: ${bestScore.toLocaleString()}`, {
+      createCrispText(this, cx, 180, `★ HIGH SCORE: ${bestScore.toLocaleString()} ★`, {
         fontFamily: FONTS.RETRO,
         fontSize: '13px',
         color: '#ffdd00',
@@ -103,28 +103,33 @@ export class MenuScene extends Phaser.Scene {
       }).setOrigin(0.5).setDepth(10);
     }
 
-    // Menu Buttons Container
-    const menuButtons = this.add.container(cx, 310).setDepth(10);
+    // 2-Column Balanced Menu Buttons
+    const btnW = 230;
+    const btnH = 42;
+    const colLeftX = -125;
+    const colRightX = 125;
+    const row1Y = 425;
+    const row2Y = 485;
 
-    // 1. START MISSION
-    const startBtn = this.createMenuButton(0, 0, 260, 48, 'START MISSION', 0x00ffff, 0x0a1a33, true, () => {
+    const menuButtons = this.add.container(cx, 0).setDepth(10);
+
+    // Left Column
+    const startBtn = this.createMenuButton(colLeftX, row1Y, btnW, btnH + 4, 'START MISSION', 0x00ffff, 0x0a1a33, true, () => {
       this.startGame();
     });
 
-    // 2. HOW TO PLAY
-    const helpBtn = this.createMenuButton(0, 60, 260, 42, 'HOW TO PLAY', 0x4a9eff, 0x0d152a, false, () => {
+    const helpBtn = this.createMenuButton(colLeftX, row2Y, btnW, btnH, 'HOW TO PLAY', 0x4a9eff, 0x0d152a, false, () => {
       this.audio.play('startGame');
       this.helpModal.show();
     });
 
-    // 3. SETTINGS
-    const settingsBtn = this.createMenuButton(0, 114, 260, 42, 'SETTINGS', 0xa855f7, 0x160f2a, false, () => {
+    // Right Column
+    const settingsBtn = this.createMenuButton(colRightX, row1Y, btnW, btnH + 4, 'SETTINGS', 0xa855f7, 0x160f2a, false, () => {
       this.audio.play('startGame');
       this.settingsModal.show();
     });
 
-    // 4. ABOUT & CREDITS
-    const aboutBtn = this.createMenuButton(0, 168, 260, 42, 'ABOUT & CREDITS', 0x64748b, 0x111726, false, () => {
+    const aboutBtn = this.createMenuButton(colRightX, row2Y, btnW, btnH, 'ABOUT & CREDITS', 0x64748b, 0x111726, false, () => {
       this.audio.play('startGame');
       this.aboutModal.show();
     });
@@ -166,29 +171,29 @@ export class MenuScene extends Phaser.Scene {
   }
 
   private createTopBar(): void {
-    const bar = this.add.container(GAME_WIDTH - 20, 20).setDepth(20);
+    const bar = this.add.container(GAME_WIDTH - 24, 24).setDepth(20);
 
     // Sound toggle
-    const soundBtn = this.add.container(-40, 0);
+    const soundBtn = this.add.container(-42, 0);
     const sGfx = this.add.graphics();
     this.drawIconBtn(sGfx, this.audio.isSoundMuted() ? 0x666666 : 0x00ffff);
     soundBtn.add(sGfx);
 
-    const sLabel = createCrispText(this, 0, 0, this.audio.isSoundMuted() ? 'MUTED' : 'SFX', {
+    const sLabel = createCrispText(this, 0, 0, this.audio.isSoundMuted() ? 'MUT' : 'SFX', {
       fontFamily: FONTS.RETRO,
       fontSize: '10px',
       color: this.audio.isSoundMuted() ? '#666666' : '#00ffff',
     }).setOrigin(0.5);
     soundBtn.add(sLabel);
 
-    const sHit = this.add.rectangle(0, 0, 36, 36, 0, 0).setInteractive({ useHandCursor: true });
+    const sHit = this.add.rectangle(0, 0, 32, 32, 0, 0).setInteractive({ useHandCursor: true });
     soundBtn.add(sHit);
     sHit.on('pointerdown', () => {
       const isMuted = !this.audio.isSoundMuted();
       this.audio.setSoundMuted(isMuted);
       sGfx.clear();
       this.drawIconBtn(sGfx, isMuted ? 0x666666 : 0x00ffff);
-      sLabel.setText(isMuted ? 'MUTED' : 'SFX');
+      sLabel.setText(isMuted ? 'MUT' : 'SFX');
       sLabel.setColor(isMuted ? '#666666' : '#00ffff');
     });
 
@@ -198,14 +203,25 @@ export class MenuScene extends Phaser.Scene {
     this.drawIconBtn(fsGfx, 0x00ffff);
     fsBtn.add(fsGfx);
 
-    const fsLabel = createCrispText(this, 0, 0, '⛶', {
+    const fsLabel = createCrispText(this, 0, 0, this.scale.isFullscreen ? '🗗' : '⛶', {
       fontFamily: 'sans-serif',
-      fontSize: '16px',
+      fontSize: '15px',
       color: '#00ffff',
     }).setOrigin(0.5);
     fsBtn.add(fsLabel);
 
-    const fsHit = this.add.rectangle(0, 0, 36, 36, 0, 0).setInteractive({ useHandCursor: true });
+    const updateFsIcon = () => {
+      fsLabel.setText(this.scale.isFullscreen ? '🗗' : '⛶');
+    };
+
+    this.scale.on(Phaser.Scale.Events.ENTER_FULLSCREEN, updateFsIcon);
+    this.scale.on(Phaser.Scale.Events.LEAVE_FULLSCREEN, updateFsIcon);
+    this.events.once('shutdown', () => {
+      this.scale.off(Phaser.Scale.Events.ENTER_FULLSCREEN, updateFsIcon);
+      this.scale.off(Phaser.Scale.Events.LEAVE_FULLSCREEN, updateFsIcon);
+    });
+
+    const fsHit = this.add.rectangle(0, 0, 32, 32, 0, 0).setInteractive({ useHandCursor: true });
     fsBtn.add(fsHit);
     fsHit.on('pointerdown', () => {
       if (this.scale.isFullscreen) {
@@ -219,10 +235,10 @@ export class MenuScene extends Phaser.Scene {
   }
 
   private drawIconBtn(gfx: Phaser.GameObjects.Graphics, color: number): void {
-    gfx.fillStyle(0x0a1024, 0.8);
-    gfx.fillRoundedRect(-18, -18, 36, 36, 6);
+    gfx.fillStyle(0x0a1024, 0.85);
+    gfx.fillRoundedRect(-16, -16, 32, 32, 6);
     gfx.lineStyle(1.5, color, 0.7);
-    gfx.strokeRoundedRect(-18, -18, 36, 36, 6);
+    gfx.strokeRoundedRect(-16, -16, 32, 32, 6);
   }
 
   private createMenuButton(
@@ -291,12 +307,14 @@ export class MenuScene extends Phaser.Scene {
 
   // Attract background mode logic
   private spawnAttractAsteroids(): void {
+    const cx = GAME_WIDTH / 2;
+    const cy = 265;
     for (let i = 0; i < 6; i++) {
       const radius = 12 + Math.random() * 16;
       const angle = Math.random() * Math.PI * 2;
-      const dist = 180 + Math.random() * 260;
-      const x = GAME_WIDTH / 2 + Math.cos(angle) * dist;
-      const y = GAME_HEIGHT / 2 + Math.sin(angle) * dist;
+      const dist = 140 + Math.random() * 220;
+      const x = cx + Math.cos(angle) * dist;
+      const y = cy + Math.sin(angle) * dist;
       const speed = 15 + Math.random() * 25;
       const moveAngle = angle + Math.PI + (Math.random() - 0.5) * 0.8;
 
@@ -320,7 +338,7 @@ export class MenuScene extends Phaser.Scene {
 
     // Rotate attract turret toward nearest asteroid
     const cx = GAME_WIDTH / 2;
-    const cy = GAME_HEIGHT / 2;
+    const cy = 265;
 
     let nearestAst: AttractAsteroid | null = null;
     let minDist = Infinity;

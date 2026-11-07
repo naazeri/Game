@@ -137,16 +137,35 @@
   {
     "id": "vega",
     "title": "Vega",
-    "tagline": "Space shooter (legacy build).",
-    "description": "Hidden until it is remade for the new engine. The old build is still served at /vega/.",
-    "published": false,
-    "order": 99,
+    "tagline": "360° orbital defense against cosmic swarms and dreadnoughts.",
+    "description": "Defend the core in a high-octane 360-degree arcade space shooter. Rotate twin plasma cannons with laser sight targeting, deploy triple spreads, piercing railguns, homing swarms and time-dilating chrono freezes, and unleash the screen-clearing EMP Super Nova when overwhelmed by relentless fleets.",
+    "published": true,
+    "order": 6,
     "players": "1 player",
-    "platforms": ["desktop"],
-    "accent": "#f472b6",
-    "media": [960, 540],
-    "controls": { "desktop": [], "mobile": [] },
-    "features": ["Legacy Godot build"],
-    "tags": ["Legacy"]
+    "platforms": ["desktop", "mobile"],
+    "accent": "#00f0ff",
+    "media": [960, 600],
+    "controls": {
+      "desktop": [
+        "Move mouse - aim 360° turret with laser sight",
+        "Left click (or hold) - fire twin plasma cannons",
+        "Spacebar or Right click - EMP Super Nova bomb",
+        "P or Esc - tactical pause"
+      ],
+      "mobile": [
+        "Drag anywhere on screen to rotate and auto-fire",
+        "Tap the on-screen 💣 EMP button to detonate Super Nova"
+      ]
+    },
+    "features": [
+      "Twin-cannon turret with 360° laser targeting, recoil and auto-fire",
+      "Tri-cell energy shield matrix with radial knockback wave",
+      "Tactical power-ups: Triple Spread, Plasma Railgun, Homing Missiles, Chrono Freeze, and EMP Super Nova",
+      "Escalating threats: Asteroids, Swarm Drones, Armored Cruisers, Splitters, and colossal Dreadnought Bosses",
+      "Dynamic combo multiplier system up to 5x with combat score text",
+      "Atmospheric 3-layer parallax starfield with original soundtrack and retro synthesizer audio",
+      "Your high score and sound settings are saved on your device"
+    ],
+    "tags": ["Arcade", "Space", "Shooter", "Action"]
   }
 ]

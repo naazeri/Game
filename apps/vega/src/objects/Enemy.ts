@@ -20,6 +20,10 @@ export class Enemy {
   public rotationSpeed: number;
   public isSplitFragment: boolean = false;
 
+  public wave: number = 1;
+  public shootTimer: number = 0;
+  public onFireCounter?: (x: number, y: number, targetAngle: number) => void;
+
   private graphics: Phaser.GameObjects.Graphics;
   private vertices: Array<{ x: number; y: number }> = [];
   private weavePhase: number = 0;
@@ -29,28 +33,32 @@ export class Enemy {
     x: number,
     y: number,
     type: EnemyType = EnemyType.Asteroid,
-    isFragment: boolean = false
+    isFragment: boolean = false,
+    wave: number = 1
   ) {
     this.scene = scene;
     this.x = x;
     this.y = y;
     this.type = type;
     this.isSplitFragment = isFragment;
+    this.wave = wave;
     this.rotationSpeed = Phaser.Math.FloatBetween(-1.5, 1.5);
+
+    const speedScale = 1 + Math.min(0.45, (wave - 1) * 0.035);
 
     switch (type) {
       case EnemyType.Drone:
         this.radius = 14;
         this.maxHp = 1;
-        this.speed = Phaser.Math.FloatBetween(120, 150);
+        this.speed = Phaser.Math.FloatBetween(120, 150) * speedScale;
         this.color = 0x38bdf8; // Electric Cyan
         this.colorHex = '#38bdf8';
         break;
 
       case EnemyType.Cruiser:
         this.radius = 28;
-        this.maxHp = 4;
-        this.speed = Phaser.Math.FloatBetween(45, 65);
+        this.maxHp = 4 + Math.min(3, Math.floor(wave / 4));
+        this.speed = Phaser.Math.FloatBetween(45, 65) * speedScale;
         this.color = 0xa855f7; // Neon Purple
         this.colorHex = '#a855f7';
         break;
@@ -58,15 +66,15 @@ export class Enemy {
       case EnemyType.Splitter:
         this.radius = 20;
         this.maxHp = 2;
-        this.speed = Phaser.Math.FloatBetween(70, 95);
+        this.speed = Phaser.Math.FloatBetween(70, 95) * speedScale;
         this.color = 0xf97316; // Radiant Orange
         this.colorHex = '#f97316';
         break;
 
       case EnemyType.Dreadnought:
         this.radius = 38;
-        this.maxHp = 12;
-        this.speed = 35;
+        this.maxHp = 14 + Math.max(0, (Math.floor(wave / 5) - 1)) * 8;
+        this.speed = 36 * Math.min(1.25, speedScale);
         this.color = 0xef4444; // Crimson Red
         this.colorHex = '#ef4444';
         break;
@@ -75,7 +83,7 @@ export class Enemy {
       default:
         this.radius = isFragment ? 12 : Phaser.Math.FloatBetween(18, 26);
         this.maxHp = isFragment ? 1 : 2;
-        this.speed = isFragment ? Phaser.Math.FloatBetween(80, 110) : Phaser.Math.FloatBetween(55, 80);
+        this.speed = (isFragment ? Phaser.Math.FloatBetween(80, 110) : Phaser.Math.FloatBetween(55, 80)) * speedScale;
         this.color = isFragment ? 0xfacc15 : 0xeab308; // Magma Amber
         this.colorHex = '#facc15';
         break;
@@ -129,6 +137,14 @@ export class Enemy {
 
     this.x += this.vx * dt;
     this.y += this.vy * dt;
+
+    if (this.type === EnemyType.Dreadnought && this.onFireCounter) {
+      this.shootTimer += dt * slowFactor;
+      if (this.shootTimer >= 3.2) {
+        this.shootTimer = 0;
+        this.onFireCounter(this.x, this.y, angleToPlayer);
+      }
+    }
 
     this.draw();
   }
