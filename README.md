@@ -4,13 +4,13 @@ Small browser games by [Reza Nazeri](https://nazeriland.ir), live at **https://g
 
 Everything lives in this monorepo (pnpm workspaces): each game is a Phaser 3 + TypeScript + Vite app, and the portal is an Astro site.
 
-| Game | Play | Source |
+| Game | Details | Source |
 |---|---|---|
-| Ponge | [/ponge/](https://game.nazeriland.ir/ponge/) | [`apps/ponge`](apps/ponge) |
-| Poke | [/poke/](https://game.nazeriland.ir/poke/) | [`apps/poke`](apps/poke) |
-| Change Balls | [/change-balls/](https://game.nazeriland.ir/change-balls/) | [`apps/change-balls`](apps/change-balls) |
-| Flappy Bird | [/flappy-bird/](https://game.nazeriland.ir/flappy-bird/) | [`apps/flappy-bird`](apps/flappy-bird) |
-| Hit The Coin | [/hit-the-coin/](https://game.nazeriland.ir/hit-the-coin/) | [`apps/hit-the-coin`](apps/hit-the-coin) |
+| Ponge | [/games/ponge/](https://game.nazeriland.ir/games/ponge/) | [`apps/ponge`](apps/ponge) |
+| Poke | [/games/poke/](https://game.nazeriland.ir/games/poke/) | [`apps/poke`](apps/poke) |
+| Change Balls | [/games/change-balls/](https://game.nazeriland.ir/games/change-balls/) | [`apps/change-balls`](apps/change-balls) |
+| Flappy Bird | [/games/flappy-bird/](https://game.nazeriland.ir/games/flappy-bird/) | [`apps/flappy-bird`](apps/flappy-bird) |
+| Hit The Coin | [/games/hit-the-coin/](https://game.nazeriland.ir/games/hit-the-coin/) | [`apps/hit-the-coin`](apps/hit-the-coin) |
 
 ## Layout
 
