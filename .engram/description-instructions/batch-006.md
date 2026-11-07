@@ -1,4 +1,4 @@
-# Node Description Batch 7 of 24
+# Node Description Batch 7 of 15
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -19,53 +19,51 @@ relations (neighbors) and the provided citations/evidence — e.g.
 Ground entity descriptions in the citations/evidence when present; do not
 speculate beyond the context, so a node with no supporting context may be
 left out of the reply.
-LANGUAGE: each entry has a `lang=` marker giving the language of its source.
-Write that entry's description in EXACTLY that language. Do not translate to
-a single common language — match each node's source language individually.
+Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "assets_index_d2py_agh_nt_createbutton": ".createButton()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .createAboutModal(), .createHUD()] | lang=en
-- "assets_index_d2py_agh_nt_createhud": ".createHUD()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .create(), .createButton()] | lang=en
-- "assets_index_ufwfauyg_gt_applybirdskin": ".applyBirdSkin()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .create(), .cycleBirdSkin()] | lang=en
-- "assets_index_ufwfauyg_gt_flap": ".flap()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .handleAction(), .startGame()] | lang=en
-- "assets_index_ufwfauyg_gt_handleaction": ".handleAction()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .flap(), .startGame()] | lang=en
-- "assets_index_ufwfauyg_gt_startgame": ".startGame()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .handleAction(), .flap()] | lang=en
-- "commit:repo:github.com/naazeri/Game@07c6be398a252b0331a07df06ee4c77d47f651e5": "07c6be3 add change balls v1.2.1" | kind=Commit | source=git | neighbors=[main, e3d3949 add hit-the-coin gmae, 19f781f add bola game] | lang=en
-- "commit:repo:github.com/naazeri/Game@1270fdf0bb0536382d1c4a761554facc583ae9af": "1270fdf change text and hover color" | kind=Commit | source=git | neighbors=[main, 8ab3175 minify images, d7ef535 Update index.html] | lang=en
-- "commit:repo:github.com/naazeri/Game@19f781f008f5290cc5d83b7953f5c010312888f7": "19f781f add bola game" | kind=Commit | source=git | neighbors=[main, 07c6be3 add change balls v1.2.1, 7d1691c change flappy-bird to GLES2] | lang=en
-- "commit:repo:github.com/naazeri/Game@37be431084c5a7bdcc3d355d5e08259d198626bb": "37be431 add ponge v1.1.3" | kind=Commit | source=git | neighbors=[main, 79daffc add landing page, e3d3949 add hit-the-coin gmae] | lang=en
-- "commit:repo:github.com/naazeri/Game@41bf5e35e0869f59de8626a71a7f69548a18c3fb": "41bf5e3 add bola, flappy, hit the coin images" | kind=Commit | source=git | neighbors=[main, a4c2e32 remove preloader and unused libs, 79daffc add landing page] | lang=en
-- "commit:repo:github.com/naazeri/Game@53277901c1e24f89bb53a3c9f00854533b7704a6": "5327790 add deadzone to flappy bird sky" | kind=Commit | source=git | neighbors=[main, a902dcb Update README.md, 993d092 add vega link but commented] | lang=en
-- "commit:repo:github.com/naazeri/Game@5e62a519e8a77b084d3f9023af64eb0c981febdd": "5e62a51 update change-balls to version 1.3.0" | kind=Commit | source=git | neighbors=[main, fdf34ba feat: rebuild Hit The Coin with…, ebd193e change domain and convert image…] | lang=en
-- "commit:repo:github.com/naazeri/Game@60c8c84fc62186744c95c8fb37e7d194cc10aea7": "60c8c84 Update CNAME" | kind=Commit | source=git | neighbors=[main, ebd193e change domain and convert image…, a902dcb Update README.md] | lang=en
-- "commit:repo:github.com/naazeri/Game@66591ee6b11106e7a52b29da4eef8664f4f8a0c5": "66591ee chore(titles): clean game titles and set portal title to Game - nazeril…" | kind=Commit | source=git | neighbors=[4042c7c feat(poke): release v2.0.0 rema…, main, bb72e0b feat(change-balls): release v2.…] | lang=en
-- "commit:repo:github.com/naazeri/Game@7a5a4cf80998a161acef3f8cfbcded46e3766aa7": "7a5a4cf Update README.md" | kind=Commit | source=git | neighbors=[main, a445a0f add poke game, cd3f55a add flappy bird game] | lang=pt
-- "commit:repo:github.com/naazeri/Game@7d1691c2887f6512b71b76c0b588fecc11abe5c8": "7d1691c change flappy-bird to GLES2" | kind=Commit | source=git | neighbors=[main, 19f781f add bola game, a445a0f add poke game] | lang=en
-- "commit:repo:github.com/naazeri/Game@8ab3175ff80e98b28da140720aac6e076a05a88a": "8ab3175 minify images" | kind=Commit | source=git | neighbors=[1270fdf change text and hover color, main, 8ee78eb change Bootstrap to v5.3.1] | lang=en
-- "commit:repo:github.com/naazeri/Game@993d09281e0b27ae8a0bdc712615e86364fe47a1": "993d092 add vega link but commented" | kind=Commit | source=git | neighbors=[main, 5327790 add deadzone to flappy bird sky, e7dfc30 add vega game] | lang=en
-- "commit:repo:github.com/naazeri/Game@a06c4ecc10b9ede008268bb7334fa085d8ec75f1": "a06c4ec chore: remove bola game and update engram memory graph" | kind=Commit | source=git | neighbors=[main, 4042c7c feat(poke): release v2.0.0 rema…, b714fad chore(memory): initialize Engra…] | lang=en
-- "commit:repo:github.com/naazeri/Game@a445a0fc5d9926b7df64233faa8151cc6435f04d": "a445a0f add poke game" | kind=Commit | source=git | neighbors=[7a5a4cf Update README.md, main, 7d1691c change flappy-bird to GLES2] | lang=pt
-- "commit:repo:github.com/naazeri/Game@a4c2e32222bd9e99704d905756f49a2d644690bf": "a4c2e32 remove preloader and unused libs" | kind=Commit | source=git | neighbors=[41bf5e3 add bola, flappy, hit the coin …, main, a834ef4 add favicon] | lang=en
-- "commit:repo:github.com/naazeri/Game@a834ef4971b93a92d62138accec36ace87cf1ffd": "a834ef4 add favicon" | kind=Commit | source=git | neighbors=[a4c2e32 remove preloader and unused libs, main, bcc967b fix header] | lang=pt
-- "commit:repo:github.com/naazeri/Game@a902dcb640b40bb29c6ac7040d69e9c2f20c5688": "a902dcb Update README.md" | kind=Commit | source=git | neighbors=[5327790 add deadzone to flappy bird sky, main, 60c8c84 Update CNAME] | lang=pt
-- "commit:repo:github.com/naazeri/Game@b3188a4e4cdbeab702f15447ff80c13ba68d998a": "b3188a4 Create CNAME" | kind=Commit | source=git | neighbors=[main, cd3f55a add flappy bird game, ea8f4f5 Initial commit] | lang=pt
-- "commit:repo:github.com/naazeri/Game@b714fad0f3a1c714faa4b102287ed463c4e7cd52": "b714fad chore(memory): initialize Engram knowledge graph and Antigravity agent …" | kind=Commit | source=git | neighbors=[main, a06c4ec chore: remove bola game and upd…, c3fedc4 feat(flappy-bird): release v1.2…] | lang=en
-- "commit:repo:github.com/naazeri/Game@bcc967b0ad878f8c66beacccffe35f5ec830aa22": "bcc967b fix header" | kind=Commit | source=git | neighbors=[a834ef4 add favicon, main, d7ef535 Update index.html] | lang=en
-- "commit:repo:github.com/naazeri/Game@cd3f55a0cf14f975805265ec03e0d10ea82cdb21": "cd3f55a add flappy bird game" | kind=Commit | source=git | neighbors=[b3188a4 Create CNAME, main, 7a5a4cf Update README.md] | lang=pt
-- "commit:repo:github.com/naazeri/Game@d7ef535fb4469a4914d5732d3290ad084ce64975": "d7ef535 Update index.html" | kind=Commit | source=git | neighbors=[bcc967b fix header, main, 1270fdf change text and hover color] | lang=en
-- "commit:repo:github.com/naazeri/Game@e3d39499515f4517bc8299fa3942f2dbddfc0a27": "e3d3949 add hit-the-coin gmae" | kind=Commit | source=git | neighbors=[07c6be3 add change balls v1.2.1, main, 37be431 add ponge v1.1.3] | lang=en
-- "commit:repo:github.com/naazeri/Game@ebd193e532d5857242e3d01f84ea1744cce80547": "ebd193e change domain and convert images to webp" | kind=Commit | source=git | neighbors=[60c8c84 Update CNAME, main, 5e62a51 update change-balls to version …] | lang=en
-- "data_storagemanager_storagemanager_getbestscore": ".getBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L10 | neighbors=[StorageManager, .getKey(), .saveBestScore()] | lang=en
-- "data_storagemanager_storagemanager_getgamesplayed": ".getGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L36 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
-- "data_storagemanager_storagemanager_savebestscore": ".saveBestScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L16 | neighbors=[StorageManager, .getBestScore(), .getKey()] | lang=en
-- "data_storagemanager_storagemanager_savecurrentscore": ".saveCurrentScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L31 | neighbors=[StorageManager, .getKey(), .incrementGamesPlayed()] | lang=en
-- "entities_ballpillar_ballpillar_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L24 | neighbors=[BallPillar, .drawPivot(), .drawRod()] | lang=en
-- "entities_centralball_centralball_spawntrailparticle": ".spawnTrailParticle()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L149 | neighbors=[CentralBall, getHeatTierForScore(), .update()] | lang=en
-- "entities_centralball_centralball_updatescore": ".updateScore()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L75 | neighbors=[CentralBall, .drawGlow(), getHeatTierForScore()] | lang=en
-- "js_bootstrap_min_ai_changecontent": ".changeContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, ._checkContent(), ._getTemplateFactory()] | lang=en
-- "js_bootstrap_min_ai_checkcontent": "._checkContent()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ai, .changeContent(), ._typeCheckConfig()] | lang=en
+- "audio_audiomanager_audiomanager_playscoreexplosion": ".playScoreExplosion()" | kind=code-symbol | source=apps/ponge/src/audio/AudioManager.ts:L68 | neighbors=[AudioManager, .playSynthExplosion()]
+- "audio_audiomanager_audiomanager_playservechime": ".playServeChime()" | kind=code-symbol | source=apps/ponge/src/audio/AudioManager.ts:L82 | neighbors=[AudioManager, .playSynthBlip()]
+- "audio_audiomanager_audiomanager_playsynthexplosion": ".playSynthExplosion()" | kind=code-symbol | source=apps/ponge/src/audio/AudioManager.ts:L198 | neighbors=[AudioManager, .playScoreExplosion()]
+- "audio_audiomanager_audiomanager_playwallbounce": ".playWallBounce()" | kind=code-symbol | source=apps/ponge/src/audio/AudioManager.ts:L59 | neighbors=[AudioManager, .playSynthBlip()]
+- "audio_audiomanager_audiomanager_togglemusic": ".toggleMusic()" | kind=code-symbol | source=apps/change-balls/src/audio/AudioManager.ts:L69 | neighbors=[AudioManager, .playBgm()]
+- "commit:repo:github.com/naazeri/Game@ea8f4f5b223e693a6d31492fb57eb8a49ec269d8": "ea8f4f5 Initial commit" | kind=Commit | source=git | neighbors=[main, b3188a4 Create CNAME]
+- "components_header": "Header.astro" | kind=code-symbol | source=apps/portal/src/components/Header.astro:L1 | neighbors=[875b52a feat(portal): add Astro portal …, Base.astro]
+- "data_storagemanager_storagemanager_getcurrentscore": ".getCurrentScore()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L26 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_getspeedsetting": ".getSpeedSetting()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L46 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_ismusicenabled": ".isMusicEnabled()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L64 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_issoundenabled": ".isSoundEnabled()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L55 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_savespeedsetting": ".saveSpeedSetting()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L51 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_setmusicenabled": ".setMusicEnabled()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L69 | neighbors=[StorageManager, .getKey()]
+- "data_storagemanager_storagemanager_setsoundenabled": ".setSoundEnabled()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L60 | neighbors=[StorageManager, .getKey()]
+- "entities_ballpillar_ballpillar_drawpivot": ".drawPivot()" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L80 | neighbors=[BallPillar, .constructor()]
+- "entities_ballpillar_ballpillar_drawrod": ".drawRod()" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L59 | neighbors=[BallPillar, .constructor()]
+- "entities_centralball_centralball_constructor": ".constructor()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L50 | neighbors=[CentralBall, .drawGlow()]
+- "entities_centralball_centralball_reset": ".reset()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L305 | neighbors=[CentralBall, .drawGlow()]
+- "entities_centralball_centralball_switchcolor": ".switchColor()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L208 | neighbors=[CentralBall, .drawGlow()]
+- "entities_centralball_centralball_update": ".update()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L137 | neighbors=[CentralBall, .spawnTrailParticle()]
+- "flappy_bird_vite_config": "vite.config.ts" | kind=code-symbol | source=apps/flappy-bird/vite.config.ts:L1 | neighbors=[0d024c8 feat(flappy-bird): rebuild with…, c3fedc4 feat(flappy-bird): release v1.2…]
+- "lib_gsap_min_a": "_a()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, v()]
+- "lib_gsap_min_animation": "Animation()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ra()]
+- "lib_gsap_min_context": "Context()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, cb()]
+- "lib_gsap_min_db": "db()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, eb()]
+- "lib_gsap_min_ee": "ee()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
+- "lib_gsap_min_fc": "Fc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ec()]
+- "lib_gsap_min_gc": "gc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween()]
+- "lib_gsap_min_ie": "ie()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, je()]
+- "lib_gsap_min_jc": "Jc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Lc()]
+- "lib_gsap_min_la": "la()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Q()]
+- "lib_gsap_min_ld": "Ld()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Kd()]
+- "lib_gsap_min_le": "le()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ke()]
+- "lib_gsap_min_ma": "ma()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, na()]
+- "lib_gsap_min_na": "na()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ma()]
+- "lib_gsap_min_oa": "oa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r()]
+- "lib_gsap_min_q": "Q()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, la()]
+- "lib_gsap_min_sb": "Sb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ha()]
+- "lib_gsap_min_sd": "Sd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Od()]
+- "lib_gsap_min_ta": "ta()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, v()]
 
 ## Instructions
 

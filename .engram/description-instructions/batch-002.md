@@ -1,4 +1,4 @@
-# Node Description Batch 3 of 24
+# Node Description Batch 3 of 15
 
 Engram is running in assistant/skill mode (no API key). You are the host
 assistant (Claude Code / Codex / Gemini CLI). Read the prompt below and write
@@ -12,58 +12,51 @@ describing what it is or does. Use only the provided context.
 For a code symbol (kind=code-symbol — a function, class, or constant),
 describe what the function/symbol does based on its name, source location
 and neighbors — e.g. "Resolves the configured ontology profile from graphify.yaml.".
-For an entity node (any other kind — e.g. a person, place, event, object),
-describe what the entity is and its role, grounded in its type, its
-relations (neighbors) and the provided citations/evidence — e.g.
-"Lady Carfax, a wealthy heiress who disappears en route to Lausanne.".
-Ground entity descriptions in the citations/evidence when present; do not
-speculate beyond the context, so a node with no supporting context may be
-left out of the reply.
 Write every description in English (en). Do not switch languages.
 No marketing language.
 Respond ONLY with a JSON object mapping each node id (as a string) to its
 one-sentence description — no prose, no markdown fences.
 
-- "lib_gsap_min_v": "v()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _a(), ac(), ea(), eb(), gb()]
-- "ui_aboutmodal_aboutmodal": "AboutModal" | kind=code-symbol | source=apps/change-balls/src/ui/AboutModal.ts:L6 | neighbors=[MenuScene.ts, AboutModal.ts, .constructor(), .createButton(), .createContent(), .getVisible()]
-- "ui_texthelper_createcrisptext": "createCrispText()" | kind=code-symbol | source=apps/change-balls/src/ui/TextHelper.ts:L5 | neighbors=[GameScene.ts, MenuScene.ts, AboutModal.ts, BannerManager.ts, GameOverModal.ts, SettingsModal.ts]
-- "assets_index_b4cljeyc_gt": "Gt" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .createButton(), .createFullscreenButton(), .handleResize()]
-- "assets_index_ctaeemyb_ue_drawglow": ".drawGlow()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ue, .constructor(), Nt(), .clear(), .reset(), .switchColor()]
-- "assets_index_ctaeemyb_ve_clear": ".clear()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.restartGame(), .drawHeart(), .drawPivot(), .drawRod(), .activateShield(), .drawGlow()]
-- "assets_index_d2py_agh_nt_create": ".create()" | kind=code-symbol | source=poke/assets/index-D2py_AGH.js:L6360 | neighbors=[Nt, .createAboutModal(), .createAmbientGlows(), .createGlobalControls(), .createHUD(), .setupInput()]
-- "commit:repo:github.com/naazeri/Game@385e2dec823273ba03c163ee3887a02d0972eb94": "385e2de fix(hit-the-coin): prevent duplicate bgm_menu on return from result sce…" | kind=Commit | source=git | neighbors=[index-B4CLjEYc.js, main, 0d024c8 feat(flappy-bird): rebuild with…, GameScene.ts, MenuScene.ts, ResultScene.ts]
-- "js_bootstrap_min_fs_setinitialattributesonchild": "._setInitialAttributesOnChild()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._setInitialAttributes(), ._elemIsActive(), ._getInnerElement(), ._getOuterElement(), ._setAttributeIfNotExists()]
-- "lib_gsap_min_d": "_d()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, be(), fa(), ia(), Pd(), oe()]
-- "lib_gsap_min_eb": "eb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, db(), ja(), r(), s(), v()]
-- "scenes_resultscene": "ResultScene.ts" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L1 | neighbors=[385e2de fix(hit-the-coin): prevent dupl…, fdf34ba feat: rebuild Hit The Coin with…, ResultData, ResultScene, config.ts, GAME_CONFIG]
-- "scenes_resultscene_resultscene": "ResultScene" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/ResultScene.ts:L11 | neighbors=[ResultScene.ts, .constructor(), .create(), .createButton(), .handleResize(), .playMenuMusic()]
-- "src_config_game_config": "GAME_CONFIG" | kind=code-symbol | source=apps/poke/src/config.ts:L1 | neighbors=[AboutScene.ts, BootScene.ts, GameScene.ts, MenuScene.ts, ResultScene.ts, config.ts]
-- "ui_aboutmodal": "AboutModal.ts" | kind=code-symbol | source=apps/change-balls/src/ui/AboutModal.ts:L1 | neighbors=[bb72e0b feat(change-balls): release v2.…, MenuScene.ts, AudioManager.ts, AudioManager, AboutModal, TextHelper.ts]
-- "ui_bannermanager": "BannerManager.ts" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L1 | neighbors=[bb72e0b feat(change-balls): release v2.…, GameScene.ts, config.ts, BannerManager, BannerOptions, TextHelper.ts]
-- "assets_index_b4cljeyc_ut": "Ut" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[index-B4CLjEYc.js, .constructor(), .create(), .createButton(), .handleResize(), .playMenuMusic()]
-- "assets_index_ctaeemyb_ct_getbestscore": ".getBestScore()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.createHUD(), Ct, .getKey(), .saveBestScore(), .show(), .show()]
-- "assets_index_ctaeemyb_ct_getspeedsetting": ".getSpeedSetting()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[.create(), .restartGame(), Ct, .getKey(), .constructor(), .show()]
-- "assets_index_ctaeemyb_ve": "ve" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[index-CTAEEmYb.js, .create(), .clear(), .constructor(), .processNext(), .show()]
-- "assets_index_ufwfauyg_gt_create": ".create()" | kind=code-symbol | source=flappy-bird/assets/index-UfWfaUyg.js:L6360 | neighbors=[Gt, .applyBirdSkin(), .createGameOverUI(), .createGlobalControls(), .createInGameHUD(), .createReadyUI()]
-- "entities_ballpillar": "BallPillar.ts" | kind=code-symbol | source=apps/change-balls/src/entities/BallPillar.ts:L1 | neighbors=[bb72e0b feat(change-balls): release v2.…, BallPillar, config.ts, BallColor, COLORS, GameScene.ts]
-- "entities_centralball_centralball_drawglow": ".drawGlow()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L104 | neighbors=[CentralBall, .constructor(), getHeatTierForScore(), .reset(), .switchColor(), .updateScore()]
-- "js_bootstrap_min_n": "N()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[bootstrap.min.js, D(), F(), I(), L(), O()]
-- "js_bootstrap_min_ot_cycle": ".cycle()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .constructor(), ._clearInterval(), ._updateInterval(), ._maybeEnableCycle(), ._slide()]
-- "js_bootstrap_min_ot_to": ".to()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ot, .jQueryInterface(), ._getActive(), ._getItemIndex(), ._getItems(), ._slide()]
-- "lib_gsap_min_ac": "ac()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, r(), s(), t(), u(), v()]
-- "lib_gsap_min_gb": "gb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, fb(), s(), t(), v(), Wa()]
-- "lib_gsap_min_ka": "ka()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, be(), ja(), t(), xa(), za()]
-- "scenes_aboutscene": "AboutScene.ts" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L1 | neighbors=[4042c7c feat(poke): release v2.0.0 rema…, fdf34ba feat: rebuild Hit The Coin with…, AboutScene, config.ts, GAME_CONFIG, main.ts]
-- "scenes_gamescene_gamescene_update": ".update()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L119 | neighbors=[GameScene, .checkCollisions(), .handleKeyboardMovement(), .handlePillarHit(), .updateMobs(), .updatePipes()]
-- "ui_bannermanager_bannermanager": "BannerManager" | kind=code-symbol | source=apps/change-balls/src/ui/BannerManager.ts:L12 | neighbors=[GameScene.ts, BannerManager.ts, .clear(), .constructor(), .processNext(), .show()]
-- "assets_index_b4cljeyc_nt_clearpanicticks": ".clearPanicTicks()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .endGame(), .handleCoinHit(), .init(), .triggerUrgentCountdown()]
-- "assets_index_b4cljeyc_nt_handlecoinhit": ".handleCoinHit()" | kind=code-symbol | source=hit-the-coin/assets/index-B4CLjEYc.js:L6360 | neighbors=[Nt, .clearPanicTicks(), .repositionCoin(), .showFloatingText(), .spawnParticleBurst()]
-- "assets_index_ctaeemyb_ce_createhud": ".createHUD()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[ce, .create(), .createIconButton(), .getBestScore(), de]
-- "assets_index_ctaeemyb_de_drawheart": ".drawHeart()" | kind=code-symbol | source=change-balls/assets/index-CTAEEmYb.js:L6360 | neighbors=[de, .addLife(), .createHearts(), .clear(), .setLives()]
-- "audio_audiomanager_audiomanager_playbgm": ".playBgm()" | kind=code-symbol | source=apps/change-balls/src/audio/AudioManager.ts:L44 | neighbors=[AudioManager, .stopMusic(), .playGameMusic(), .playMenuMusic(), .toggleMusic()]
-- "commit:repo:github.com/naazeri/Game@e7dfc308b5fac5933c0665914a820d82e6412c30": "e7dfc30 add vega game" | kind=Commit | source=git | neighbors=[8ee78eb change Bootstrap to v5.3.1, index-3509133a.js, main, 993d092 add vega link but commented, gsap.min.js]
-- "js_bootstrap_min_fs_show": ".show()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[fs, ._activate(), ._deactivate(), ._elemIsActive(), ._getActiveElem()]
-- "js_bootstrap_min_ne_getwidth": ".getWidth()" | kind=code-symbol | source=assets/bootstrap/js/bootstrap.min.js:L6 | neighbors=[Ne, .hide(), .isOverflowing(), ._setElementAttributes(), ._adjustDialog()]
+- "lib_gsap_min_cb": "cb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Ab(), Bb(), Context(), Ew()]
+- "lib_gsap_min_ea": "ea()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, s(), v(), fa(), Tween()]
+- "lib_gsap_min_fb": "fb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Bb(), ja(), t(), gb()]
+- "lib_gsap_min_ia": "ia()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), Aa(), ja(), oe()]
+- "lib_gsap_min_ra": "Ra()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Animation(), Aa(), ja(), Sa()]
+- "lib_gsap_min_va": "va()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), r(), t(), w()]
+- "lib_gsap_min_wb": "wb()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, qa(), s(), ua(), x()]
+- "objects_ball_ball_draw": ".draw()" | kind=code-symbol | source=apps/ponge/src/objects/Ball.ts:L154 | neighbors=[Ball, .constructor(), .getHeatColor(), .stop(), .update()]
+- "objects_paddle_paddle_draw": ".draw()" | kind=code-symbol | source=apps/ponge/src/objects/Paddle.ts:L101 | neighbors=[Paddle, .constructor(), .reset(), .setColor(), .update()]
+- "objects_playerpaddle": "PlayerPaddle.ts" | kind=code-symbol | source=apps/ponge/src/objects/PlayerPaddle.ts:L1 | neighbors=[ed4b732 feat(ponge): release v2.0.0 rem…, Paddle.ts, Paddle, PlayerPaddle, GameScene.ts]
+- "objects_powerup": "PowerUp.ts" | kind=code-symbol | source=apps/ponge/src/objects/PowerUp.ts:L1 | neighbors=[ed4b732 feat(ponge): release v2.0.0 rem…, PowerUp, config.ts, PowerUpKind, GameScene.ts]
+- "scenes_aboutscene_aboutscene": "AboutScene" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/AboutScene.ts:L5 | neighbors=[AboutScene.ts, .constructor(), .create(), .handleResize(), main.ts]
+- "scenes_bootscene_bootscene": "BootScene" | kind=code-symbol | source=apps/ponge/src/scenes/BootScene.ts:L4 | neighbors=[BootScene.ts, .constructor(), .create(), .preload(), main.ts]
+- "scenes_gamescene_gamescene_clearpanicticks": ".clearPanicTicks()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L187 | neighbors=[GameScene, .endGame(), .handleCoinHit(), .init(), .triggerUrgentCountdown()]
+- "scenes_gamescene_gamescene_handlecoinhit": ".handleCoinHit()" | kind=code-symbol | source=apps/hit-the-coin/src/scenes/GameScene.ts:L192 | neighbors=[GameScene, .clearPanicTicks(), .repositionCoin(), .showFloatingText(), .spawnParticleBurst()]
+- "src_config_gamemode": "GameMode" | kind=code-symbol | source=apps/ponge/src/config.ts:L40 | neighbors=[StorageManager.ts, GameScene.ts, MenuScene.ts, config.ts, GameOverModal.ts]
+- "assets_index_3509133a_i": "I" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, .constructor(), .draw(), .update()]
+- "assets_index_3509133a_q": "q" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, .constructor(), .draw(), .update()]
+- "assets_index_3509133a_r": "r()" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, o(), S, v()]
+- "assets_index_3509133a_s": "S" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, r(), .constructor(), .draw()]
+- "assets_index_3509133a_t": "T" | kind=code-symbol | source=vega/assets/index-3509133a.js:L1 | neighbors=[index-3509133a.js, .constructor(), .draw(), .update()]
+- "audio_audiomanager_audiomanager_stopmusic": ".stopMusic()" | kind=code-symbol | source=apps/ponge/src/audio/AudioManager.ts:L146 | neighbors=[AudioManager, .playBgm(), .playMusic(), .setMusicEnabled()]
+- "components_gamecard": "GameCard.astro" | kind=code-symbol | source=apps/portal/src/components/GameCard.astro:L1 | neighbors=[875b52a feat(portal): add Astro portal …, games.ts, [slug].astro, index.astro]
+- "data_storagemanager_storagemanager_incrementgamesplayed": ".incrementGamesPlayed()" | kind=code-symbol | source=apps/change-balls/src/data/StorageManager.ts:L41 | neighbors=[StorageManager, .getGamesPlayed(), .getKey(), .saveCurrentScore()]
+- "entities_centralball_getheattierforscore": "getHeatTierForScore()" | kind=code-symbol | source=apps/change-balls/src/entities/CentralBall.ts:L26 | neighbors=[CentralBall.ts, .drawGlow(), .spawnTrailParticle(), .updateScore()]
+- "games_slug": "[slug].astro" | kind=code-symbol | source=apps/portal/src/pages/games/[slug].astro:L1 | neighbors=[875b52a feat(portal): add Astro portal …, GameCard.astro, Base.astro, games.ts]
+- "lib_gsap_min_ab": "Ab()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, t(), zb(), cb()]
+- "lib_gsap_min_be": "be()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), ka(), Pd()]
+- "lib_gsap_min_fa": "fa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, _d(), ea(), ke()]
+- "lib_gsap_min_ha": "ha()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ja(), Lc(), Sb()]
+- "lib_gsap_min_je": "je()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ie(), Pd(), ke()]
+- "lib_gsap_min_ke": "ke()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, fa(), je(), le()]
+- "lib_gsap_min_lc": "Lc()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, ha(), Jc(), r()]
+- "lib_gsap_min_pd": "Pd()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, be(), _d(), je()]
+- "lib_gsap_min_w": "w()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Timeline(), Tween(), va()]
+- "lib_gsap_min_wa": "Wa()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, gb(), hb(), lb()]
+- "lib_gsap_min_y": "y()" | kind=code-symbol | source=vega/lib/gsap.min.js:L10 | neighbors=[gsap.min.js, Tween(), r(), s()]
+- "media_capture_capture_capture": "capture()" | kind=code-symbol | source=tools/media-capture/capture.mjs:L204 | neighbors=[capture.mjs, ffmpeg(), mediaWidth(), sleep()]
+- "pages_index": "index.astro" | kind=code-symbol | source=apps/portal/src/pages/index.astro:L1 | neighbors=[875b52a feat(portal): add Astro portal …, GameCard.astro, Base.astro, games.ts]
+- "scenes_gamescene_gamescene_checkcollisions": ".checkCollisions()" | kind=code-symbol | source=apps/poke/src/scenes/GameScene.ts:L537 | neighbors=[GameScene, .distToSegment(), .handleGameOver(), .update()]
 
 ## Instructions
 
