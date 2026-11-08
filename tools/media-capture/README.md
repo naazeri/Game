@@ -72,6 +72,8 @@ Per game, `capture(browser, slug)`:
 8. Encodes with `ffmpeg-static` (see §5) and writes the files listed in §0.
 9. Prints one line: `slug: fps~60, scene=GameScene, webm NNKB, mp4 NNKB`. **`fps` must be ~60 and `scene` must be the gameplay scene** — if not, something is wrong (see §7).
 
+> **Two recipe styles.** The five simple games use `bot` + `recordMs` + `shotsAt` (recording starts before the Start click, screenshots at fixed times). A recipe may instead define `play(ctx)` (**manual mode**, used by Vega, §3b): `capture()` then only clicks Start, and the recipe itself calls `ctx.startRecording()` / `ctx.stopRecording()`, writes `<shotDir>/shot-1..3.png`, and may return `{ clipStartMs, clipLengthMs }` to select the part of the take to keep.
+
 The width used when scaling comes from `apps/portal/src/content/games.json` → `media: [width, height]` of that game (`mediaWidth(slug)`).
 
 ---
@@ -97,6 +99,29 @@ All state is read with `page.evaluate` against `scene = game.scene.getScene('Gam
 - **change-balls** — reads the central ball (`centralBall.container.x`, `.vx`, `.currentColor`) and the pillars (`leftPillar/rightPillar.getActiveColor()`, `.container.x`). Both pillars flip together on Space. If the pillar the ball is heading toward doesn't match the ball's colour and the ball is > 170 px away, press **Space** (at most once per 260 ms, because the flip animation takes 140 ms).
 - **flappy-bird** — reads `bird.y`, `bird.body.velocity.y`, and the next pipe pair (`pipePairs.find(p => p.topPipe.active && p.topPipe.x + 40 > bird.x)`); gap centre = `(topPipe.y + bottomPipe.y) / 2`. Flaps (**Space**) when the bird is below `gapCentre + 18`, not already rising fast (`vy > -80`), and ≥ 140 ms since the last flap.
 - **hit-the-coin** — reads `scene.coin.{x,y}` and clicks it every 330–520 ms (human-ish pace).
+
+### 3b. Vega — the "manual" recipe (`bots/vega.mjs`)
+
+Vega is a stationary-turret shooter (960×600 canvas): the mouse aims, holding the left button auto-fires, **Space** detonates an EMP bomb, shooting a crystal collects a power-up. Enemies fly in from the screen edges. Its early sectors are calm, so a clip recorded from the start looks boring. The Vega recipe therefore uses **manual mode** (`play: playVega` instead of `bot`/`recordMs`/`shotsAt`):
+
+1. The bot plays in **real time** from the start (start click at (355, 425) “START MISSION”) **without recording**, collecting crystals and using all weapons.
+2. When the game reaches sector `VEGA_RECORD_WAVE` (default **9**) *and* ≥ 5 enemies are on screen, it calls `startRecording()` and records a **36 s take** (`VEGA_RECORD_MS`). Sector 10 is the Dreadnought boss sector.
+3. During the take it logs an *excitement* value per tick: visible enemies (max 8) + boss + special weapon + camera shake + EMP blast. Afterwards `bestWindow()` picks the **busiest contiguous 15 s** (`VEGA_CLIP_MS`), penalising empty screens (sector banners, waiting for the next wave). It returns `{ clipStartMs, clipLengthMs }`; `capture.mjs` uses them for `-ss` / `-t` when encoding.
+4. **Screenshots** come from the whole run, not the clip: every ~0.65 s the bot scores the frame (distinct enemy types ×4, enemies on screen, own bolts visible, boss, special weapon, combo, score) and keeps the best frame **per weapon** (`standard`, `triple`, `railgun`, `homing`). Frames are skipped while the camera is shaking (they would be offset) or when fewer than 3 of the current weapon's bolts are visible. The three best frames with **different weapons** are kept, in chronological order → the gallery shows different bolts and enemy mixes.
+5. The run **throws** if the core is destroyed (re-run after improving the bot) or if the take never starts (9 min limit).
+
+What makes it look like an expert human instead of an aimbot (keep these if you edit the bot):
+
+- The pointer is a **spring-damped hand** (`Hand` class: ω 22–34 rad/s, ζ 0.82 → quick flicks with a little overshoot) plus a tiny tremor. It is never teleported.
+- Target choice = threat: `urgency = timeToImpact − timeToKill` (uses the weapon's damage rate and bullet speed). A new target is adopted only after a **90–170 ms reaction delay**, with hysteresis so it doesn't flip between two enemies.
+- Shots **lead** moving targets (closed-form intercept) with a small random aim error (a few bolts miss).
+- It opens fire only inside `FIRE_RANGE = 340 px` (or when a threat is urgent), so enemies get close and the screen fills up; it grabs crystals only when safe.
+- Railgun: aims along the line that pierces the most enemies. EMP: used for emergencies, and one stockpiled bomb is spent on a swarm during the take (a great visual).
+- The bot reads Phaser state through `window.game`: `scene.enemies`, `scene.powerUps`, `scene.projectiles`, `scene.player.{shields,empBombs,currentWeapon}`, `scene.wave`, `scene.isGameOver`, `scene.cameras.main.shakeEffect.isRunning`. If Vega's code changes these names, update `STATE_JS` at the top of `bots/vega.mjs`.
+
+Env knobs for experiments: `VEGA_RECORD_WAVE`, `VEGA_RECORD_MS`, `VEGA_CLIP_MS`. Lower `VEGA_RECORD_WAVE` (e.g. 6) for a quick test run (~2 min), but use the default for the final footage.
+
+Review checklist specific to Vega: boss bar visible, ≥ 8 enemies on screen at some point, an EMP ring in the clip, the three screenshots show three different bolt colours (cyan standard, yellow triple, magenta railgun, green homing) and all four enemy types (amber asteroid, blue drone, purple cruiser, orange splitter).
 
 ---
 
@@ -237,7 +262,7 @@ The `.tmp/` folder is git-ignored; delete it when done.
 
 `node smoke.mjs` (site served on :4173) runs ~55 end-to-end checks with Edge: landing page lists the games, every card links to `/games/<slug>/`, each details page has a PLAY link with `href="/<slug>/" target="_blank" rel="noopener"`, the source link points to `https://github.com/naazeri/Game/tree/main/apps/<slug>`, the clip + 3 screenshots exist, canonical/OG tags are right, PLAY really opens the game in a new tab and the game boots, lightbox opens/closes, hidden games are 404, `/404.html` exists, sitemap/robots/manifest/CNAME are served, mobile has a sticky PLAY bar and no horizontal scroll, and there are no console errors. It must end with `All checks passed`.
 
-> **Known limitation:** the list of games it expects is hard-coded at the top of `smoke.mjs` (`SLUGS = [...]`, “lists N games”, “Vega is not listed”, “3 screenshots present”, “gameplay clip present”). When a game is published, hidden, or has no clip yet, **update that list and those expectations** or the test will fail for the wrong reason.
+> **Known limitation:** the list of games it expects is hard-coded at the top of `smoke.mjs` (`SLUGS = [...]`, “lists N games”, “3 screenshots present”, “gameplay clip present”). When a game is published, hidden, or has no clip yet, **update that list and those expectations** or the test will fail for the wrong reason.
 
 Also eyeball the page once in a browser (desktop and a 375 px-wide viewport): hero video plays and loops, no layout jump, PLAY bar visible on mobile.
 
@@ -248,4 +273,4 @@ Also eyeball the page once in a browser (desktop and a 375 px-wide viewport): he
 | Game | Clip | Screenshots | Capture recipe |
 |---|---|---|---|
 | ponge, poke, change-balls, flappy-bird, hit-the-coin | yes | 3 each | yes |
-| vega | no (not recorded yet) | 3 | **no recipe yet** — follow §4 to add one |
+| vega | yes | 3 | yes — **manual mode** (see §3b); takes ~4–5 minutes to run |

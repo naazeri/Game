@@ -9,9 +9,10 @@
 import { chromium } from 'playwright-core';
 import ffmpegPath from 'ffmpeg-static';
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, readFileSync, rmSync, writeFileSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { playVega } from './bots/vega.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const portal = path.resolve(here, '../../apps/portal');
@@ -198,59 +199,11 @@ const GAMES = {
   vega: {
     viewport: { width: 1280, height: 720 },
     ready: 'MenuScene',
-    start: () => [355, 425], // "START MISSION" button in game coordinates
-    recordMs: 9500,
-    trimMs: 500,
-    shotsAt: [2500, 5200, 7800],
-    async bot(c) {
-      let isMouseDown = false;
-      while (!c.stopped()) {
-        const s = await c.page.evaluate(`(() => {
-          const sc = ${GAME}.scene.getScene('GameScene');
-          if (!sc || !sc.scene.isActive() || sc.isGameOver) return null;
-          const enemies = (sc.enemies || []).filter(e => e.active).map(e => ({ x: e.x, y: e.y, r: e.radius, hp: e.hp }));
-          return {
-            enemies,
-            shields: sc.player ? sc.player.shields : 0,
-            bombs: sc.player ? sc.player.empBombs : 0
-          };
-        })()`);
-
-        if (s) {
-          if (!isMouseDown) {
-            await c.page.mouse.down();
-            isMouseDown = true;
-          }
-
-          let target = null;
-          let minDist = Infinity;
-          for (const e of s.enemies) {
-            const d = Math.hypot(e.x - 480, e.y - 300);
-            if (d < minDist) {
-              minDist = d;
-              target = e;
-            }
-          }
-
-          if (target) {
-            const [cx, cy] = c.toClient(target.x, target.y);
-            await c.page.mouse.move(cx, cy);
-          } else {
-            const t = Date.now() / 600;
-            const [cx, cy] = c.toClient(480 + Math.cos(t) * 150, 300 + Math.sin(t) * 150);
-            await c.page.mouse.move(cx, cy);
-          }
-
-          if (s.bombs > 0 && minDist < 90) {
-            await c.page.keyboard.press('Space');
-          }
-        }
-        await sleep(25);
-      }
-      if (isMouseDown) {
-        await c.page.mouse.up();
-      }
-    },
+    start: () => [355, 425], // "START MISSION"
+    trimMs: 300,
+    // Manual mode: the bot plays through the early sectors in real time, starts the recorder itself near the
+    // end of sector 4 and takes the screenshots (see bots/vega.mjs).
+    play: playVega,
   },
 };
 
@@ -278,45 +231,63 @@ async function capture(browser, slug) {
   })()`);
   const toClient = (x, y) => [geo.left + (x / geo.gw) * geo.width, geo.top + (y / geo.gh) * geo.height];
 
-  // Start recording the canvas, then click Start.
-  await page.evaluate(`(() => {
-    const g = ${GAME};
-    const stream = g.canvas.captureStream(30);
-    const rec = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9', videoBitsPerSecond: 6_000_000 });
-    window.__chunks = [];
-    rec.ondataavailable = (e) => e.data.size && window.__chunks.push(e.data);
-    rec.start(250);
-    window.__rec = rec;
-  })()`);
+  // Recording of the canvas (inside the page). Simple recipes record from before the Start click;
+  // "manual" recipes (cfg.play) decide themselves when to start/stop.
+  const startRecording = () =>
+    page.evaluate(`(() => {
+      const g = ${GAME};
+      const stream = g.canvas.captureStream(30);
+      const rec = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9', videoBitsPerSecond: 6_000_000 });
+      window.__chunks = [];
+      rec.ondataavailable = (e) => e.data.size && window.__chunks.push(e.data);
+      rec.start(250);
+      window.__rec = rec;
+    })()`);
+  let stopped;
+  const stopRecording = async () => {
+    stopped ??= await page.evaluate(`(async () => {
+      const rec = window.__rec;
+      await new Promise((res) => { rec.onstop = res; rec.stop(); });
+      const buf = await new Blob(window.__chunks, { type: 'video/webm' }).arrayBuffer();
+      let bin = ''; const bytes = new Uint8Array(buf);
+      for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+      const sc = ${GAME}.scene.getScenes(true)[0];
+      return { b64: btoa(bin), fps: Math.round(${GAME}.loop.actualFps), scene: sc && sc.scene.key };
+    })()`);
+    return stopped;
+  };
+
+  const manual = typeof cfg.play === 'function';
+  let playResult;
+  if (!manual) await startRecording();
   const startedAt = Date.now();
   const [sx, sy] = cfg.start({ w: geo.gw, h: geo.gh });
   const [cx, cy] = toClient(sx, sy);
   await page.mouse.move(cx, cy);
   await page.mouse.click(cx, cy);
 
-  const ctx = { page, toClient, stopped: () => Date.now() - startedAt > cfg.recordMs };
-  const botDone = cfg.bot(ctx);
-
-  // Screenshots (canvas only) at the scheduled moments.
   const shotDir = path.join(tmpDir, slug);
   rmSync(shotDir, { recursive: true, force: true });
   mkdirSync(shotDir, { recursive: true });
-  const canvas = page.locator('canvas').first();
-  for (const [i, at] of cfg.shotsAt.entries()) {
-    await sleep(Math.max(0, at - (Date.now() - startedAt)));
-    await canvas.screenshot({ path: path.join(shotDir, `shot-${i + 1}.png`) });
+
+  if (manual) {
+    // The recipe plays, records and writes <shotDir>/shot-1..3.png itself.
+    // It may return { clipStartMs, clipLengthMs }: the part of the take to keep (e.g. the busiest moments).
+    playResult = await cfg.play({ page, toClient, geo, startRecording, stopRecording, shotDir, log: (m) => console.log(`  [${slug}] ${m}`) });
+  } else {
+    const ctx = { page, toClient, stopped: () => Date.now() - startedAt > cfg.recordMs };
+    const botDone = cfg.bot(ctx);
+
+    // Screenshots (canvas only) at the scheduled moments.
+    const canvas = page.locator('canvas').first();
+    for (const [i, at] of cfg.shotsAt.entries()) {
+      await sleep(Math.max(0, at - (Date.now() - startedAt)));
+      await canvas.screenshot({ path: path.join(shotDir, `shot-${i + 1}.png`) });
+    }
+    await botDone;
   }
 
-  await botDone;
-  const result = await page.evaluate(`(async () => {
-    const rec = window.__rec;
-    await new Promise((res) => { rec.onstop = res; rec.stop(); });
-    const buf = await new Blob(window.__chunks, { type: 'video/webm' }).arrayBuffer();
-    let bin = ''; const bytes = new Uint8Array(buf);
-    for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
-    const sc = ${GAME}.scene.getScenes(true)[0];
-    return { b64: btoa(bin), fps: Math.round(${GAME}.loop.actualFps), scene: sc && sc.scene.key };
-  })()`);
+  const result = await stopRecording();
   await context.close();
 
   // ---- encode ----
@@ -325,16 +296,18 @@ async function capture(browser, slug) {
   const mw = mediaWidth(slug);
   const outDir = path.join(portal, 'public', 'media', slug);
   mkdirSync(outDir, { recursive: true });
-  const trim = (cfg.trimMs / 1000).toFixed(2);
+  const trim = ((playResult?.clipStartMs ?? cfg.trimMs) / 1000).toFixed(2);
+  const lenArgs = playResult?.clipLengthMs ? ['-t', (playResult.clipLengthMs / 1000).toFixed(2)] : [];
   const vf = `scale=${mw}:-2:flags=lanczos,fps=30`;
 
-  ffmpeg(['-ss', trim, '-i', raw, '-vf', vf, '-an', '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '37', '-row-mt', '1', '-deadline', 'good', '-cpu-used', '2', path.join(outDir, 'clip.webm')]);
-  ffmpeg(['-ss', trim, '-i', raw, '-vf', vf, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', path.join(outDir, 'clip.mp4')]);
+  ffmpeg(['-ss', trim, '-i', raw, ...lenArgs, '-vf', vf, '-an', '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '37', '-row-mt', '1', '-deadline', 'good', '-cpu-used', '2', path.join(outDir, 'clip.webm')]);
+  ffmpeg(['-ss', trim, '-i', raw, ...lenArgs, '-vf', vf, '-an', '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', path.join(outDir, 'clip.mp4')]);
   ffmpeg(['-ss', (Number(trim) + 1.2).toFixed(2), '-i', raw, '-frames:v', '1', '-vf', `scale=${mw}:-2:flags=lanczos`, '-c:v', 'libwebp', '-quality', '80', path.join(outDir, 'poster.webp')]);
 
   const shotsOut = path.join(portal, 'src', 'assets', 'games', slug);
   mkdirSync(shotsOut, { recursive: true });
-  for (let i = 1; i <= cfg.shotsAt.length; i++) {
+  const shotCount = cfg.shotsAt ? cfg.shotsAt.length : 3;
+  for (let i = 1; i <= shotCount; i++) {
     ffmpeg(['-i', path.join(shotDir, `shot-${i}.png`), '-vf', `scale='min(${mw},iw)':-2:flags=lanczos`, '-c:v', 'libwebp', '-quality', '82', path.join(shotsOut, `shot-${i}.webp`)]);
   }
 
