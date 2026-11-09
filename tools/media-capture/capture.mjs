@@ -13,6 +13,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync, statSync } 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { playVega } from './bots/vega.mjs';
+import { playBlockBreaker } from './bots/block-breaker.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const portal = path.resolve(here, '../../apps/portal');
@@ -204,6 +205,16 @@ const GAMES = {
     // Manual mode: the bot plays through the early sectors in real time, starts the recorder itself near the
     // end of sector 4 and takes the screenshots (see bots/vega.mjs).
     play: playVega,
+  },
+
+  'block-breaker': {
+    viewport: { width: 1280, height: 720 },
+    ready: 'MenuScene',
+    start: () => [282, 445], // "START MISSION"
+    trimMs: 300,
+    // Manual mode: the bot plays in real time, starts the recorder in stage 3 and takes the screenshots
+    // (see bots/block-breaker.mjs).
+    play: playBlockBreaker,
   },
 };
 

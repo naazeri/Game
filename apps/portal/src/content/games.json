@@ -167,5 +167,34 @@
       "Your high score and sound settings are saved on your device"
     ],
     "tags": ["Arcade", "Space", "Shooter", "Action"]
+  },
+  {
+    "id": "block-breaker",
+    "title": "Block Breaker",
+    "tagline": "Cyber-neon brick breaking with lasers, fireballs and chain explosions.",
+    "description": "Steer the paddle, bounce the ball into the matrix and shatter every block across five hand-built stages. Catch falling capsules for tri-ball splits, twin lasers, plasma fireballs and more, set off bomb blocks for chain reactions, and keep your hits going to build a 5x combo.",
+    "published": true,
+    "order": 7,
+    "players": "1 player",
+    "platforms": ["desktop", "mobile"],
+    "accent": "#00f0ff",
+    "media": [800, 600],
+    "controls": {
+      "desktop": [
+        "Move the mouse — steer the paddle",
+        "Click or Space — launch the ball and fire the lasers",
+        "P or Esc — pause"
+      ],
+      "mobile": ["Touch and slide anywhere on the lower screen to move the paddle", "Tap to launch the ball"]
+    },
+    "features": [
+      "Five stages, from Neon Gateway to the Quantum Core",
+      "Six block types: glass, alloy, core and solar vaults, bombs that blow up their neighbours, and unbreakable titanium",
+      "Seven power-ups: Tri-Ball Split, Twin Lasers, Energy Barrier, Paddle Expand, Plasma Fireball, Chrono Slow and a Repair Cell",
+      "The paddle angles the ball: hit with the edge for sharp shots, the centre for straight ones",
+      "Combo multiplier up to 5x for hits without touching the paddle",
+      "Original music and retro sound effects, with your high score saved on your device"
+    ],
+    "tags": ["Arcade", "Retro", "Quick rounds"]
   }
 ]

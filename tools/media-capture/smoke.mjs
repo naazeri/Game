@@ -3,7 +3,7 @@
 import { chromium } from 'playwright-core';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:4173';
-const SLUGS = ['ponge', 'poke', 'change-balls', 'flappy-bird', 'hit-the-coin', 'vega'];
+const SLUGS = ['ponge', 'poke', 'change-balls', 'flappy-bird', 'hit-the-coin', 'vega', 'block-breaker'];
 const REPO = 'https://github.com/naazeri/Game/tree/main/apps/';
 
 const failures = [];

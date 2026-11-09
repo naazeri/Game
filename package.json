@@ -19,7 +19,9 @@
     "dev:ponge": "pnpm --filter ponge dev",
     "build:ponge": "pnpm --filter ponge build",
     "dev:vega": "pnpm --filter vega dev",
-    "build:vega": "pnpm --filter vega build"
+    "build:vega": "pnpm --filter vega build",
+    "dev:block-breaker": "pnpm --filter block-breaker dev",
+    "build:block-breaker": "pnpm --filter block-breaker build"
   },
   "devDependencies": {
     "sirv-cli": "^3.0.1"

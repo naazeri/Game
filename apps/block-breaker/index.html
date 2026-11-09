@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Block Breaker</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="preload" href="./assets/fonts/VCR_OSD_MONO_1.001.ttf" as="font" type="font/ttf" crossorigin />
+    <style>
+      @font-face {
+        font-family: 'VCR_OSD_MONO';
+        src: url('./assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #05070e;
+        font-family: 'VCR_OSD_MONO', monospace;
+      }
+
+      #game-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #05070e;
+        background: radial-gradient(circle at center, #0b1120 0%, #05070e 100%);
+      }
+
+      :fullscreen,
+      ::backdrop,
+      :fullscreen::backdrop,
+      :-webkit-full-screen,
+      :-webkit-full-screen::backdrop,
+      #game-container:fullscreen,
+      #game-container:-webkit-full-screen {
+        width: 100vw;
+        height: 100vh;
+        background: #05070e !important;
+        background-color: #05070e !important;
+      }
+
+      canvas {
+        display: block;
+        box-shadow: 0 0 35px rgba(0, 240, 255, 0.12);
+        border-radius: 4px;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

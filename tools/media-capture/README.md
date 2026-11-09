@@ -123,6 +123,22 @@ Env knobs for experiments: `VEGA_RECORD_WAVE`, `VEGA_RECORD_MS`, `VEGA_CLIP_MS`.
 
 Review checklist specific to Vega: boss bar visible, ≥ 8 enemies on screen at some point, an EMP ring in the clip, the three screenshots show three different bolt colours (cyan standard, yellow triple, magenta railgun, green homing) and all four enemy types (amber asteroid, blue drone, purple cruiser, orange splitter).
 
+### 3c. Block Breaker — manual recipe (`bots/block-breaker.mjs`)
+
+Arena 800×600 (4:3, `media: [800, 600]`). The mouse moves the paddle, **Space** launches the ball and fires the lasers, the stage-clear card has an "ENGAGE NEXT SECTOR" button at game coordinates (400, 365). The bot plays like a skilled human:
+
+- **Hand:** spring-damped pointer (slight overshoot, tremor), faster only when the ball is close.
+- **Landing prediction:** it simulates each ball (walls + blocks, fireballs pierce) to the paddle line and puts the paddle there. The paddle position is chosen so the rebound heads for a bomb or gold block (`Paddle.getDeflectionAngle`: `-90° + offset·58°`), with a little aim noise. Near a side wall, where that angle is unreachable, it hits the ball the other way so it kicks off the wall (otherwise it loops on the spot). After 5 s without a kill it adds large aim noise to break repeating rallies.
+- **Power-ups:** fetched whenever it can still be back under the ball in time; lasers fire in bursts; launches happen after a human pause; stage-clear cards are clicked after ~1.7 s.
+- **Recording:** it plays from stage 1 in real time and starts the recorder in stage `BB_REC_STAGE` (default **3**), keeps `BB_RECORD_MS` (default **95 000**, so it covers stages 3–5), then `bestWindow()` keeps the busiest `BB_CLIP_MS` (default **11 000**): extra balls, active buffs, laser beams, blocks destroyed per second, 3x+ combo, a full board.
+- **Screenshots:** best frame per (stage, feature) where feature is fireball / laser / multi-ball / chrono / barrier / expand / combo. Only "busy" frames count (≥ 2 of: extra balls, buffs, laser beams, quick kills), none during camera shake, and frames within 3.2 s of a pick-up are only a fallback (two toasts at once overlap into unreadable text). The final three must differ in stage and feature and be ≥ 12 s apart.
+- It throws if the paddle runs out of lives; just re-run (about 4–5 minutes per run, the clip is random-dependent: look at it).
+- Debug shortcut to test a late stage without playing the early ones: `BB_DEBUG_STAGE=5 BB_REC_STAGE=5 BB_RECORD_MS=25000 node capture.mjs block-breaker`. Never use it for the final footage.
+- The list thumbnail is a screenshot of the menu: `node thumb.mjs block-breaker` (writes `apps/portal/src/assets/games/block-breaker/thumb.webp`). Run it for any new game before the portal build, which throws without it.
+- State read through `window.game`: `scene.paddle`, `balls`, `blocks`, `powerUps`, `score`, `lives`, `currentStageIndex`, `comboMultiplier`, `fireballTimer`, `chronoTimer`, `isStageTransitioning`, `isGameOver`. If the game renames them, update `STATE_JS`.
+
+Review checklist: the clip shows several balls or lasers, falling capsules and a combo badge; no game-over card; the three screenshots show different stages and different power-ups, with readable toasts.
+
 ---
 
 ## 4. Adding a new game (or re-doing one) — step by step
@@ -274,3 +290,4 @@ Also eyeball the page once in a browser (desktop and a 375 px-wide viewport): he
 |---|---|---|---|
 | ponge, poke, change-balls, flappy-bird, hit-the-coin | yes | 3 each | yes |
 | vega | yes | 3 | yes — **manual mode** (see §3b); takes ~4–5 minutes to run |
+| block-breaker | yes | 3 | yes — **manual mode** (see §3c); takes ~4–5 minutes to run, plus `thumb.mjs` for the thumbnail |
